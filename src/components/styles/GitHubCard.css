@@ -1,0 +1,14 @@
+/* Reset Spectre CSS button */
+button:focus {
+  outline: none;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+@media (max-width: 500px) {
+  .card {
+    width: 100% !important;
+  }
+}
