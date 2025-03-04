@@ -6,6 +6,7 @@ import 'spectre.css/dist/spectre.min.css'
 
 import 'spectre.css/dist/spectre-icons.min.css'
 import 'spectre.css/dist/spectre-exp.min.css'
+import Modals from './components/Modals'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,7 +21,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Vite + React + Spectre</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 3)}>
           count is {count}
@@ -35,6 +36,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      <section id='gabo'>
+        <Modals />
+      </section>
     </>
   )
 }
