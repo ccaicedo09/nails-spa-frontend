@@ -38,6 +38,33 @@ const Hero = () => {
         </article>
       )}
 
+      {activeHero === "enhanced-hero" && (
+        <article className="hero bg-gray my-2 p-2">
+          <div className="columns col-gap-2 flex-centered">
+            <div className="hero-body column col-lg-7 col-md-12">
+              <h1 className="text-bold">Hero mejorado</h1>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum
+                ducimus laborum dicta repudiandae cumque asperiores enim quam
+                molestiae facilis maxime esse dolores, dolorum sapiente aut
+                aspernatur hic id incidunt? Consequuntur.
+              </p>
+              <div className="btn-group mt-2">
+                <button className="btn btn-primary">Acción principal</button>
+                <button className="btn btn-secondary">Acción secundaria</button>
+              </div>
+            </div>
+            <div className="column col-lg-5 col-md-12">
+              <img
+                src="https://cascai.vercel.app/hero-illustration.webp"
+                alt="Hero image"
+                className="img-responsive rounded"
+              />
+            </div>
+          </div>
+        </article>
+      )}
+
       <div className="btn-group my-2">
         <button
           className={`btn ${activeHero === "default" ? "btn-primary" : ""}`}
@@ -56,6 +83,14 @@ const Hero = () => {
           onClick={() => setActiveHero("large")}
         >
           Hero Grande
+        </button>
+        <button
+          className={`btn ${
+            activeHero === "enhanced-hero" ? "btn-primary" : ""
+          }`}
+          onClick={() => setActiveHero("enhanced-hero")}
+        >
+          Hero mejorado
         </button>
       </div>
     </>
