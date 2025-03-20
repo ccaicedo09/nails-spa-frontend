@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:css": "rm node_modules/spectre.css/dist/spectre.css && rm node_modules/spectre.css/dist/spectre.min.css && sass node_modules/spectre.css/src/spectre.scss node_modules/spectre.css/dist/spectre.css && echo 'Archvio construido' && sass node_modules/spectre.css/dist/spectre.css node_modules/spectre.css/dist/spectre.min.css --style=compressed"
+    "build:css": "rm spectre.css/dist/spectre.css && rm spectre.css/dist/spectre.min.css && sass spectre.css/src/spectre.scss spectre.css/dist/spectre.css && echo 'Archvio construido' && sass spectre.css/dist/spectre.css spectre.css/dist/spectre.min.css --style=compressed",
+    "build:css:exp": "rm spectre.css/dist/spectre-exp.css && rm spectre.css/dist/spectre-exp.min.css && sass spectre.css/src/spectre-exp.scss spectre.css/dist/spectre-exp.css && echo 'Archvio construido' && sass spectre.css/dist/spectre-exp.css spectre.css/dist/spectre-exp.min.css --style=compressed"
   },
   "dependencies": {
     "@spectre-org/spectre-css": "^1.2.0",
