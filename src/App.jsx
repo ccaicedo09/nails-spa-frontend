@@ -4,12 +4,12 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import 'spectre.css/dist/spectre.min.css'
 
-import 'spectre.css/dist/spectre-icons.min.css'
-import 'spectre.css/dist/spectre-exp.min.css'
+// import 'spectre.css/dist/spectre-icons.min.css'
+// import 'spectre.css/dist/spectre-exp.min.css'
 import Modals from './components/Modals'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import GithubCard from './components/GithubCard'
+import GithubCard from './components/GitHubCard'
 function App() {
   const [count, setCount] = useState(0)
 
