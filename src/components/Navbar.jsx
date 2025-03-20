@@ -3,7 +3,7 @@ import spectreLogo from '../assets/spectre-logo.svg';
 function Navbar() {
   return (
     <>
-      <header className="navbar">
+      <header className="navbar mx-10">
         <section className="navbar-section">
           <a href="#" className="btn btn-link">Docs</a>
           <a href="#" className="btn btn-link">Examples</a>
