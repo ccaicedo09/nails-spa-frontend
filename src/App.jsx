@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import spectreLogo from './assets/spectre-logo.svg'
 import './App.css'
 import 'spectre.css/dist/spectre.min.css'
 
@@ -26,6 +27,9 @@ function App() {
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+        <a href="https://picturepan2.github.io/spectre/getting-started.html">
+          <img src={spectreLogo} className='logo' alt="Spectre logo" />
         </a>
       </div>
       <h1>Vite + React + Spectre</h1>
