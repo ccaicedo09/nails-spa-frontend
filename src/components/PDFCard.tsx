@@ -3,10 +3,6 @@ import React from 'react';
 import PDFLogo from '../assets/pdf.svg'; 
 import './styles/about/PDFCard.css'; 
 
-const downloadPDF = () => {
-  window.open('/carta-precios-2025.pdf', '_blank');
-}
-
 const PDFCard = () => {
   return (
     <div className='card card-dwnld s-rounded col-4 p-centered bg-dark text-white text-center'>
@@ -15,7 +11,7 @@ const PDFCard = () => {
         <p>Descubre todos los tratamientos y cuidados que ofrecemos para tus uñas.</p>
       </div>
 
-      <button className='btn btn-primary' onClick={downloadPDF}>
+      <button className='btn btn-primary' onClick={() => window.open('/carta-precios-2025.pdf', '_blank')}>
         <img src={PDFLogo} alt='PDF logo' />
         Descargar PDF
       </button>

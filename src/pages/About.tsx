@@ -2,6 +2,8 @@ import React from 'react';
 import Card from '../components/Card';
 import PDFCard from '../components/PDFCard';
 import Branch from '../components/Branch';
+import Shecdule from '../components/Schedule';
+import Contact from '../components/Contact';
 
 const teamWork = [
   {
@@ -27,26 +29,30 @@ const teamWork = [
 const About = () => {
   return (
     <>
-      <section>
+      <section style={{ display: 'flex', flexDirection: 'column', gap: 24, alignItems: 'center' }}>
+        <div style={{  backgroundColor: '#8b0000', padding: 24, width: '100%' }}></div>
 
-      </section>
-      
-      <section style={{display: 'flex', flexDirection: 'column', gap: 24, alignItems: 'center'}}>
-        {/* TODO: Implementar Carousel 
-        *<div style={{display: 'flex', gap: 16, justifyContent: 'center'}}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32 }}>
+          <PDFCard />
+          <Shecdule />
+        </div>
+        
+        <div style={{ backgroundColor: '#1E1E1E', padding: 24 }}>
+          <h2 className='text-center' style={{ color: '#F5F5F5', marginBottom: 28 }}>Conoce cada una de nuestras sedes!</h2>
+          <Branch url={'https://maps.app.goo.gl/hMh2G9v2sjZffuUj6'}/>
+        </div>
+
+        <h2 className='text-center'>Expertos en nuestra pasión</h2>
+        <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
           {teamWork.map((worker, index) => (
-          <Card key={index} worker={worker} />
-          )}
-        </div> */}
-        
-        <h2 className='p-centered'>Expertos en nuestra pasión</h2>
-        <Card worker={teamWork[0]} />
+            <Card key={index} worker={worker} />
+          ))}
+        </div>
 
-        <PDFCard />
-        
-        <h2 className='text-primary p-centered'>Conoce cada una de nuestras sedes!</h2>
-        <Branch url={'https://maps.app.goo.gl/hMh2G9v2sjZffuUj6'}/>
+        <div style={{  backgroundColor: '#8b0000', padding: 24, width: '100%' }}></div>
       </section>
+
+      <Contact />
     </>
 
   )

@@ -1,8 +1,11 @@
 .card-tm {
-  padding: 12px;
-  width: 28%;
-  min-width: 450px;
+  padding: 24px;
+  width: 26%;
+  min-width: 440px;
 }
+
+.card-tm p { margin: 0; }
+.card-tm .card-body { margin: 0 }
 
 @media (max-width: 500px) {
   .card-tm {
