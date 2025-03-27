@@ -14,10 +14,12 @@ import Modals from '../components/Modals'
 const Home = () => {
   return (
     <>
-      <section className='mx-10'>
-      <Carrousel />
+    <Carrousel />
+      <section className='mx-10 '>
+      
       <Hero />
       <ImageComparision />
+
 
       <section className='text-center'>
         <div>
