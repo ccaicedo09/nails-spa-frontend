@@ -22,7 +22,7 @@ $carousel-number: 8;
   z-index: $zindex-0;
 
   .carousel-container {
-    height: 100%;
+    max-height: 500px;
     left: 0;
     position: relative;
     &::before {
