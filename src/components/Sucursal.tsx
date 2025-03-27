@@ -1,16 +1,16 @@
 import React from 'react';
 //@ts-ignore
-import branch from '/img/branch.webp';
-import './styles/about/Branch.css';
+import sucursal from '/img/sucursal.webp';
+import './styles/about/Sucursal.css';
 
-const Branch = ({url}) => {
+const Sucursal = ({url}) => {
   return (
-    <div className='card card-brch p-centered'>
+    <div className='card card-scrl p-centered'>
       <div className='card-image'>
-        <img src={branch} alt="Surcursal" className='img-responsive' />
+        <img src={sucursal} alt="Sucursal" className='img-responsive' />
       </div>
 
-      <div className='brch-body'>
+      <div className='scrl-body'>
         <div className='card-header'>
           <div className='card-title h4'>Sede Principal</div>
           <div className='card-subtitle text-gray'>Carrera 7 #25-40, Neiva, Huila.</div>
@@ -28,4 +28,4 @@ const Branch = ({url}) => {
   );
 }
 
-export default Branch; 
+export default Sucursal; 

@@ -1,27 +1,27 @@
 import React from 'react';
 import Card from '../components/Card';
 import PDFCard from '../components/PDFCard';
-import Branch from '../components/Branch';
-import Shecdule from '../components/Schedule';
+import Schedule from '../components/Schedule';
+import Sucursal from '../components/Sucursal';
 import Contact from '../components/Contact';
 
 const teamWork = [
   {
-    name: 'Claudia Castro',
-    message: 'La palabra perfecta que define a súper wow es FAMILIA por que es un lugar lleno de amor, paz, diversión, complicidad y sobre todo mucho profesionalismo. Siempre hacen que me sienta Súper WOW!!!',
-    pathProfile: 'https://th.bing.com/th/id/OIP.mYEoUnMW0N6XkBCe_YmKwwAAAA?rs=1&pid=ImgDetMain',
-    role: 'Actriz'
+    name: 'Esperanza Gomez',
+    message: 'Aquí en nuestras instalaciones encontrarás un espacio diseñado para brindarte bienestar, belleza y comodidad. Somos un equipo apasionado por el detalle y la perfección, comprometidos en ofrecerte una experiencia única en cada visita.',
+    pathProfile: 'https://as1.ftcdn.net/v2/jpg/03/53/11/00/1000_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg',
+    role: 'Diseñadora'
   },
   {
-    name: 'Laura de Leon',
-    message: 'Me encanta Superwow porque me dejan las uñas perfectas, me dura mucho más tiempo el esmalte y sus procesos de asepsia son impecables que es lo más importante para mí.',
-    pathProfile: 'https://superwow.com.co/wp-content/uploads/2022/12/Claudia-castro.png',
+    name: 'Mia Khalifa',
+    message: 'Nos especializamos en ofrecerte servicios de la más alta calidad, con técnicas innovadoras y un equipo de profesionales que cuidan cada detalle. Queremos que cada cliente se sienta especial y disfrute de una experiencia premium.',
+    pathProfile: 'https://as1.ftcdn.net/v2/jpg/03/53/11/00/1000_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg',
     role: 'Modelo'
   },
   {
-    name: 'Ana Maria Uribe',
-    message: 'AMO ir a Súper Wow porque no existe lugar donde me sienta mas tranquila y en total confianza para entregar a ojos cerrados el cuidado de mis uñas ❤',
-    pathProfile: 'https://superwow.com.co/wp-content/uploads/2022/12/Ana-maria-uribe.png',
+    name: 'Lana Rhoades',
+    message: 'En nuestro espacio encontrarás el equilibrio perfecto entre elegancia y bienestar. Nos enfocamos en brindarte un servicio impecable, con un ambiente acogedor donde cada cliente se siente valorado y atendido con profesionalismo.',
+    pathProfile: 'https://as1.ftcdn.net/v2/jpg/03/53/11/00/1000_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg',
     role: 'Publicista'
   }
 ]
@@ -34,12 +34,12 @@ const About = () => {
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32 }}>
           <PDFCard />
-          <Shecdule />
+          <Schedule />
         </div>
         
         <div style={{ backgroundColor: '#1E1E1E', padding: 24 }}>
           <h2 className='text-center' style={{ color: '#F5F5F5', marginBottom: 28 }}>Conoce cada una de nuestras sedes!</h2>
-          <Branch url={'https://maps.app.goo.gl/hMh2G9v2sjZffuUj6'}/>
+          <Sucursal url={'https://maps.app.goo.gl/hMh2G9v2sjZffuUj6'}/>
         </div>
 
         <h2 className='text-center'>Expertos en nuestra pasión</h2>

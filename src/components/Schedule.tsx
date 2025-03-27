@@ -1,13 +1,13 @@
 import React from "react";
 import './styles/about/Schedule.css';
 
-const shecdule = [
+const schedule = [
   { day: "Lunes - Viernes", hours: "9:00 AM - 8:00 PM" },
   { day: "Sábado", hours: "10:00 AM - 6:00 PM" },
   { day: "Domingo", hours: "Cerrado" }
 ]
 
-const Shecdule = () => {
+const Schedule = () => {
   return (
     <table className="table table-hover" style={{flexGrow: 1}}>
       <thead>
@@ -17,7 +17,7 @@ const Shecdule = () => {
         </tr>
       </thead>
       <tbody>
-        {shecdule.map((day, index) => (
+        {schedule.map((day, index) => (
           <tr key={index}>
             <td>{day.day}</td>
             <td>{day.hours}</td>
@@ -28,4 +28,4 @@ const Shecdule = () => {
   );
 }
 
-export default Shecdule;
+export default Schedule;
