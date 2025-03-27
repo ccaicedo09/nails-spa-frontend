@@ -1,0 +1,30 @@
+.card-brch {
+  padding: 0;
+  width: 26%;
+  min-width: 360px;
+}
+
+.card-brch p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.card-brch .btn {
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+.card-brch .btn:hover {
+  transform: scale(1.1)
+}
+
+.brch-body {
+  padding: 0 12px;
+}
+
+@media (max-width: 500px) {
+  .card-brch {
+    width: 100%;
+    min-width: auto;
+  }
+}
