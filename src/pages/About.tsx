@@ -1,9 +1,8 @@
 import React from 'react';
 import Card from '../components/Card';
-import PDFCard from '../components/PDFCard';
-import Schedule from '../components/Schedule';
-import Sucursal from '../components/Sucursal';
-import Contact from '../components/Contact';
+//@ts-ignore
+import aboutUsImage from '/img/about_us.webp';
+import './styles/About.css';
 
 const teamWork = [
   {
@@ -28,33 +27,21 @@ const teamWork = [
 
 const About = () => {
   return (
-    <>
-      <section style={{ display: 'flex', flexDirection: 'column', gap: 24, alignItems: 'center' }}>
-        <div style={{  backgroundColor: '#8b0000', padding: 24, width: '100%' }}></div>
-
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32 }}>
-          <PDFCard />
-          <Schedule />
+    <section style={{ display: 'flex', flexDirection: 'column', gap: 24, alignItems: 'center' }}>
+      <div className='about' style={{ width: '100%', height: '95vh', backgroundImage: `url(${aboutUsImage})`, backgroundSize: 'cover', backgroundPosition: 'center'}} >
+        <div className='text-light'>
+          <h1>Donde tus uñas cuentan una historia</h1>
+          <p>Descubre la combinación perfecta de arte, belleza y cuidado en cada detalle. Porque unas manos impecables son el reflejo de tu estilo y personalidad.</p>
         </div>
-        
-        <div style={{ backgroundColor: '#1E1E1E', padding: 24 }}>
-          <h2 className='text-center' style={{ color: '#F5F5F5', marginBottom: 28 }}>Conoce cada una de nuestras sedes!</h2>
-          <Sucursal url={'https://maps.app.goo.gl/hMh2G9v2sjZffuUj6'}/>
-        </div>
+      </div>
 
-        <h2 className='text-center'>Expertos en nuestra pasión</h2>
-        <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-          {teamWork.map((worker, index) => (
-            <Card key={index} worker={worker} />
-          ))}
-        </div>
-
-        <div style={{  backgroundColor: '#8b0000', padding: 24, width: '100%' }}></div>
-      </section>
-
-      <Contact />
-    </>
-
+      <h2 className='text-center'>Expertos en nuestra pasión</h2>
+      <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 48 }}>
+        {teamWork.map((worker, index) => (
+          <Card key={index} worker={worker} />
+        ))}
+      </div>
+    </section>
   )
 }
 
