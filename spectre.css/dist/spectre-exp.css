@@ -100,15 +100,15 @@
   width: 1.4rem;
 }
 .calendar .calendar-date .date-item.date-today {
-  border-color: rgb(217.6, 124.1, 202.2);
+  border-color: rgb(230.3068965517, 177.3931034483, 225.6034482759);
   color: #AA60C8;
 }
 .calendar .calendar-date .date-item:focus {
   box-shadow: 0 0 0 0.1rem rgba(170, 96, 200, 0.2);
 }
 .calendar .calendar-date .date-item:focus, .calendar .calendar-date .date-item:hover {
-  background: rgb(224.4, 147.9, 211.8);
-  border-color: rgb(217.6, 124.1, 202.2);
+  background: rgb(237.6931034483, 200.6068965517, 234.3965517241);
+  border-color: rgb(230.3068965517, 177.3931034483, 225.6034482759);
   color: #AA60C8;
   text-decoration: none;
 }
@@ -139,7 +139,7 @@
   position: relative;
 }
 .calendar .calendar-range::before {
-  background: #DD88CF;
+  background: #EABDE6;
   content: "";
   height: 1.4rem;
   left: 0;
@@ -223,7 +223,6 @@
 }
 
 .carousel {
-  background: rgb(247.1842105263, 248.0131578947, 249.3157894737);
   display: block;
   overflow: hidden;
   position: relative;

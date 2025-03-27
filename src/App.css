@@ -4,9 +4,9 @@
   /* padding: 1rem; */
   /* text-align: center; */
 }
-.mx-10 {
-  margin-left: 1rem;
-  margin-right: 1rem;
+.mx-30 {
+  margin-left: 6rem;
+  margin-right: 6rem;
 }
 
 .my-10 {
@@ -14,9 +14,14 @@
   margin-bottom: 1rem;
 }
 .px-30 {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
 }
+
+.object-fit-content {
+  object-fit: contain;
+}
+
 
 .logo {
   height: 6em;
