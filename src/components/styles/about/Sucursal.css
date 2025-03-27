@@ -1,0 +1,30 @@
+.card-scrl {
+  padding: 0;
+  width: 26%;
+  min-width: 360px;
+}
+
+.card-scrl p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.card-scrl .btn {
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+.card-scrl .btn:hover {
+  transform: scale(1.1)
+}
+
+.scrl-body {
+  padding: 0 12px;
+}
+
+@media (max-width: 500px) {
+  .card-scrl {
+    width: 100%;
+    min-width: auto;
+  }
+}
