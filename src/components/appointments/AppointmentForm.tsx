@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import Services from './Services';
 import { useFormContext } from './AppointmentFormContext';
+import Specialists from './Specialists';
 
 const renderStep = (step: number) => {
     switch (step) {
         case 1:
             return <Services />
         case 2:
-            return <div>Seleccionar una fecha</div>
+            return <Specialists />
         case 3:
-            return <div>Confirmar cita</div>
+            return <div>Seleccionar fecha</div>
         default:
             return null;
     }

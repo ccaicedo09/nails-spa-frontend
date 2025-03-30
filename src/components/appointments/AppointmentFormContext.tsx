@@ -1,9 +1,11 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
-import Service from "../../types/FormTypes.interface";
+import { Service, Specialist } from "../../types/FormTypes.interface";
 
 interface AppointmentFormContextType {
   services: Service[];   
   setServices: React.Dispatch<React.SetStateAction<Service[]>>;
+  specialist: Specialist | null;
+  setSpecialist: React.Dispatch<React.SetStateAction<Specialist | null>>;
   nextStep: () => void;
   prevStep: () => void;
   currentStep: number;
@@ -21,6 +23,7 @@ export const useFormContext = () => {
 
 export const FormProvider: React.FC<{ children: ReactNode}> = ({ children }) => {
   const [services, setServices] = useState<Service[]>([]);
+  const [specialist, setSpecialist] = useState<Specialist | null>(null);
   const [currentStep, setCurrentStep] = useState(1);
 
   const nextStep = () => setCurrentStep((prev) => prev + 1);
@@ -28,7 +31,7 @@ export const FormProvider: React.FC<{ children: ReactNode}> = ({ children }) => 
 
   return (
     <AppointmentFormContext.Provider
-      value={{ services, setServices, nextStep, prevStep, currentStep }}
+      value={{ services, setServices, specialist, setSpecialist, nextStep, prevStep, currentStep }}
     >
       {children}
     </AppointmentFormContext.Provider>

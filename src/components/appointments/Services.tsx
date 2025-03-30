@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useFormContext } from './AppointmentFormContext'
 import supabase from '../../utils/supabaseClient';
-import Service from '../../types/FormTypes.interface';
-import "../../components/styles/appointments/Services.css";	
+import { Service } from '../../types/FormTypes.interface';
 
 const Services = () => {
   const { services, setServices } = useFormContext();

@@ -22,7 +22,7 @@ const exampleData = {
 // const endDate = new Date(startDate.getTime() + totalTime * 60000);
 
 const Review = () => {
-  const { services } = useFormContext();
+  const { services, specialist } = useFormContext();
 
   const totalPrice = services.reduce((sum, service) => sum + service.price, 0);
 
@@ -42,14 +42,20 @@ const Review = () => {
 
         <hr />
 
-        <article>
-          <h3 className="h6 label label-rounded label-primary">
-            Reserva a cargo de:
-          </h3>
-          <span style={{ display: "block", fontWeight: "bold" }}>{exampleData.specialist}</span>
-        </article>
+        {specialist && (
+          <>
+            <article>
+              <h3 className="h6 label label-rounded label-primary">
+                Reserva a cargo de:
+              </h3>
+              <span style={{ display: "block", fontWeight: "bold" }}>
+                {specialist.name}
+              </span>
+            </article>
 
-        <hr />
+            <hr />
+          </>
+        )}
 
         <article>
           {services.length === 0 ? (
