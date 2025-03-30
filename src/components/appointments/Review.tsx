@@ -1,5 +1,7 @@
 import React from 'react'
 import { useFormContext } from './AppointmentFormContext';
+import FormControls from './FormControls';
+import '../../components/styles/appointments/Review.css';
 
 const exampleData = {
   specialist: "Nathalia Ávila Borrero",
@@ -23,22 +25,7 @@ const Review = () => {
   const { nextStep, prevStep, services } = useFormContext();
   return (
     <>
-      <div
-        className="container form-controls"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "row",
-          gap: "3rem",
-        }}
-      >
-        <button className="btn btn-lg btn-secondary" onClick={prevStep}>
-          ← Anterior
-        </button>
-        <button className="btn btn-lg btn-primary" onClick={nextStep}>
-          Continuar →
-        </button>
-      </div>
+      <FormControls />
 
       <hr />
 
@@ -64,17 +51,24 @@ const Review = () => {
         {services.length === 0 ? (
           <p>No has seleccionado ningún servicio.</p>
         ) : (
-          <ul>
-            {services.map((service) => (
-              <li key={service.id}>
-                <h4>{service.name}</h4>
-                <p>{service.description}</p>
-                <p>
-                  <strong>Precio:</strong> ${service.price}
-                </p>
-              </li>
-            ))}
-          </ul>
+          <>
+            <h3 className="h6 label label-rounded label-primary">
+              Servicios seleccionados:
+            </h3>
+            <ul className="selected-services">
+              {services.map((service) => (
+                <li key={service.id} className="service-item">
+                  <div className="service-header">
+                    <h4 className="h5">{service.name}</h4>
+                    <p className="service-price">
+                      $ {service.price.toLocaleString("es-CO")}
+                    </p>
+                  </div>
+                  <p className="service-duration">{service.estimated_duration} min</p>
+                </li>
+              ))}
+            </ul>
+          </>
         )}
       </article>
     </>
