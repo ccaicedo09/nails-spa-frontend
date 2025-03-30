@@ -1,0 +1,26 @@
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 48px;
+}
+
+.about > * {
+  width: calc(40% - 8px);
+}
+
+.about div {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 16px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.about div h1 { font-size: 48px; }
+
+.about div p { font-size: 20px; }
