@@ -53,3 +53,29 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Used to style cards in booking module */
+
+.card-custom {
+  cursor: pointer;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  padding: 0;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+.card-custom li {
+  margin-bottom: 1px;
+}
+
+.card-custom:hover {
+  border-color: #AA60C8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-custom.selected {
+  border-color: #AA60C8;
+  background: #EABDE6;
+}
