@@ -1,5 +1,5 @@
 .appointments-container {
-    margin: 0 4rem;
+    padding: 0rem 3rem;
     height: 80vh;
 }
 
@@ -7,7 +7,7 @@
 .appointment-form {
     height: 100%;
     overflow-y: auto;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 .appointment-review {

@@ -19,9 +19,6 @@ const AppointmentForm = () => {
     const { currentStep } = useFormContext();
     return (
         <>
-            <header>
-                <h2>Test</h2>
-            </header>
             {renderStep(currentStep)}
         </>
     )
