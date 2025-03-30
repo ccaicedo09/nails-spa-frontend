@@ -17,3 +17,37 @@
 .appointment-form {
     max-height: 80vh;
 }
+
+
+/* Fix scroll bar */
+
+/* WebKit (Chrome, Edge, Safari) */
+.appointment-review::-webkit-scrollbar,
+.appointment-form::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.appointment-review::-webkit-scrollbar-thumb,
+.appointment-form::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.appointment-review::-webkit-scrollbar-thumb:hover,
+.appointment-form::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
+.appointment-review::-webkit-scrollbar-track,
+.appointment-form::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+/* Firefox */
+.appointment-review,
+.appointment-form {
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f0f0f0;
+}

@@ -18,8 +18,6 @@ const Services = () => {
           .from("services")
           .select("*")
         
-        console.log(services);
-        
         if (error) throw error;
         setServicesList(services);
       } catch (error: any) {
