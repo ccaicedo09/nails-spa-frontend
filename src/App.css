@@ -1,8 +1,5 @@
 #root {
-  /* max-width: 1280px; */
-  /* margin: 0 auto; */
-  /* padding: 1rem; */
-  /* text-align: center; */
+ width: 100%;
 }
 .mx-30 {
   margin-left: 6rem;
@@ -13,9 +10,17 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.mt-80 {
+  margin-top: 8rem;
+
+}
 .px-30 {
   padding-left: 6rem;
   padding-right: 6rem;
+}
+.py-30 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .object-fit-content {
@@ -51,10 +56,15 @@
   }
 }
 
-.card {
+/* .card {
   padding: 2em;
-}
+} */
 
 .read-the-docs {
   color: #888;
+}
+
+.navbar {
+  z-index: 90;
+  width: 100%;
 }

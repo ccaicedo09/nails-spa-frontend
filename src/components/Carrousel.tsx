@@ -8,7 +8,7 @@ import image4 from '/img/test_img_4.png'
 
 const Carrousel = () => {
   return (
-    <div className="carousel my-10 px-30">
+    <div className="carousel mt-80 mx-30">
   
   <input className="carousel-locator" id="slide-1" type="radio" name="carousel-radio" hidden defaultChecked />
   <input className="carousel-locator" id="slide-2" type="radio" name="carousel-radio" hidden/>

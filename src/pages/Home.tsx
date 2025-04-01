@@ -26,9 +26,23 @@ const Home = () => {
     <Carrousel />
       <section className='mx-30 '>
       
-      <Hero />
+      {/* <Hero /> */}
+
+      <div className='text-center text-dark hero'>
+        <h1 className='text-4xl '>
+        Bienvenidos a Nails Spa! 
+
+        </h1>
+
+
+      </div>
+      <section className='columns'>
+      <ImageComparision />
+    
       <ImageComparision />
 
+      </section>
+     
 
       {/* <section className='text-center'>
         <div>
@@ -48,33 +62,64 @@ const Home = () => {
         </p>
       </section> */}
     </section>
-    <section className='bg-secondary col-12 px-30 my-10'>
+    <section className='bg-secondary col-12 px-30 my-10 py-30'>
 
 
 
         <div  className='text-center text-primary'>
           <div className="container">
               <div className="columns">
-                <div className="column col-6" >
+                <div className="column col-12" >
                   <div className="columns">
                     <div className="column col-6" >
-                      <img src={image17} alt='' style={{height: '120px'}}  />
+                      <div className='card '>
+                        <div className="card-image">
+                        <img  className="img-responsive"src={image17} alt=''   />
+                        </div>
+                        <div className='card-body bg-dark text-light'>
+                          <h4 className='text-center'>Nail Art</h4>
+                          <p className='text-center'>Diseños de uñas creativos y personalizados.</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="column col-6" >
-                    <img src={image16} alt='' style={{height: '120px'}}  />
+                    <div className="column col-6"  >
+                    <div className='card '>
+                        <div className="card-image">
+                        <img  className="img-responsive"src={image18} alt=''   />
+                        </div>
+                        <div className='card-body bg-dark text-light' >
+                          <h4 className='text-center'>Nail Art</h4>
+                          <p className='text-center'>Diseños de uñas creativos y personalizados.</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
                   <div className="columns">
-                    <div className="column col-6" >
-                      <img src={image20} alt='' style={{height: '120px'}}  />
+                    <div className="column col-6"  >
+                    <div className='card '>
+                        <div className="card-image">
+                        <img  className="img-responsive"src={image19} alt=''   />
+                        </div>
+                        <div className='card-body bg-dark text-light'>
+                          <h4 className='text-center'>Nail Art</h4>
+                          <p className='text-center'>Diseños de uñas creativos y personalizados.</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="column col-6" >
-                    <img src={image18} alt='' style={{height: '120px'}}  />
+                    <div className="column col-6"  >
+                    <div className='card '>
+                        <div className="card-image">
+                        <img  className="img-responsive"src={image20} alt=''   />
+                        </div>
+                        <div className='card-body bg-dark text-light'>
+                          <h4 className='text-center'>Nail Art</h4>
+                          <p className='text-center'>Diseños de uñas creativos y personalizados.</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="column col-6" >col-6</div>
               </div>
           </div>
         </div>
@@ -85,8 +130,23 @@ const Home = () => {
 
       </section>
       <section id='gabo' className='mx-30'>
-        <Modals />
+        {/* <Modals /> */}
         <GithubCard />
+      </section>
+      <section className='bg-dark'>
+        <footer className='text-center text-light py-20'>
+          <p>&copy; 2025 Nails Spa. Todos los derechos reservados.</p>
+          <p > 
+        Síguenos en{' '}
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className='text-primary'>
+          Instagram
+        </a>{' '}
+        y{' '}
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className='text-primary'>
+          Facebook
+        </a>.
+          </p>
+        </footer>
       </section>
     </>
   )
