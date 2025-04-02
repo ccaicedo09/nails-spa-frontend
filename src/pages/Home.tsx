@@ -15,7 +15,7 @@ import image20 from '/img/test_img_20.png'
 import image19 from '/img/test_img_19.png'
 import image18 from '/img/test_img_18.png'
 import image17 from '/img/test_img_17.png'
-import image16 from '/img/test_img_16.png'
+
 
 
 
@@ -23,8 +23,8 @@ import image16 from '/img/test_img_16.png'
 const Home = () => {
   return (
     <>
-    <Carrousel />
-      <section className='mx-30 '>
+    
+      <section className='mx-30 mt-50'>
       
       {/* <Hero /> */}
 
@@ -36,7 +36,9 @@ const Home = () => {
 
 
       </div>
-      <section className='columns'>
+
+      <Carrousel />
+      <section className='columns my-10'>
       <ImageComparision />
     
       <ImageComparision />
@@ -44,23 +46,7 @@ const Home = () => {
       </section>
      
 
-      {/* <section className='text-center'>
-        <div>
-          <a href="https://vite.dev" target="_blank">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
-          </a>
-          <a href="https://react.dev" target="_blank">
-            <img src={reactLogo} className="logo react" alt="React logo" />
-          </a>
-          <a href="https://picturepan2.github.io/spectre/getting-started.html">
-            <img src={spectreLogo} className='logo' alt="Spectre logo" />
-          </a>
-        </div>
-        <h1>Vite + React + Spectre</h1>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
-      </section> */}
+      
     </section>
     <section className='bg-secondary col-12 px-30 my-10 py-30'>
 
@@ -69,10 +55,10 @@ const Home = () => {
         <div  className='text-center text-primary'>
           <div className="container">
               <div className="columns">
-                <div className="column col-12" >
+                <div className="column p-0 col-12" >
                   <div className="columns">
-                    <div className="column col-6" >
-                      <div className='card '>
+                    <div className="column col-6 mt-2" >
+                      <div className='card my-10'>
                         <div className="card-image">
                         <img  className="img-responsive"src={image17} alt=''   />
                         </div>
@@ -82,8 +68,8 @@ const Home = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="column col-6"  >
-                    <div className='card '>
+                    <div className="column p-0 col-6 mt-2"  >
+                    <div className='card my-10'>
                         <div className="card-image">
                         <img  className="img-responsive"src={image18} alt=''   />
                         </div>
@@ -97,7 +83,7 @@ const Home = () => {
 
                   <div className="columns">
                     <div className="column col-6"  >
-                    <div className='card '>
+                    <div className='card my-10'>
                         <div className="card-image">
                         <img  className="img-responsive"src={image19} alt=''   />
                         </div>
@@ -108,7 +94,7 @@ const Home = () => {
                       </div>
                     </div>
                     <div className="column col-6"  >
-                    <div className='card '>
+                    <div className='card my-10'>
                         <div className="card-image">
                         <img  className="img-responsive"src={image20} alt=''   />
                         </div>

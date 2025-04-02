@@ -1,4 +1,5 @@
 import React from 'react'
+import image16 from '/img/test_img_16.png'
 
 const ImageComparision = () => {
   return (
@@ -7,7 +8,8 @@ const ImageComparision = () => {
 
         <div className="comparison-slider">
         <figure className="comparison-before">
-            <img className="rounded" src="https://spectre-org.github.io/spectre-docs/img/macos-sierra-2.jpg" alt="" />
+            <img className="rounded" 
+            src={image16} alt="" />
             
             <div className="comparison-label">Antes</div>
         </figure>
