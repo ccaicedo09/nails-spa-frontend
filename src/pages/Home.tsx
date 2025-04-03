@@ -1,4 +1,7 @@
 import React from 'react'
+//Css
+import './Home.css'
+
 //@ts-ignore
 import reactLogo from '../assets/react.svg'
 //@ts-ignore
@@ -24,31 +27,26 @@ const Home = () => {
   return (
     <>
     
-      <section className='mx-30 mt-50'>
+      <section className='mx-30 mt-80'>
       
       {/* <Hero /> */}
 
-      <div className='text-center text-dark hero'>
-        <h1 className='text-4xl '>
-        Bienvenidos a Nails Spa! 
-
+      <div className='text-center  hero py-30 bg-hero'>	
+        <h1 className='text-hero'>
+        Bienvenidos a Nails Spa! El lugar adecuado para tus uñas. 
         </h1>
+        <p className=''>Descubre nuestros servicios </p>
+        
 
 
       </div>
 
-      <Carrousel />
-      <section className='columns my-10'>
-      <ImageComparision />
-    
-      <ImageComparision />
-
-      </section>
-     
+      {/* <Carrousel /> */}
+      
 
       
     </section>
-    <section className='bg-secondary col-12 px-30 my-10 py-30'>
+    <section className='bg-secondary col-12 px-30  py-30'>
 
 
 
@@ -62,8 +60,8 @@ const Home = () => {
                         <div className="card-image">
                         <img  className="img-responsive"src={image17} alt=''   />
                         </div>
-                        <div className='card-body bg-dark text-light'>
-                          <h4 className='text-center'>Nail Art</h4>
+                        <div className='card-body bg-dark text-primary'>
+                          <h4 className='text-center'>Semi-permanentes</h4>
                           <p className='text-center'>Diseños de uñas creativos y personalizados.</p>
                         </div>
                       </div>
@@ -73,8 +71,8 @@ const Home = () => {
                         <div className="card-image">
                         <img  className="img-responsive"src={image18} alt=''   />
                         </div>
-                        <div className='card-body bg-dark text-light' >
-                          <h4 className='text-center'>Nail Art</h4>
+                        <div className='card-body bg-dark text-primary' >
+                          <h4 className='text-center'>Press on</h4>
                           <p className='text-center'>Diseños de uñas creativos y personalizados.</p>
                         </div>
                       </div>
@@ -87,8 +85,8 @@ const Home = () => {
                         <div className="card-image">
                         <img  className="img-responsive"src={image19} alt=''   />
                         </div>
-                        <div className='card-body bg-dark text-light'>
-                          <h4 className='text-center'>Nail Art</h4>
+                        <div className='card-body bg-dark text-primary'>
+                          <h4 className='text-center'>Acrilicos</h4>
                           <p className='text-center'>Diseños de uñas creativos y personalizados.</p>
                         </div>
                       </div>
@@ -98,8 +96,8 @@ const Home = () => {
                         <div className="card-image">
                         <img  className="img-responsive"src={image20} alt=''   />
                         </div>
-                        <div className='card-body bg-dark text-light'>
-                          <h4 className='text-center'>Nail Art</h4>
+                        <div className='card-body bg-dark text-primary'>
+                          <h4 className='text-center'>Permanentes</h4>
                           <p className='text-center'>Diseños de uñas creativos y personalizados.</p>
                         </div>
                       </div>
@@ -115,14 +113,35 @@ const Home = () => {
 
 
       </section>
-      <section id='gabo' className='mx-30'>
-        {/* <Modals /> */}
-        <GithubCard />
+      <section id='gabo' className='mx-30 py-30'>
+
+      <section className='columns my-30'>
+      {/* <ImageComparision /> */}
+    
+    <code className='column col-6 hero text-opinion text-primary'>Mis uñas quedaron espectacular! Se los recomiendo!
+      
+    </code>
+      <ImageComparision />
+
       </section>
-      <section className='bg-dark'>
-        <footer className='text-center text-light py-20'>
+
+      <section className='columns '>
+      {/* <ImageComparision /> */}
+    
+    
+      <ImageComparision />
+      <code className='column col-6 hero text-opinion text-primary'>Mis uñas quedaron muy mal!No se los recomiendo!
+      
+    </code>
+
+      </section>
+     
+        
+      </section>
+      <section className='bg-footer'>
+        <footer className='text-center text-light bg- py-20'>
           <p>&copy; 2025 Nails Spa. Todos los derechos reservados.</p>
-          <p > 
+          <p style={{marginBottom: '0'}}> 
         Síguenos en{' '}
         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className='text-primary'>
           Instagram
