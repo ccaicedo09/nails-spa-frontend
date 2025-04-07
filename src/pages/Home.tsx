@@ -16,7 +16,7 @@ import Modals from '../components/Modals'
 
 import image20 from '/img/test_img_20.png'
 import image19 from '/img/test_img_19.png'
-import image18 from '/img/test_img_18.png'
+import image9 from '/img/test_img_9.png'
 import image17 from '/img/test_img_17.png'
 
 
@@ -63,7 +63,7 @@ const Home = () => {
               <div className="columns">
                 <div className="column p-0 col-12" >
                   <div className="columns">
-                    <div className="column col-6 mt-2" >
+                    <div className="column col-lg-6 col-md-12 mt-2" >
                       <div className='card my-10'>
                         <div className="card-image">
                         <img  className="img-responsive"src={image17} alt=''   />
@@ -74,10 +74,10 @@ const Home = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="column p-0 col-6 mt-2"  >
+                    <div className="column  col-md-12 col-6 mt-2"  >
                     <div className='card my-10'>
                         <div className="card-image">
-                        <img  className="img-responsive"src={image18} alt=''   />
+                        <img  className="img-responsive"src={image9} alt=''   />
                         </div>
                         <div className='card-body bg-dark text-primary' >
                           <h4 className='text-center'>Press on</h4>
@@ -88,7 +88,7 @@ const Home = () => {
                   </div>
 
                   <div className="columns">
-                    <div className="column col-6"  >
+                    <div className="column col-md-12 col-6 "  >
                     <div className='card my-10'>
                         <div className="card-image">
                         <img  className="img-responsive"src={image19} alt=''   />
@@ -99,7 +99,7 @@ const Home = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="column col-6"  >
+                    <div className="column col-md-12 col-6 "  >
                     <div className='card my-10'>
                         <div className="card-image">
                         <img  className="img-responsive"src={image20} alt=''   />
@@ -126,7 +126,7 @@ const Home = () => {
       <section className='columns my-30'>
       {/* <ImageComparision /> */}
     
-    <code className='column bg-none col-6 hero text-opinion text-primary'>Mis uñas quedaron espectacular! Se los recomiendo!
+    <code className='column bg-none col-md-12 col-6 hero text-opinion text-primary'>Mis uñas quedaron espectacular! Se los recomiendo!
       
     </code>
       <ImageComparision />
@@ -138,7 +138,7 @@ const Home = () => {
     
     
       <ImageComparision />
-      <code className='column  bg-none col-6 hero text-opinion text-primary'>Mis uñas quedaron muy mal!No se los recomiendo!
+      <code className='column  bg-none col-md-12 col-6 hero text-opinion text-primary'>Mis uñas quedaron muy mal!No se los recomiendo!
       
     </code>
 
