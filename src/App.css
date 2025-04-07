@@ -4,6 +4,9 @@
 .p-0{
   padding: 0;
 }
+.bg-none {
+  background-color: white;
+}
 
 .mx-30 {
   margin-left: 6rem;

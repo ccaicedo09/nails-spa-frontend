@@ -41,11 +41,19 @@ const Home = () => {
 
       </div>
 
+
+     
       {/* <Carrousel /> */}
       
 
       
     </section>
+    <code className='column col-12 px-30 hero bg-none text-opinion text-center text-primary'>
+      Somos los mejores en el sector de uñas! 
+      <br />
+      Conocenos y se parte de nuestrra comunidad!
+      
+      </code>
     <section className='bg-secondary col-12 px-30  py-30'>
 
 
@@ -118,7 +126,7 @@ const Home = () => {
       <section className='columns my-30'>
       {/* <ImageComparision /> */}
     
-    <code className='column col-6 hero text-opinion text-primary'>Mis uñas quedaron espectacular! Se los recomiendo!
+    <code className='column bg-none col-6 hero text-opinion text-primary'>Mis uñas quedaron espectacular! Se los recomiendo!
       
     </code>
       <ImageComparision />
@@ -130,7 +138,7 @@ const Home = () => {
     
     
       <ImageComparision />
-      <code className='column col-6 hero text-opinion text-primary'>Mis uñas quedaron muy mal!No se los recomiendo!
+      <code className='column  bg-none col-6 hero text-opinion text-primary'>Mis uñas quedaron muy mal!No se los recomiendo!
       
     </code>
 
