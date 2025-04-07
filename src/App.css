@@ -1,21 +1,38 @@
 #root {
-  /* max-width: 1280px; */
-  /* margin: 0 auto; */
-  /* padding: 1rem; */
-  /* text-align: center; */
+ width: 100%;
 }
-.mx-10 {
-  margin-left: 1rem;
-  margin-right: 1rem;
+.p-0{
+  padding: 0;
+}
+
+.mx-30 {
+  margin-left: 6rem;
+  margin-right: 6rem;
 }
 
 .my-10 {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.mt-80 {
+  margin-top: 9rem;
+  margin-bottom:3rem;
+
+}
 .px-30 {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+.py-30 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.object-fit-content {
+  object-fit: contain;
+}
+.bg-footer{
+  background-color: black;
 }
 
 .logo {
@@ -46,10 +63,15 @@
   }
 }
 
-.card {
+/* .card {
   padding: 2em;
-}
+} */
 
 .read-the-docs {
   color: #888;
+}
+
+.navbar {
+  z-index: 90;
+  width: 100%;
 }

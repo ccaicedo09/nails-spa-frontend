@@ -13,16 +13,16 @@ $carousel-number: 8;
 }
 
 .carousel {
-  background: $bg-color;
+  // background: $bg-color;
   display: block;
   overflow: hidden;
   position: relative;
-  width: 100%;
+  // width: 100%;
   -webkit-overflow-scrolling: touch;
   z-index: $zindex-0;
 
   .carousel-container {
-    max-height: 500px;
+    max-height: 700px;
     left: 0;
     position: relative;
     &::before {
