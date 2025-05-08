@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Services from './Services';
 import { useFormContext } from './AppointmentFormContext';
 import Specialists from './Specialists';
+import Datetime from './Datetime';
 
 const renderStep = (step: number) => {
     switch (step) {
@@ -10,7 +11,7 @@ const renderStep = (step: number) => {
         case 2:
             return <Specialists />
         case 3:
-            return <div>Seleccionar fecha</div>
+            return <Datetime />
         default:
             return null;
     }

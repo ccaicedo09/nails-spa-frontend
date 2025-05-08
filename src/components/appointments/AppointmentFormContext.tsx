@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useContext, useState } from "react";
+import React, { createContext, ReactNode, useContext, useEffect, useState } from "react";
 import { Service, Specialist } from "../../types/FormTypes.interface";
 
 interface AppointmentFormContextType {
@@ -6,6 +6,10 @@ interface AppointmentFormContextType {
   setServices: React.Dispatch<React.SetStateAction<Service[]>>;
   specialist: Specialist | null;
   setSpecialist: React.Dispatch<React.SetStateAction<Specialist | null>>;
+  date: Date | null;
+  setDate: React.Dispatch<React.SetStateAction<Date | null>>;
+  totalTime: number;
+  setTotalTime: React.Dispatch<React.SetStateAction<number>>;
   nextStep: () => void;
   prevStep: () => void;
   currentStep: number;
@@ -24,14 +28,31 @@ export const useFormContext = () => {
 export const FormProvider: React.FC<{ children: ReactNode}> = ({ children }) => {
   const [services, setServices] = useState<Service[]>([]);
   const [specialist, setSpecialist] = useState<Specialist | null>(null);
+  const [date, setDate] = useState<Date | null>(null);
+  const [totalTime, setTotalTime] = useState<number>(0);
   const [currentStep, setCurrentStep] = useState(1);
 
+  useEffect(() => {
+    const calculatedTotalTime = services.reduce(
+      (sum, service) => sum + service.estimated_duration,
+      0
+    );
+    setTotalTime(calculatedTotalTime);
+  }, [services]);
+
   const nextStep = () => setCurrentStep((prev) => prev + 1);
-  const prevStep = () => setCurrentStep((prev) => Math.max(1, prev - 1));
+  const prevStep = () => {
+    setCurrentStep((prev) => {
+      if (prev === 2) {
+        setSpecialist(null);
+      }
+      return Math.max(1, prev - 1);
+    });
+  };
 
   return (
     <AppointmentFormContext.Provider
-      value={{ services, setServices, specialist, setSpecialist, nextStep, prevStep, currentStep }}
+      value={{ services, setServices, specialist, setSpecialist, date, setDate, totalTime, setTotalTime, nextStep, prevStep, currentStep }}
     >
       {children}
     </AppointmentFormContext.Provider>

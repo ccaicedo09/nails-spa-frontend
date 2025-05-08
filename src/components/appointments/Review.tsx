@@ -22,7 +22,7 @@ const exampleData = {
 // const endDate = new Date(startDate.getTime() + totalTime * 60000);
 
 const Review = () => {
-  const { services, specialist } = useFormContext();
+  const { services, specialist, totalTime } = useFormContext();
 
   const totalPrice = services.reduce((sum, service) => sum + service.price, 0);
 
