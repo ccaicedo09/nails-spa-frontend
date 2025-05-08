@@ -1,6 +1,6 @@
 import React from 'react'
 //Css
-import './Home.css'
+// import './Home.css'
 
 //@ts-ignore
 import reactLogo from '../assets/react.svg'
