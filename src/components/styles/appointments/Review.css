@@ -1,0 +1,53 @@
+.selected-services {
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-item {
+    padding: 0.4rem;
+}
+
+.service-item h4 {
+    word-break: break-word;
+    margin: 0;
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.service-price {
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.service-duration {
+    color: #666;
+    display: flex;
+    margin-top: -15px;
+}
+
+.review-container {
+    min-height: 100vh;
+}
+
+.total-price-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding: 0.8rem 1.5rem 0 1.5rem;
+    align-items: center;
+    position: sticky;
+    color: white;
+    bottom: 0;
+    background: #AA60C8;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: bold;
+}
