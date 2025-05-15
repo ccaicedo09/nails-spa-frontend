@@ -93,7 +93,7 @@ const Datetime = () => {
             <h4>Horarios disponibles:</h4>
             <ul>
                 {availableTimes.map((time, index) => (
-                    <li key={index}>{time.toLocaleTimeString()}</li>
+                    <li key={index} style={{cursor:"pointer"}}>{time.toLocaleTimeString()}</li>
                 ))}
             </ul>
         </div>

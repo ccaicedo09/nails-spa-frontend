@@ -1,4 +1,4 @@
-.text-opinion {
+/* .text-opinion {
     font-size: 4rem;
 }
 
@@ -11,4 +11,15 @@
     background-image: url('/img/test_img_17.png');
     opacity: 0.8;
     color: black;
+} */
+
+.text-cards {
+    font-size: 1.2rem;
+    color: black;
+    font-weight: 200;
+    opacity: 0.8;
+   /*font-family: "Great Vibes", "Segoe UI Mono", "Roboto Mono", Courier, monospace;*/
+}
+.text-p-hero {
+    font-size: 2rem;
 }

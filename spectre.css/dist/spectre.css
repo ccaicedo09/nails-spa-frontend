@@ -462,36 +462,37 @@ h6 {
 
 h1,
 .h1 {
-  font-size: 2rem;
+  font-size: 5rem;
 }
 
 h2,
 .h2 {
-  font-size: 1.6rem;
+  font-size: 3.2rem;
 }
 
 h3,
 .h3 {
-  font-size: 1.4rem;
+  font-size: 2.8rem;
 }
 
 h4,
 .h4 {
-  font-size: 1.2rem;
+  font-size: 2.2rem;
 }
 
 h5,
 .h5 {
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 h6,
 .h6 {
-  font-size: 0.8rem;
+  font-size: 2rem;
 }
 
 p {
   margin: 0 0 1.2rem;
+  font-size: 1rem;
 }
 
 a,
@@ -1353,7 +1354,7 @@ code {
   padding: 0.1rem 0.2rem;
   background: rgb(252.2103004292, 241.5396995708, 242.2371244635);
   color: #d73e48;
-  font-size: 85%;
+  font-size: 3rem;
 }
 
 .code {
@@ -1900,9 +1901,11 @@ video.video-responsive::before {
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding-bottom: 4rem;
   padding-top: 4rem;
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
 }
 .hero.hero-sm {
   padding-bottom: 2rem;

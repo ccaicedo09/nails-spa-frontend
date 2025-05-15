@@ -1,6 +1,7 @@
 .appointments-container {
     padding: 0rem 2rem;
-    height: 80vh;
+    height: calc(100vh - 8rem);
+    
 }
 
 .appointment-review,

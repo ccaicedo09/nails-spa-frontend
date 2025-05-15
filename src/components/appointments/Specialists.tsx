@@ -58,7 +58,7 @@ const Specialists = () => {
               alignItems: "center",
             }}
           >
-            <h4 className="h5">{specialistItem.name}</h4>
+            <h4 className="h5" style={{cursor: "pointer"}}>{specialistItem.name}</h4>
           </div>
         </article>
       ))}
