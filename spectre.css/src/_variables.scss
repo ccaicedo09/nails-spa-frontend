@@ -1,6 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300..700&display=swap');
-
+@font-face {
+    font-family: 'Yipes Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../src/assets/Yipes\ Regular.otf') format('opentype');
+    
+}
 // Core variables
 $version: "0.5.9";
 
@@ -45,7 +51,7 @@ $link-color-light: lighten($link-color, 10%) !default;
 
 // Fonts
 // Credit: https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/
-$base-font-family: "Quicksand", BlinkMacSystemFont, "Segoe UI", Roboto !default;
+$base-font-family: "Yipes Regular", BlinkMacSystemFont, "Segoe UI", Roboto !default;
 $mono-font-family: "Great Vibes", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace !default;
 $fallback-font-family: "Helvetica Neue", sans-serif !default;
 $cjk-zh-hans-font-family: $base-font-family, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", $fallback-font-family !default;

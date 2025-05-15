@@ -61,7 +61,7 @@ const Services = () => {
               alignItems: "center",
             }}
           >
-            <h4 className="h5">{service.name}</h4>
+            <h4 className="h5" style={{cursor: "pointer"}}>{service.name}</h4>
             <p>
                 <strong>$ {service.price.toLocaleString('es-CO')}</strong>
             </p>

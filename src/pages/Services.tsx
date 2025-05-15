@@ -4,7 +4,7 @@ import Schedule from '../components/Schedule';
 
 const Services = () => {
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32 }}>
+    <div className="text-primary" style={{fontSize:'1rem', display: 'flex', flexWrap: 'wrap', gap: 32, minHeight: '100vh', padding: 24 }}>
       <PDFCard />
       <Schedule />
     </div>
