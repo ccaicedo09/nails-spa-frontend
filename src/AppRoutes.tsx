@@ -10,8 +10,8 @@ import Appointments from './pages/Appointments';
 const AppRoutes = () => {
   let routes = useRoutes([
     { path: '/', element: <Home /> },
-    { path: '/about', element: <About /> },
-    { path: '/services', element: <Services /> },
+    { path: '/sobre-nosotros', element: <About /> },
+    { path: '/servicios', element: <Services /> },
     { path: '/sedes', element: <Sedes />},
     { path: '/api', element: <Api /> },
     { path: '/citas', element: <Appointments />}
