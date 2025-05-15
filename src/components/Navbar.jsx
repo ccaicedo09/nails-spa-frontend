@@ -7,7 +7,7 @@ function Navbar() {
     <>
     <header className="navbar bg-secondary px-30">
         <section className="navbar-section">
-          <a href="/about" className="btn btn-link ">Sobre nosotros</a>
+          <a href="/sobre-nosotros" className="btn btn-link ">Sobre nosotros</a>
           <a href="/sedes" className="btn btn-link ">Nuestras sedes</a>
         </section>
         <section className="navbar-center">
@@ -16,7 +16,7 @@ function Navbar() {
           </a>
         </section>
         <section className="navbar-section">
-          <a href="/services" className="btn btn-link ">Nuestros servicios</a>
+          <a href="/servicios" className="btn btn-link ">Nuestros servicios</a>
           <a href="/citas" className="btn btn-link ">Agenda tu cita</a>
         </section>
       </header>
