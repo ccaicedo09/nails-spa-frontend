@@ -5,6 +5,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Sedes from './pages/Sedes';
 import Api from './pages/Api';
+import Appointments from './pages/Appointments';
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -12,7 +13,8 @@ const AppRoutes = () => {
     { path: '/about', element: <About /> },
     { path: '/services', element: <Services /> },
     { path: '/sedes', element: <Sedes />},
-    { path: '/api', element: <Api />}
+    { path: '/api', element: <Api /> },
+    { path: '/citas', element: <Appointments />}
   ]);
 
   return routes;

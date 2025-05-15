@@ -5,7 +5,7 @@ import spectreLogo from '../assets/logo.png'
 function Navbar() {
   return (
     <>
-    <header className="navbar p-fixed   bg-secondary px-30">
+    <header className="navbar bg-secondary px-30">
         <section className="navbar-section">
           <a href="#" className="btn btn-link ">Sobre nosotros</a>
           <a href="#" className="btn btn-link ">Nuestras sedes</a>
@@ -17,7 +17,7 @@ function Navbar() {
         </section>
         <section className="navbar-section">
           <a href="#" className="btn btn-link ">Nuestros servicios</a>
-          <a href="#" className="btn btn-link ">Api</a>
+          <a href="/citas" className="btn btn-link ">Agenda tu cita</a>
         </section>
       </header>
     </>
