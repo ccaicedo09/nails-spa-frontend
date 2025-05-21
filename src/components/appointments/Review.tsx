@@ -3,28 +3,27 @@ import { useFormContext } from './AppointmentFormContext';
 import FormControls from './FormControls';
 import '../../components/styles/appointments/Review.css';
 
-const exampleData = {
-  specialist: "Nathalia Ávila Borrero",
-  startDate: "2025-03-29T10:00:00"
-};
-
-// const totalPrice = exampleData.selectedServices.reduce(
-//   (sum, service) => sum + service.price,
-//   0
-// );
-
-// const totalTime = exampleData.selectedServices.reduce(
-//   (sum, service) => sum + service.estimated_duration,
-//   0
-// );
-
-// const startDate = new Date(exampleData.startDate);
-// const endDate = new Date(startDate.getTime() + totalTime * 60000);
-
 const Review = () => {
-  const { services, specialist, totalTime } = useFormContext();
+  const { services, specialist, totalTime, startDate, endDate } = useFormContext();
 
   const totalPrice = services.reduce((sum, service) => sum + service.price, 0);
+
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString("es-CO", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+  };
+
+  const formatTime = (date: Date) => {
+    return date.toLocaleTimeString("es-CO", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+  };
 
   return (
     <>
@@ -39,6 +38,23 @@ const Review = () => {
             Carrera 7 #25-40
           </span>
         </article>
+
+        <hr />
+
+        {startDate && endDate && (
+          <>
+            <article>
+              <h3 className="h6 label label-rounded label-primary">
+                Fecha y hora seleccionadas:
+              </h3>
+              <p>
+                {formatDate(startDate)} <br />
+                De <strong>{formatTime(startDate)}</strong> a{" "}
+                <strong>{formatTime(endDate)}</strong>
+              </p>
+            </article>
+          </>
+        )}
 
         <hr />
 
