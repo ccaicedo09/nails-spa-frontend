@@ -15,6 +15,7 @@ interface AppointmentFormContextType {
   nextStep: () => void;
   prevStep: () => void;
   currentStep: number;
+  setCurrentStep: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const AppointmentFormContext = createContext<AppointmentFormContextType | undefined>(undefined);
@@ -55,7 +56,7 @@ export const FormProvider: React.FC<{ children: ReactNode}> = ({ children }) => 
 
   return (
     <AppointmentFormContext.Provider
-      value={{ services, setServices, specialist, setSpecialist, startDate, setStartDate, endDate, setEndDate, totalTime, setTotalTime, nextStep, prevStep, currentStep }}
+      value={{ services, setServices, specialist, setSpecialist, startDate, setStartDate, endDate, setEndDate, totalTime, setTotalTime, nextStep, prevStep, currentStep, setCurrentStep }}
     >
       {children}
     </AppointmentFormContext.Provider>
