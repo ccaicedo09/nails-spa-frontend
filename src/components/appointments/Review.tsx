@@ -39,10 +39,9 @@ const Review = () => {
           </span>
         </article>
 
-        <hr />
-
         {startDate && endDate && (
           <>
+            <hr />
             <article>
               <h3 className="h6 label label-rounded label-primary">
                 Fecha y hora seleccionadas:
