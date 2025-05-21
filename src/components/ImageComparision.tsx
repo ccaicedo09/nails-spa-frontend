@@ -4,7 +4,7 @@ import image16 from '/img/test_img_16.png'
 const ImageComparision = () => {
   return (
     
-        <div className='column col-md-12 col-6'>
+        <div className='column '>
 
         <div className="comparison-slider">
         <figure className="comparison-before">
@@ -22,11 +22,7 @@ const ImageComparision = () => {
         </div>
 
         </div>
-        
-
-    
-    
-  )
+  );
 }
 
 export default ImageComparision

@@ -18,16 +18,10 @@ import image20 from '/img/test_img_20.png'
 import image19 from '/img/test_img_19.png'
 import image9 from '/img/test_img_9.png'
 import image17 from '/img/test_img_17.png'
-import Footer from '../components/Footer'
-
-
-
-
 
 const Home = () => {
   return (
     <>
-    
     <section className='container home-container'>
 
     <section className="columns my-30 section-hero">
@@ -39,7 +33,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="column col-md-12 col-6 p-0 equal-">
+      <div className="column col-md-12 col-6 p-0">
         <Carrousel />
       </div>
     </section>    
@@ -53,7 +47,7 @@ const Home = () => {
 
     <section className='bg-secondary col-12 px-30  py-30'>
 
-
+      <h5 className='text-center'>Nuestros servicios</h5>
 
         <div  className='text-center text-primary'>
           <div className="container">
@@ -66,7 +60,7 @@ const Home = () => {
                         <img  className="img-responsive"src={image17} alt=''   />
                         </div>
                         <div className='card-body bg-dark text-primary'>
-                          <h4 className='text-center'>Semi-permanentes</h4>
+                          <h4 className='text-center'>Acrilicas</h4>
                           <p className='text-center text-cards'>Diseños de uñas creativos y personalizados.</p>
                         </div>
                       </div>
@@ -83,7 +77,6 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-
                   <div className="columns">
                     <div className="column col-md-12 col-6 "  >
                     <div className='card my-10'>
@@ -91,7 +84,7 @@ const Home = () => {
                         <img  className="img-responsive"src={image19} alt=''   />
                         </div>
                         <div className='card-body bg-dark text-primary'>
-                          <h4 className='text-center'>Acrilicos</h4>
+                          <h4 className='text-center'>Permanentes</h4>
                           <p className='text-center text-cards'>Diseños de uñas creativos y personalizados.</p>
                         </div>
                       </div>
@@ -102,7 +95,7 @@ const Home = () => {
                         <img  className="img-responsive"src={image20} alt=''   />
                         </div>
                         <div className='card-body bg-dark text-primary'>
-                          <h4 className='text-center'>Permanentes</h4>
+                          <h4 className='text-center'>Tratamientos</h4>
                           <p className='text-center text-cards'>Diseños de uñas creativos y personalizados.</p>
                         </div>
                       </div>
@@ -113,36 +106,47 @@ const Home = () => {
           </div>
         </div>
 
-        
-
-
-
-      </section>
-      <section id='gabo' className='mx-30 py-30'>
-
-      <section className='columns my-30'>
-      {/* <ImageComparision /> */}
-    
-    <code className='column bg-none col-md-12 col-6 hero text-opinion text-primary'>Mis uñas quedaron espectacular! Se los recomiendo!
-      
-    </code>
-      <ImageComparision />
-
-      </section>
-
-      <section className='columns '>
-      {/* <ImageComparision /> */}
-    
-    
-      <ImageComparision />
-      <code className='column  bg-none col-md-12 col-6 hero text-opinion text-primary'>Mis uñas quedaron muy mal! No se los recomiendo!
-      
-    </code>
-
       </section>
      
-        
-      </section>
+    <h5 className='text-center'>Reseñas destacadas</h5>
+   
+     <section className="columns my-30 section-hero">
+      
+      <div className="column col-md-12 col-6 bg-secondary d-flex flex-column justify-center align-center text-center p-4">
+        <div>
+        <h6 className="text-center">Marta Diaz Lozano</h6>
+        <p className="text-primary">Mis uñas quedaron espectacular! Se los recomiendo!</p>
+        <div className="rating text-large">
+          ⭐⭐⭐⭐☆
+      </div>
+      
+        </div>
+      </div>
+
+      <div className="column comparation-section col-md-12 col-6 p-0">
+        <ImageComparision />
+      </div>
+    </section>    
+
+    <section className="columns my-30 section-hero">
+      
+         <div className="column comparation-section col-md-12 col-6 p-0">
+        <ImageComparision />
+      </div>
+
+      <div className="column col-md-12 col-6 bg-secondary d-flex flex-column justify-center align-center text-center p-4">
+        <div>
+        <h6 className="text-center mt-2">Marta Diaz Lozano</h6>
+        <p className="text-primary">Mis uñas quedaron espectacular! Se los recomiendo!</p>
+        <div className="rating text-large">
+          ⭐⭐⭐⭐☆
+      </div>
+      
+        </div>
+      </div>
+      
+    </section>    
+
     </section>
     </>
   );

@@ -17,8 +17,6 @@
   font-family: "Quicksand", "sans-serif";
 }
 
-
-
 .text-cards {
     font-size: 1.2rem;
     color: black;
@@ -33,14 +31,13 @@
 
 .bg-secondary {
   background-color: #f9f9f9; 
-  
 }
 
 .section-hero {
   margin-top: 2rem; 
   margin-left: 3rem;
   margin-right: 3rem;
-  border-radius: 20px;
+  margin-bottom: 2rem;
 }
 
 .justify-center {
@@ -51,6 +48,16 @@
   align-items: center;
 }
 
+
 .flex-column {
   flex-direction: column;
+}
+
+.home-container h5{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.rating{
+  margin-bottom: 20px;
 }
