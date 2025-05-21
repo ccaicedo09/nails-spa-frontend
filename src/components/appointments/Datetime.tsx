@@ -60,7 +60,7 @@ const Datetime = () => {
 
   return (
     <div>
-      <h3 className="text-lg font-semibold mb-2">
+      <h3 className="h6 text-center font-semibold mb-2">
         Selecciona la fecha y hora de tu reserva
       </h3>
 
@@ -71,7 +71,7 @@ const Datetime = () => {
         onChange={(e) =>
           setSelectedDate(e.target.value ? new Date(e.target.value) : null)
         }
-        className="border p-2 rounded mb-4"
+        className="border p-2 rounded my-2"
       />
 
       <h4 className="font-medium mb-2">Horarios disponibles:</h4>
@@ -80,8 +80,8 @@ const Datetime = () => {
         {availableSlots.map((slot, index) => (
           <div className="column col-4" key={index}>
             <div
-              className={`card p-2 ${
-                selectedSlotIndex === index ? "bg-primary text-light" : ""
+              className={`card card-custom p-2 ${
+                selectedSlotIndex === index ? "card-custom-selected" : ""
               }`}
               style={{ cursor: "pointer" }}
               onClick={() => handleSlotSelect(index)}

@@ -66,3 +66,13 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.card-custom:hover {
+  background-color: black;
+  border-radius: 10px;
+}
+
+.card-custom-selected {
+  background-color: black !important;
+  border-radius: 10px !important;
+}

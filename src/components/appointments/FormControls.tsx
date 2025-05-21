@@ -97,35 +97,31 @@ const FormControls = () => {
       </div>
 
       {showModal && (
-        <div
-          className="modal active"
-          tabIndex={-1}
-          role="dialog"
-        >
+        <div className="modal active" tabIndex={-1} role="dialog">
           <div className="modal-container">
             <div className="modal-header">
               <button
                 className="btn btn-clear float-right"
                 onClick={() => setShowModal(false)}
               ></button>
-              <h5 className="modal-title">Confirmación de cita</h5>
+              <h5 className="modal-title text-primary">Confirmación de cita</h5>
             </div>
             <div className="modal-body">
-              <p>
+              <p className="text-primary">
                 <strong>Especialista:</strong> {specialist?.name}
               </p>
               <p>
-                <strong>Servicios:</strong>
+                <strong className="text-primary">Servicios:</strong>
               </p>
               <ul>
                 {services.map((s) => (
-                  <li key={s.id}>
+                  <li className="text-primary" key={s.id}>
                     {s.name} ({s.estimated_duration} min) - $
                     {s.price.toLocaleString("es-CO")}
                   </li>
                 ))}
               </ul>
-              <p>
+              <p className="text-primary">
                 <strong>Fecha y hora:</strong>{" "}
                 {startDate?.toLocaleDateString("es-CO")} de{" "}
                 {startDate?.toLocaleTimeString("es-CO", {
