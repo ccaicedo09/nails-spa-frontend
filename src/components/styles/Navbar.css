@@ -1,0 +1,79 @@
+.compact-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 200px;
+  padding-right: 200px;
+  
+
+}
+
+.compact-navbar .logo {
+  height: 95px;
+  width: 90px; 
+}
+
+.compact-navbar .navbar-center {
+  padding: 0 25px;
+  
+}
+
+.compact-navbar .btn.btn-link {
+  padding: 8px 12px;
+  margin-left: 16px;
+  font-size: 20px;
+  border-bottom: 1px solid #000000ee;
+  text-decoration: none; 
+  margin-bottom: 1px; 
+  border-width: 1.5px;
+  transition: border-color 0.3s ease; 
+  align-items: center;
+
+}
+
+.compact-navbar .btn.btn-link:hover {
+  border-bottom-color: #666666 !important; 
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 992px) {
+  .compact-navbar {
+    padding-left: 120px;
+    padding-right: 100px;
+  }
+
+  .compact-navbar .logo{
+    margin-top: 10px;
+    width: 90px; 
+    height: 90px;
+  }
+
+  .compact-navbar .navbar-center {
+  padding: 0 15px;
+  }
+  
+  .compact-navbar .btn.btn-link {
+    font-size: 0.8rem;
+    margin-left: 5px;
+    
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .compact-navbar {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  .compact-navbar .btn.btn-link {
+    padding: 8px 5px;
+    font-size: 0.69rem;
+    margin-left: 10px;
+  }
+
+  .compact-navbar .logo {
+    margin-top: 15px;
+    width: 90px;
+    height: 90px;
+  }
+}
