@@ -1,6 +1,6 @@
 import React from 'react'
 //Css
- import './Home.css'
+ import './styles/Home.css'
 
 //@ts-ignore
 import reactLogo from '../assets/react.svg'
@@ -28,33 +28,29 @@ const Home = () => {
   return (
     <>
     
-      <section className='mx-30'>
-      
-      {/* <Hero /> */}
+    <section className='container home-container'>
 
-      <div className='text-center  hero py-30 bg-hero'>	
-        <h1 className='text-hero'>
-        Bienvenidos a Nails Spa! El lugar adecuado para tus uñas. 
-        </h1>
-        <p className='text-p-hero'>Descubre nuestros servicios </p>
-        
-
-
+    <section className="columns my-30 section-hero">
+      <div className="column col-md-12 col-6 bg-secondary d-flex flex-column justify-center align-center text-center p-4">
+        <div>
+        <h2 className="text-center">Nails Spa</h2>
+        <p className="text-primary">Manicures, Pedicures, y más.</p>
+        <p className="text-primary">Localizados en Neiva, Huila.</p>
+        </div>
       </div>
 
+      <div className="column col-md-12 col-6 p-0 equal-">
+        <Carrousel />
+      </div>
+    </section>    
 
-     
-      {/* <Carrousel /> */}
-      
-
-      
+    <section className='column col-12 px-30 hero bg-none text-opinion text-center text-primary'>
+        <h4 className='text-center text-dark'>
+          Somos los mejores en el sector de uñas
+        </h4>
+        <p>¡Conocénos y sé parte de nuestra comunidad!</p>
     </section>
-    <code className='column col-12 px-30 hero bg-none text-opinion text-center text-primary'>
-      Somos los mejores en el sector de uñas! 
-      <br />
-      Conocenos y se parte de nuestrra comunidad!
-      
-      </code>
+
     <section className='bg-secondary col-12 px-30  py-30'>
 
 
@@ -147,11 +143,9 @@ const Home = () => {
      
         
       </section>
-      <section className='bg-footer'>
-        <Footer />
-      </section>
+    </section>
     </>
-  )
+  );
 }
 
 export default Home;

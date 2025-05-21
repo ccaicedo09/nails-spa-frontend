@@ -13,6 +13,12 @@
     color: black;
 } */
 
+.home-container p {
+  font-family: "Quicksand", "sans-serif";
+}
+
+
+
 .text-cards {
     font-size: 1.2rem;
     color: black;
@@ -20,6 +26,31 @@
     opacity: 0.8;
    /*font-family: "Great Vibes", "Segoe UI Mono", "Roboto Mono", Courier, monospace;*/
 }
+
 .text-p-hero {
     font-size: 2rem;
+}
+
+.bg-secondary {
+  background-color: #f9f9f9; 
+  
+}
+
+.section-hero {
+  margin-top: 2rem; 
+  margin-left: 3rem;
+  margin-right: 3rem;
+  border-radius: 20px;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
 }
