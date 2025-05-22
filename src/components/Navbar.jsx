@@ -1,27 +1,24 @@
-// import spectreLogo from '../assets/spectre-logo.svg';
-import spectreLogo from '../assets/logo.png'
-
+import nailsLogo from '../assets/logo.svg';
+import './styles/Navbar.css'; 
 
 function Navbar() {
   return (
-    <>
-    <header className="navbar bg-secondary px-30">
-        <section className="navbar-section">
-          <a href="/sobre-nosotros" className="btn btn-link ">Sobre nosotros</a>
-          <a href="/sedes" className="btn btn-link ">Nuestras sedes</a>
-        </section>
-        <section className="navbar-center">
-          <a href="/"  rel="noopener noreferrer">
-              <img src={spectreLogo} className="logo" alt="Spectre logo" />
-          </a>
-        </section>
-        <section className="navbar-section">
-          <a href="/servicios" className="btn btn-link ">Nuestros servicios</a>
-          <a href="/citas" className="btn btn-link ">Agenda tu cita</a>
-        </section>
-      </header>
-    </>
-  )
+    <header className="navbar bg-secondary compact-navbar">
+      <section className="navbar-section">
+        <a href="/sobre-nosotros" className="btn btn-link">Nosotros</a>
+        <a href="/sedes" className="btn btn-link">Sedes</a>
+      </section>
+      <section className="navbar-center">
+        <a href="/" rel="noopener noreferrer">
+          <img src={nailsLogo} className="logo" alt="Nails Spa Logo" />
+        </a>
+      </section>
+      <section className="navbar-section">
+        <a href="/servicios" className="btn btn-link">Servicios</a>
+        <a href="/citas" className="btn btn-link">Citas</a>
+      </section>
+    </header>
+  );
 }
 
 export default Navbar;

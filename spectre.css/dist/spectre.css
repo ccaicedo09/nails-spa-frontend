@@ -415,7 +415,7 @@ html {
 
 body {
   background: #fff;
-  color: rgb(225.075, 190.425, 192);
+  color: rgb(166.098, 119.402, 122.994);
   font-family: "Yipes Regular", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   font-size: 0.8rem;
   overflow-x: hidden;
@@ -423,19 +423,19 @@ body {
 }
 
 a {
-  color: black;
+  color: rgb(2, 2, 2);
   outline: none;
   text-decoration: none;
 }
 a:focus {
-  box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 0.1rem rgba(2, 2, 2, 0.2);
 }
 a:focus, a:hover, a:active, a.active {
   color: black;
   text-decoration: underline;
 }
 a:visited {
-  color: rgb(25.5, 25.5, 25.5);
+  color: rgb(27.5, 27.5, 27.5);
 }
 
 h1,
@@ -511,14 +511,14 @@ kbd {
   border-radius: 0.1rem;
   line-height: 1.25;
   padding: 0.1rem 0.2rem;
-  background: #d9adaf;
+  background: #9c686c;
   color: #fff;
   font-size: 0.7rem;
 }
 
 mark {
   background: #ffe9b3;
-  color: rgb(225.075, 190.425, 192);
+  color: rgb(166.098, 119.402, 122.994);
   border-bottom: 0.05rem solid rgb(255, 210.8552631579, 102.5);
   border-radius: 0.1rem;
   padding: 0.05rem 0.1rem 0;
@@ -661,9 +661,9 @@ html:lang(ko),
 .btn {
   appearance: none;
   background: #fff;
-  border: 0.05rem solid black;
+  border: 0.05rem solid rgb(2, 2, 2);
   border-radius: 0.1rem;
-  color: black;
+  color: rgb(2, 2, 2);
   cursor: pointer;
   display: inline-block;
   font-size: 0.8rem;
@@ -679,7 +679,7 @@ html:lang(ko),
   white-space: nowrap;
 }
 .btn:focus {
-  box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 0.1rem rgba(2, 2, 2, 0.2);
 }
 .btn:focus, .btn:hover {
   background: #f6f6f6;
@@ -702,7 +702,7 @@ html:lang(ko),
   pointer-events: none;
 }
 .btn.btn-primary {
-  background: black;
+  background: rgb(2, 2, 2);
   border-color: black;
   color: #fff;
 }
@@ -767,7 +767,7 @@ html:lang(ko),
 .btn.btn-link {
   background: transparent;
   border-color: transparent;
-  color: black;
+  color: rgb(2, 2, 2);
 }
 .btn.btn-link:focus, .btn.btn-link:hover, .btn.btn-link:active, .btn.btn-link.active {
   color: black;
@@ -882,7 +882,7 @@ legend {
   background-image: none;
   border: 0.05rem solid rgb(229.5, 229.5, 229.5);
   border-radius: 0.1rem;
-  color: rgb(225.075, 190.425, 192);
+  color: rgb(166.098, 119.402, 122.994);
   display: block;
   font-size: 0.8rem;
   height: 1.8rem;
@@ -895,8 +895,8 @@ legend {
   width: 100%;
 }
 .form-input:focus {
-  box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.2);
-  border-color: black;
+  box-shadow: 0 0 0 0.1rem rgba(2, 2, 2, 0.2);
+  border-color: rgb(2, 2, 2);
 }
 .form-input::placeholder {
   color: white;
@@ -951,8 +951,8 @@ textarea.form-input, textarea.form-input.input-lg, textarea.form-input.input-sm 
   background: #fff;
 }
 .form-select:focus {
-  box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.2);
-  border-color: black;
+  box-shadow: 0 0 0 0.1rem rgba(2, 2, 2, 0.2);
+  border-color: rgb(2, 2, 2);
 }
 .form-select::-ms-expand {
   display: none;
@@ -1031,14 +1031,14 @@ textarea.form-input, textarea.form-input.input-lg, textarea.form-input.input-sm 
 .form-checkbox input:focus + .form-icon,
 .form-radio input:focus + .form-icon,
 .form-switch input:focus + .form-icon {
-  box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.2);
-  border-color: black;
+  box-shadow: 0 0 0 0.1rem rgba(2, 2, 2, 0.2);
+  border-color: rgb(2, 2, 2);
 }
 .form-checkbox input:checked + .form-icon,
 .form-radio input:checked + .form-icon,
 .form-switch input:checked + .form-icon {
-  background: black;
-  border-color: black;
+  background: rgb(2, 2, 2);
+  border-color: rgb(2, 2, 2);
 }
 .form-checkbox .form-icon,
 .form-radio .form-icon,
@@ -1094,8 +1094,8 @@ textarea.form-input, textarea.form-input.input-lg, textarea.form-input.input-sm 
   width: 6px;
 }
 .form-checkbox input:indeterminate + .form-icon {
-  background: black;
-  border-color: black;
+  background: rgb(2, 2, 2);
+  border-color: rgb(2, 2, 2);
 }
 .form-checkbox input:indeterminate + .form-icon::before {
   background: #fff;
@@ -1319,7 +1319,7 @@ input:disabled + .form-icon, input.disabled + .form-icon {
   line-height: 1.25;
   padding: 0.1rem 0.2rem;
   background: rgb(247.35, 247.35, 247.35);
-  color: rgb(233.15, 207.85, 209);
+  color: rgb(176.196, 134.804, 137.988);
   display: inline-block;
 }
 .label.label-rounded {
@@ -1328,12 +1328,12 @@ input:disabled + .form-icon, input.disabled + .form-icon {
   padding-right: 0.4rem;
 }
 .label.label-primary {
-  background: black;
+  background: rgb(2, 2, 2);
   color: #fff;
 }
 .label.label-secondary {
   background: #f6f6f6;
-  color: black;
+  color: rgb(2, 2, 2);
 }
 .label.label-success {
   background: #32b643;
@@ -1359,7 +1359,7 @@ code {
 
 .code {
   border-radius: 0.1rem;
-  color: rgb(225.075, 190.425, 192);
+  color: rgb(166.098, 119.402, 122.994);
   position: relative;
 }
 .code::before {
@@ -1971,7 +1971,7 @@ summary.accordion-header::-webkit-details-marker {
   font-size: 0.8rem;
   height: 1.6rem;
   width: 1.6rem;
-  background: black;
+  background: rgb(2, 2, 2);
   border-radius: 50%;
   color: rgba(255, 255, 255, 0.85);
   display: inline-block;
@@ -2051,7 +2051,7 @@ summary.accordion-header::-webkit-details-marker {
   white-space: nowrap;
 }
 .badge[data-badge]::after, .badge:not([data-badge])::after {
-  background: black;
+  background: rgb(2, 2, 2);
   background-clip: padding-box;
   border-radius: 0.5rem;
   box-shadow: 0 0 0 0.1rem #fff;
@@ -2124,7 +2124,7 @@ summary.accordion-header::-webkit-details-marker {
   height: 0.2rem;
 }
 .bar .bar-item {
-  background: black;
+  background: rgb(2, 2, 2);
   color: #fff;
   display: block;
   font-size: 0.7rem;
@@ -2160,7 +2160,7 @@ summary.accordion-header::-webkit-details-marker {
   z-index: 1;
 }
 .bar-slider .bar-slider-btn {
-  background: black;
+  background: rgb(2, 2, 2);
   border: 0;
   border-radius: 50%;
   height: 0.6rem;
@@ -2172,7 +2172,7 @@ summary.accordion-header::-webkit-details-marker {
   width: 0.6rem;
 }
 .bar-slider .bar-slider-btn:active {
-  box-shadow: 0 0 0 0.1rem black;
+  box-shadow: 0 0 0 0.1rem rgb(2, 2, 2);
 }
 
 .card {
@@ -2229,7 +2229,7 @@ summary.accordion-header::-webkit-details-marker {
   white-space: nowrap;
 }
 .chip.active {
-  background: black;
+  background: rgb(2, 2, 2);
   color: #fff;
 }
 .chip .avatar {
@@ -2287,7 +2287,7 @@ summary.accordion-header::-webkit-details-marker {
 }
 
 .menu {
-  box-shadow: 0 0.05rem 0.2rem rgba(217, 173, 175, 0.3);
+  box-shadow: 0 0.05rem 0.2rem rgba(156, 104, 108, 0.3);
   background: #fff;
   border-radius: 0.1rem;
   list-style: none;
@@ -2317,11 +2317,11 @@ summary.accordion-header::-webkit-details-marker {
 }
 .menu .menu-item > a:focus, .menu .menu-item > a:hover {
   background: #f6f6f6;
-  color: black;
+  color: rgb(2, 2, 2);
 }
 .menu .menu-item > a:active, .menu .menu-item > a.active {
   background: #f6f6f6;
-  color: black;
+  color: rgb(2, 2, 2);
 }
 .menu .menu-item .form-checkbox,
 .menu .menu-item .form-radio,
@@ -2388,7 +2388,7 @@ summary.accordion-header::-webkit-details-marker {
 }
 
 .modal-container {
-  box-shadow: 0 0.2rem 0.5rem rgba(217, 173, 175, 0.3);
+  box-shadow: 0 0.2rem 0.5rem rgba(156, 104, 108, 0.3);
   background: #fff;
   border-radius: 0.1rem;
   display: flex;
@@ -2402,7 +2402,7 @@ summary.accordion-header::-webkit-details-marker {
   max-height: 100vh;
 }
 .modal-container .modal-header {
-  color: #d9adaf;
+  color: #9c686c;
   padding: 0.8rem;
 }
 .modal-container .modal-body {
@@ -2427,14 +2427,14 @@ summary.accordion-header::-webkit-details-marker {
   text-decoration: none;
 }
 .nav .nav-item a:focus, .nav .nav-item a:hover {
-  color: black;
+  color: rgb(2, 2, 2);
 }
 .nav .nav-item.active > a {
   color: #999999;
   font-weight: bold;
 }
 .nav .nav-item.active > a:focus, .nav .nav-item.active > a:hover {
-  color: black;
+  color: rgb(2, 2, 2);
 }
 .nav .nav {
   margin-bottom: 0.4rem;
@@ -2461,7 +2461,7 @@ summary.accordion-header::-webkit-details-marker {
   text-decoration: none;
 }
 .pagination .page-item a:focus, .pagination .page-item a:hover {
-  color: black;
+  color: rgb(2, 2, 2);
 }
 .pagination .page-item.disabled a {
   cursor: default;
@@ -2469,7 +2469,7 @@ summary.accordion-header::-webkit-details-marker {
   pointer-events: none;
 }
 .pagination .page-item.active a {
-  background: black;
+  background: rgb(2, 2, 2);
   color: #fff;
 }
 .pagination .page-item.page-prev, .pagination .page-item.page-next {
@@ -2548,7 +2548,7 @@ summary.accordion-header::-webkit-details-marker {
   transform: translate(-100%, -50%) scale(1);
 }
 .popover .card {
-  box-shadow: 0 0.2rem 0.5rem rgba(217, 173, 175, 0.3);
+  box-shadow: 0 0.2rem 0.5rem rgba(156, 104, 108, 0.3);
   border: 0;
 }
 
@@ -2567,7 +2567,7 @@ summary.accordion-header::-webkit-details-marker {
   position: relative;
 }
 .step .step-item:not(:first-child)::before {
-  background: black;
+  background: rgb(2, 2, 2);
   content: "";
   height: 2px;
   left: -50%;
@@ -2576,13 +2576,13 @@ summary.accordion-header::-webkit-details-marker {
   width: 100%;
 }
 .step .step-item a {
-  color: black;
+  color: rgb(2, 2, 2);
   display: inline-block;
   padding: 20px 10px 0;
   text-decoration: none;
 }
 .step .step-item a::before {
-  background: black;
+  background: rgb(2, 2, 2);
   border: 0.1rem solid #fff;
   border-radius: 50%;
   content: "";
@@ -2597,7 +2597,7 @@ summary.accordion-header::-webkit-details-marker {
 }
 .step .step-item.active a::before {
   background: #fff;
-  border: 0.1rem solid black;
+  border: 0.1rem solid rgb(2, 2, 2);
 }
 .step .step-item.active ~ .step-item::before {
   background: white;
@@ -2629,12 +2629,12 @@ summary.accordion-header::-webkit-details-marker {
   text-decoration: none;
 }
 .tab .tab-item a:focus, .tab .tab-item a:hover {
-  color: black;
+  color: rgb(2, 2, 2);
 }
 .tab .tab-item.active a,
 .tab .tab-item a.active {
-  border-bottom-color: black;
-  color: black;
+  border-bottom-color: rgb(2, 2, 2);
+  color: rgb(2, 2, 2);
 }
 .tab .tab-item.tab-action {
   flex: 1 0 auto;
@@ -2697,9 +2697,9 @@ summary.accordion-header::-webkit-details-marker {
 }
 
 .toast {
-  background: rgba(217, 173, 175, 0.95);
-  border-color: #d9adaf;
-  border: 0.05rem solid #d9adaf;
+  background: rgba(156, 104, 108, 0.95);
+  border-color: #9c686c;
+  border: 0.05rem solid #9c686c;
   border-radius: 0.1rem;
   color: #fff;
   display: block;
@@ -2707,8 +2707,8 @@ summary.accordion-header::-webkit-details-marker {
   width: 100%;
 }
 .toast.toast-primary {
-  background: rgba(0, 0, 0, 0.95);
-  border-color: black;
+  background: rgba(2, 2, 2, 0.95);
+  border-color: rgb(2, 2, 2);
 }
 .toast.toast-success {
   background: rgba(50, 182, 67, 0.95);
@@ -2740,7 +2740,7 @@ summary.accordion-header::-webkit-details-marker {
   position: relative;
 }
 .tooltip::after {
-  background: rgba(217, 173, 175, 0.95);
+  background: rgba(156, 104, 108, 0.95);
   border-radius: 0.1rem;
   bottom: 100%;
   color: #fff;
@@ -2812,14 +2812,14 @@ summary.accordion-header::-webkit-details-marker {
   }
 }
 .text-primary {
-  color: black !important;
+  color: rgb(2, 2, 2) !important;
 }
 
 a.text-primary:focus, a.text-primary:hover {
   color: black;
 }
 a.text-primary:visited {
-  color: rgb(12.75, 12.75, 12.75);
+  color: rgb(14.75, 14.75, 14.75);
 }
 
 .text-secondary {
@@ -2856,14 +2856,14 @@ a.text-light:visited {
 }
 
 .text-dark {
-  color: rgb(225.075, 190.425, 192) !important;
+  color: rgb(166.098, 119.402, 122.994) !important;
 }
 
 a.text-dark:focus, a.text-dark:hover {
-  color: #d9adaf;
+  color: #9c686c;
 }
 a.text-dark:visited {
-  color: rgb(233.15, 207.85, 209);
+  color: rgb(176.196, 134.804, 137.988);
 }
 
 .text-success {
@@ -2900,7 +2900,7 @@ a.text-error:visited {
 }
 
 .bg-primary {
-  background: black !important;
+  background: rgb(2, 2, 2) !important;
   color: #fff;
 }
 
@@ -2909,7 +2909,8 @@ a.text-error:visited {
 }
 
 .bg-dark {
-  background: #d9adaf !important;
+  background: #9c686c !important;
+  color: #fff;
 }
 
 .bg-gray {
@@ -3064,7 +3065,7 @@ a.text-error:visited {
 .loading::after {
   animation: loading 500ms infinite linear;
   background: transparent;
-  border: 0.1rem solid black;
+  border: 0.1rem solid rgb(2, 2, 2);
   border-radius: 50%;
   border-right-color: transparent;
   border-top-color: transparent;

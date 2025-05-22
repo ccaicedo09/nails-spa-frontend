@@ -1,6 +1,6 @@
 import React from 'react'
 //Css
- import './Home.css'
+ import './styles/Home.css'
 
 //@ts-ignore
 import reactLogo from '../assets/react.svg'
@@ -14,50 +14,40 @@ import Carrousel from '../components/Carrousel'
 import ImageComparision from '../components/ImageComparision'
 import Modals from '../components/Modals'
 
-import image20 from '/img/test_img_20.png'
-import image19 from '/img/test_img_19.png'
-import image9 from '/img/test_img_9.png'
-import image17 from '/img/test_img_17.png'
-import Footer from '../components/Footer'
-
-
-
-
+import image21 from '/img/test_img_21.png'
+import image22 from '/img/test_img_22.png'
+import image23 from '/img/test_img_23.png'
+import image24 from '/img/test_img_24.png'
 
 const Home = () => {
   return (
     <>
-    
-      <section className='mx-30'>
-      
-      {/* <Hero /> */}
+    <section className='container home-container'>
 
-      <div className='text-center  hero py-30 bg-hero'>	
-        <h1 className='text-hero'>
-        Bienvenidos a Nails Spa! El lugar adecuado para tus uñas. 
-        </h1>
-        <p className='text-p-hero'>Descubre nuestros servicios </p>
-        
-
-
+    <section className="columns my-30 section-hero">
+      <div className="column col-md-12 col-6 bg-secondary d-flex flex-column justify-center align-center text-center p-4">
+        <div>
+        <h2 className="text-center">Nails Spa</h2>
+        <p className="text-primary">Manicures, Pedicures, y más.</p>
+        <p className="text-primary">Localizados en Neiva, Huila.</p>
+        </div>
       </div>
 
+      <div className="column col-md-12 col-6 p-0">
+        <Carrousel />
+      </div>
+    </section>    
 
-     
-      {/* <Carrousel /> */}
-      
-
-      
+    <section className='column col-12 px-30 hero bg-none text-opinion text-center text-primary'>
+        <h4 className='text-center text-dark'>
+          Somos los mejores en el sector de uñas
+        </h4>
+        <p>¡Conocénos y sé parte de nuestra comunidad!</p>
     </section>
-    <code className='column col-12 px-30 hero bg-none text-opinion text-center text-primary'>
-      Somos los mejores en el sector de uñas! 
-      <br />
-      Conocenos y se parte de nuestrra comunidad!
-      
-      </code>
+
     <section className='bg-secondary col-12 px-30  py-30'>
 
-
+      <h5 className='text-center'>Nuestros servicios</h5>
 
         <div  className='text-center text-primary'>
           <div className="container">
@@ -67,10 +57,10 @@ const Home = () => {
                     <div className="column col-lg-6 col-md-12 mt-2" >
                       <div className='card my-10'>
                         <div className="card-image">
-                        <img  className="img-responsive"src={image17} alt=''   />
+                        <img  className="img-responsive"src={image22} alt=''   />
                         </div>
-                        <div className='card-body bg-dark text-primary'>
-                          <h4 className='text-center'>Semi-permanentes</h4>
+                        <div className='card-body bg-dark-alpha text-primary'>
+                          <h4 className='text-center text-primary'>Acrilicas</h4>
                           <p className='text-center text-cards'>Diseños de uñas creativos y personalizados.</p>
                         </div>
                       </div>
@@ -78,24 +68,23 @@ const Home = () => {
                     <div className="column  col-md-12 col-6 mt-2"  >
                     <div className='card my-10'>
                         <div className="card-image">
-                        <img  className="img-responsive"src={image9} alt=''   />
+                        <img  className="img-responsive"src={image24} alt=''   />
                         </div>
-                        <div className='card-body bg-dark text-primary' >
-                          <h4 className='text-center'>Press on</h4>
+                        <div className='card-body bg-dark-alpha text-primary' >
+                          <h4 className='text-center'>Diseños</h4>
                           <p className='text-center text-cards'>Diseños de uñas creativos y personalizados.</p>
                         </div>
                       </div>
                     </div>
                   </div>
-
                   <div className="columns">
                     <div className="column col-md-12 col-6 "  >
                     <div className='card my-10'>
                         <div className="card-image">
-                        <img  className="img-responsive"src={image19} alt=''   />
+                        <img  className="img-responsive"src={image23} alt=''   />
                         </div>
-                        <div className='card-body bg-dark text-primary'>
-                          <h4 className='text-center'>Acrilicos</h4>
+                        <div className='card-body bg-dark-alpha text-primary'>
+                          <h4 className='text-center'>Permanentes</h4>
                           <p className='text-center text-cards'>Diseños de uñas creativos y personalizados.</p>
                         </div>
                       </div>
@@ -103,10 +92,10 @@ const Home = () => {
                     <div className="column col-md-12 col-6 "  >
                     <div className='card my-10'>
                         <div className="card-image">
-                        <img  className="img-responsive"src={image20} alt=''   />
+                        <img  className="img-responsive"src={image21} alt=''   />
                         </div>
-                        <div className='card-body bg-dark text-primary'>
-                          <h4 className='text-center'>Permanentes</h4>
+                        <div className='card-body bg-dark-alpha text-primary'>
+                          <h4 className='text-center'>Tratamientos</h4>
                           <p className='text-center text-cards'>Diseños de uñas creativos y personalizados.</p>
                         </div>
                       </div>
@@ -117,41 +106,50 @@ const Home = () => {
           </div>
         </div>
 
-        
-
-
-
-      </section>
-      <section id='gabo' className='mx-30 py-30'>
-
-      <section className='columns my-30'>
-      {/* <ImageComparision /> */}
-    
-    <code className='column bg-none col-md-12 col-6 hero text-opinion text-primary'>Mis uñas quedaron espectacular! Se los recomiendo!
-      
-    </code>
-      <ImageComparision />
-
-      </section>
-
-      <section className='columns '>
-      {/* <ImageComparision /> */}
-    
-    
-      <ImageComparision />
-      <code className='column  bg-none col-md-12 col-6 hero text-opinion text-primary'>Mis uñas quedaron muy mal! No se los recomiendo!
-      
-    </code>
-
       </section>
      
-        
-      </section>
-      <section className='bg-footer'>
-        <Footer />
-      </section>
+    <h5 className='text-center'>Reseñas destacadas</h5>
+   
+     <section className="columns my-30 section-hero">
+      
+      <div className="column col-md-12 col-6 bg-secondary d-flex flex-column justify-center align-center text-center p-4">
+        <div>
+        <h6 className="text-center">Marta Diaz Lozano</h6>
+        <p className="text-primary">Mis uñas quedaron espectacular! Se los recomiendo!</p>
+        <div className="rating text-large">
+          ★★★★☆
+      </div>
+      
+        </div>
+      </div>
+
+      <div className="column comparation-section col-md-12 col-6 p-0">
+        <ImageComparision />
+      </div>
+    </section>    
+
+    <section className="columns my-30 section-hero">
+      
+         <div className="column comparation-section col-md-12 col-6 p-0">
+        <ImageComparision />
+      </div>
+
+      <div className="column col-md-12 col-6 bg-secondary d-flex flex-column justify-center align-center text-center p-4">
+        <div>
+        <h6 className="text-center mt-2">Marta Diaz Lozano</h6>
+        <p className="text-primary">Mis uñas quedaron espectacular! Se los recomiendo!</p>
+        <div className="rating text-large">
+          ★★★★☆
+      </div>
+      
+        </div>
+      </div>
+
+    </section>    
+
+    </section>
     </>
-  )
+  );
 }
 
 export default Home;

@@ -1,0 +1,66 @@
+/* .text-opinion {
+    font-size: 4rem;
+}
+
+.text-hero{
+    font-size: 4rem;
+    
+}
+
+.bg-hero {
+    background-image: url('/img/test_img_17.png');
+    opacity: 0.8;
+    color: black;
+} */
+
+.home-container p {
+  font-family: "Quicksand", "sans-serif";
+}
+
+.text-cards {
+    font-size: 1.2rem;
+    color: black;
+    font-weight: 200;
+    opacity: 0.8;
+   /*font-family: "Great Vibes", "Segoe UI Mono", "Roboto Mono", Courier, monospace;*/
+}
+
+.text-p-hero {
+    font-size: 2rem;
+}
+
+.bg-secondary {
+  background-color: #f9f9f9; 
+}
+
+.section-hero {
+  margin-top: 2rem; 
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 2rem;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.home-container h5{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.rating{
+  margin-bottom: 20px;
+}
+
+.bg-dark-alpha {
+  background: #b08689
+}
