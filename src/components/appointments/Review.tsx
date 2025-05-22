@@ -3,7 +3,11 @@ import { useFormContext } from './AppointmentFormContext';
 import FormControls from './FormControls';
 import '../../components/styles/appointments/Review.css';
 
-const Review = () => {
+interface ReviewProps {
+  isMobile ?: boolean;
+}
+
+const Review = ({isMobile = false}: ReviewProps) => {
   const { services, specialist, totalTime, startDate, endDate } = useFormContext();
 
   const totalPrice = services.reduce((sum, service) => sum + service.price, 0);
@@ -27,7 +31,7 @@ const Review = () => {
 
   return (
     <>
-      <div className="review-container">
+      <div className={`review-container ${isMobile ? "mobile" : ""}`}>
         <FormControls />
 
         <hr />
@@ -63,7 +67,10 @@ const Review = () => {
               <h3 className="label-title label label-rounded label-primary">
                 Reserva a cargo de:
               </h3>
-              <span className="label-title" style={{ display: "block", fontWeight: "bold" }}>
+              <span
+                className="label-title"
+                style={{ display: "block", fontWeight: "bold" }}
+              >
                 {specialist.name}
               </span>
             </article>
