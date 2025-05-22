@@ -14,10 +14,10 @@ import Carrousel from '../components/Carrousel'
 import ImageComparision from '../components/ImageComparision'
 import Modals from '../components/Modals'
 
-import image20 from '/img/test_img_20.png'
-import image19 from '/img/test_img_19.png'
-import image9 from '/img/test_img_9.png'
-import image17 from '/img/test_img_17.png'
+import image21 from '/img/test_img_21.png'
+import image22 from '/img/test_img_22.png'
+import image23 from '/img/test_img_23.png'
+import image24 from '/img/test_img_24.png'
 
 const Home = () => {
   return (
@@ -57,10 +57,10 @@ const Home = () => {
                     <div className="column col-lg-6 col-md-12 mt-2" >
                       <div className='card my-10'>
                         <div className="card-image">
-                        <img  className="img-responsive"src={image17} alt=''   />
+                        <img  className="img-responsive"src={image22} alt=''   />
                         </div>
-                        <div className='card-body bg-dark text-primary'>
-                          <h4 className='text-center'>Acrilicas</h4>
+                        <div className='card-body bg-dark-alpha text-primary'>
+                          <h4 className='text-center text-primary'>Acrilicas</h4>
                           <p className='text-center text-cards'>Diseños de uñas creativos y personalizados.</p>
                         </div>
                       </div>
@@ -68,10 +68,10 @@ const Home = () => {
                     <div className="column  col-md-12 col-6 mt-2"  >
                     <div className='card my-10'>
                         <div className="card-image">
-                        <img  className="img-responsive"src={image9} alt=''   />
+                        <img  className="img-responsive"src={image24} alt=''   />
                         </div>
-                        <div className='card-body bg-dark text-primary' >
-                          <h4 className='text-center'>Press on</h4>
+                        <div className='card-body bg-dark-alpha text-primary' >
+                          <h4 className='text-center'>Diseños</h4>
                           <p className='text-center text-cards'>Diseños de uñas creativos y personalizados.</p>
                         </div>
                       </div>
@@ -81,9 +81,9 @@ const Home = () => {
                     <div className="column col-md-12 col-6 "  >
                     <div className='card my-10'>
                         <div className="card-image">
-                        <img  className="img-responsive"src={image19} alt=''   />
+                        <img  className="img-responsive"src={image23} alt=''   />
                         </div>
-                        <div className='card-body bg-dark text-primary'>
+                        <div className='card-body bg-dark-alpha text-primary'>
                           <h4 className='text-center'>Permanentes</h4>
                           <p className='text-center text-cards'>Diseños de uñas creativos y personalizados.</p>
                         </div>
@@ -92,9 +92,9 @@ const Home = () => {
                     <div className="column col-md-12 col-6 "  >
                     <div className='card my-10'>
                         <div className="card-image">
-                        <img  className="img-responsive"src={image20} alt=''   />
+                        <img  className="img-responsive"src={image21} alt=''   />
                         </div>
-                        <div className='card-body bg-dark text-primary'>
+                        <div className='card-body bg-dark-alpha text-primary'>
                           <h4 className='text-center'>Tratamientos</h4>
                           <p className='text-center text-cards'>Diseños de uñas creativos y personalizados.</p>
                         </div>
@@ -117,7 +117,7 @@ const Home = () => {
         <h6 className="text-center">Marta Diaz Lozano</h6>
         <p className="text-primary">Mis uñas quedaron espectacular! Se los recomiendo!</p>
         <div className="rating text-large">
-          ⭐⭐⭐⭐☆
+          ★★★★☆
       </div>
       
         </div>
@@ -139,12 +139,12 @@ const Home = () => {
         <h6 className="text-center mt-2">Marta Diaz Lozano</h6>
         <p className="text-primary">Mis uñas quedaron espectacular! Se los recomiendo!</p>
         <div className="rating text-large">
-          ⭐⭐⭐⭐☆
+          ★★★★☆
       </div>
       
         </div>
       </div>
-      
+
     </section>    
 
     </section>

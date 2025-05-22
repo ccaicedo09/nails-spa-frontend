@@ -77,3 +77,22 @@
     height: 90px;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .compact-navbar {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  
+  .compact-navbar .btn.btn-link {
+    padding: 8px 5px;
+    font-size: 0.5rem;
+    margin-left: 8px;
+  }
+
+  .compact-navbar .logo {
+    margin-top: 10px;
+    width: 80px;
+    height: 80px;
+  }
+}

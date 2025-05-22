@@ -1,5 +1,6 @@
 import React from 'react'
-import image16 from '/img/test_img_16.png'
+import image25 from '/img/test_img_25.png'
+import image26 from '/img/test_img_26.png'
 
 const ImageComparision = () => {
   return (
@@ -9,14 +10,14 @@ const ImageComparision = () => {
         <div className="comparison-slider">
         <figure className="comparison-before">
             <img className="rounded" 
-            src={image16} alt="" />
+            src={image26} alt="" />
             
-            <div className="comparison-label">Antes</div>
+            <div className="comparison-label">Después</div>
         </figure>
 
         <figure className="comparison-after">
-            <img src="https://plus.unsplash.com/premium_photo-1670348051093-a3f94b408bcb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-            <div className="comparison-label">Después</div>
+            <img src={image25} alt="" />
+            <div className="comparison-label">Antes</div>
             <textarea className="comparison-resizer" readOnly></textarea>
         </figure>
         </div>

@@ -48,7 +48,6 @@
   align-items: center;
 }
 
-
 .flex-column {
   flex-direction: column;
 }
@@ -60,4 +59,8 @@
 
 .rating{
   margin-bottom: 20px;
+}
+
+.bg-dark-alpha {
+  background: #b08689
 }
