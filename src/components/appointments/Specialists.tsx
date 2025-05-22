@@ -41,9 +41,10 @@ const Specialists = () => {
 
   return (
     <div>
-      <h3>Selecciona una especialista</h3>
+      <h3 className="text-primary">Selecciona una especialista</h3>
       {specialistsList.map((specialistItem) => (
         <article
+          style={{ cursor: "pointer" }}
           key={specialistItem.id}
           className={`card card-custom ${
             specialist?.id === specialistItem.id ? "selected" : ""
@@ -58,7 +59,7 @@ const Specialists = () => {
               alignItems: "center",
             }}
           >
-            <h4 className="h5" style={{cursor: "pointer"}}>{specialistItem.name}</h4>
+            <h4 className="h5">{specialistItem.name}</h4>
           </div>
         </article>
       ))}
