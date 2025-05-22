@@ -27,7 +27,7 @@ const FormControls = () => {
           display: "flex",
           justifyContent: "center",
           flexDirection: "row",
-          gap: "3rem",
+          gap: "1.5rem",
         }}
       >
         {currentStep > 1 && (

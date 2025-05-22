@@ -32,7 +32,7 @@ const Review = ({isMobile = false}: ReviewProps) => {
   return (
     <>
       <div className={`review-container ${isMobile ? "mobile" : ""}`}>
-        <FormControls />
+        {!isMobile && <FormControls />}
 
         <hr />
 

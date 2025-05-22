@@ -4,12 +4,10 @@ import Review from "../components/appointments/Review";
 import "./styles/Appointments.css";
 import {
   FormProvider,
-  useFormContext,
 } from "../components/appointments/AppointmentFormContext";
-import { useAppointmentNavigation } from "../hooks/useAppointmentNavigation";
+import FormControls from "../components/appointments/FormControls";
 
 const MobileLayout = ({ showReview, setShowReview }) => {
-  const { currentStep, handleNext, handlePrev, showModal, setShowModal } = useAppointmentNavigation();
 
   return (
     <div className="show-sm show-md hide-lg">
@@ -23,26 +21,7 @@ const MobileLayout = ({ showReview, setShowReview }) => {
           {showReview ? "Ocultar resumen ↓" : "Ver resumen de cita ↑"}
         </button>
 
-        <div className="btn-group">
-          {currentStep > 1 && (
-            <button className="btn btn-secondary" onClick={handlePrev}>
-              Anterior
-            </button>
-          )}
-          {currentStep < 3 && (
-            <button className="btn btn-primary" onClick={handleNext}>
-              Siguiente
-            </button>
-          )}
-          {currentStep === 3 && (
-            <button
-              className="btn btn-primary"
-              onClick={() => setShowReview(true)}
-            >
-              Revisar cita
-            </button>
-          )}
-        </div>
+        <FormControls />
       </div>
 
       {showReview && (
