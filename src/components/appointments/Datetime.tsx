@@ -68,9 +68,15 @@ const Datetime = () => {
         type="date"
         value={selectedDate ? selectedDate.toISOString().split("T")[0] : ""}
         min={new Date().toISOString().split("T")[0]}
-        onChange={(e) =>
-          setSelectedDate(e.target.value ? new Date(e.target.value) : null)
-        }
+        onChange={(e) => {
+          if (e.target.value) {
+            const [year, month, day] = e.target.value.split("-").map(Number);
+            const localDate = new Date(year, month - 1, day);
+            setSelectedDate(localDate);
+          } else {
+            setSelectedDate(null);
+          }
+        }}
         className="border p-2 rounded my-2"
       />
 
