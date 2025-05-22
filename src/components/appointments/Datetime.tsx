@@ -1,103 +1,100 @@
 import React, { useEffect, useState } from 'react'
 import { useFormContext } from './AppointmentFormContext'
-import supabase from '../../utils/supabaseClient'
-
-const BUSINESS_HOURS = {
-    start: 9,
-    end: 20,
-}
 
 const Datetime = () => {
+  const { startDate, setStartDate, endDate, setEndDate, totalTime } =
+    useFormContext();
 
-    const { date, setDate, totalTime, setTotalTime } = useFormContext();
-    const [availableTimes, setAvailableTimes] = useState<Date[]>([]);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [availableSlots, setAvailableSlots] = useState<
+    { start: Date; end: Date }[]
+  >([]);
+  const [selectedSlotIndex, setSelectedSlotIndex] = useState<number | null>(
+    null
+  );
 
-    useEffect(() => {
-        if (date) {
-            fetchAvailableTimes();
-        }
-    }, [date]);
+  const formatTime = (date: Date) => {
+    return date.toLocaleTimeString("es-CO", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+  };
 
-    const fetchAvailableTimes = async () => {
-        const startOfDay = new Date(date || new Date());
-        startOfDay.setHours(BUSINESS_HOURS.start, 0, 0, 0);
+  useEffect(() => {
+    if (!totalTime || !selectedDate) return;
 
-        const endOfDay = new Date(date || new Date());
-        endOfDay.setHours(BUSINESS_HOURS.end, 0, 0, 0);
+    const slots: { start: Date; end: Date }[] = [];
+    const startTime = 9;
+    const endTime = 17;
+    const stepMinutes = 30;
 
-        const { data: appointments, error } = await supabase
-            .from("appointments")
-            .select("date, duration")
-            .gte("date", startOfDay.toISOString())
-            .lt("date", endOfDay.toISOString());
-        
-        if (error) {
-            console.error("Error fetching appointments:", error);
-            return;
-        }
+    const startOfDay = new Date(selectedDate);
+    startOfDay.setHours(startTime, 0, 0, 0);
 
-        const availableSlots = generateAvailableSlots(
-            appointments,
-            startOfDay,
-            endOfDay,
-            totalTime
-        );
-        setAvailableTimes(availableSlots);
+    const endOfDay = new Date(selectedDate);
+    endOfDay.setHours(endTime, 0, 0, 0);
+
+    let current = new Date(startOfDay);
+
+    while (true) {
+      const slotEnd = new Date(current.getTime() + totalTime * 60 * 1000);
+      if (slotEnd > endOfDay) break;
+
+      slots.push({ start: new Date(current), end: new Date(slotEnd) });
+      current = new Date(current.getTime() + stepMinutes * 60000);
     }
 
-    
+    setAvailableSlots(slots);
+    setSelectedSlotIndex(null); // Reset selection if date changes
+    setStartDate(null);
+    setEndDate(null);
+  }, [totalTime, selectedDate]);
 
-    const generateAvailableSlots = (
-        appointments,
-        startOfDay,
-        endOfDay,
-        duration
-    ) => {
-        const slots: Date[] = [];
-        let currentTime = new Date(startOfDay);
+  const handleSlotSelect = (index: number) => {
+    const slot = availableSlots[index];
+    setSelectedSlotIndex(index);
+    setStartDate(slot.start);
+    setEndDate(slot.end);
+  };
 
-        while (currentTime < endOfDay) {
-            const slotEndTime = new Date(currentTime);
-            slotEndTime.setMinutes(currentTime.getMinutes() + duration);
+  return (
+    <div>
+      <h3 className="h6 text-center font-semibold mb-2">
+        Selecciona la fecha y hora de tu reserva
+      </h3>
 
-            const isConflict = appointments.some(({ date, duration }) => {
-                const appointmentStart = new Date(date);
-                const appointmentEnd = new Date(appointmentStart);
-                appointmentEnd.setMinutes(appointmentStart.getMinutes() + duration);
-
-                return (
-                    (currentTime >= appointmentStart && currentTime < appointmentEnd) ||
-                    (slotEndTime > appointmentStart && slotEndTime <= appointmentEnd)
-                );
-            });
-
-            if (!isConflict) {
-                slots.push(new Date(currentTime));
-            }
-
-            currentTime.setMinutes(currentTime.getMinutes() + 30); // Incrementar por 30 min (ajustable)
+      <input
+        type="date"
+        value={selectedDate ? selectedDate.toISOString().split("T")[0] : ""}
+        min={new Date().toISOString().split("T")[0]}
+        onChange={(e) =>
+          setSelectedDate(e.target.value ? new Date(e.target.value) : null)
         }
+        className="border p-2 rounded my-2"
+      />
 
-        return slots;
-    };
+      <h4 className="font-medium mb-2">Horarios disponibles:</h4>
 
-    return (
-        <div>
-            <h3>Selecciona la fecha y hora de tu reserva</h3>
-            <input
-                type="date"
-                value={date ? date.toISOString().split('T')[0] : ''}
-                onChange={(e) => setDate(e.target.value ? new Date(e.target.value) : null)}
-            />
-
-            <h4>Horarios disponibles:</h4>
-            <ul>
-                {availableTimes.map((time, index) => (
-                    <li key={index} style={{cursor:"pointer"}}>{time.toLocaleTimeString()}</li>
-                ))}
-            </ul>
-        </div>
-    );
+      <div className="columns">
+        {availableSlots.map((slot, index) => (
+          <div className="column col-4" key={index}>
+            <div
+              className={`card card-custom p-2 ${
+                selectedSlotIndex === index ? "card-custom-selected" : ""
+              }`}
+              style={{ cursor: "pointer" }}
+              onClick={() => handleSlotSelect(index)}
+            >
+              <div className="card-body text-center">
+                {`${formatTime(slot.start)} a ${formatTime(slot.end)}`}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Datetime;

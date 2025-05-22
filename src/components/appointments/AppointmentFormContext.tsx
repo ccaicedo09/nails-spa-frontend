@@ -6,13 +6,16 @@ interface AppointmentFormContextType {
   setServices: React.Dispatch<React.SetStateAction<Service[]>>;
   specialist: Specialist | null;
   setSpecialist: React.Dispatch<React.SetStateAction<Specialist | null>>;
-  date: Date | null;
-  setDate: React.Dispatch<React.SetStateAction<Date | null>>;
+  startDate: Date | null;
+  setStartDate: React.Dispatch<React.SetStateAction<Date | null>>;
+  endDate: Date | null;
+  setEndDate: React.Dispatch<React.SetStateAction<Date | null>>;
   totalTime: number;
   setTotalTime: React.Dispatch<React.SetStateAction<number>>;
   nextStep: () => void;
   prevStep: () => void;
   currentStep: number;
+  setCurrentStep: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const AppointmentFormContext = createContext<AppointmentFormContextType | undefined>(undefined);
@@ -28,7 +31,8 @@ export const useFormContext = () => {
 export const FormProvider: React.FC<{ children: ReactNode}> = ({ children }) => {
   const [services, setServices] = useState<Service[]>([]);
   const [specialist, setSpecialist] = useState<Specialist | null>(null);
-  const [date, setDate] = useState<Date | null>(null);
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
   const [totalTime, setTotalTime] = useState<number>(0);
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -52,7 +56,7 @@ export const FormProvider: React.FC<{ children: ReactNode}> = ({ children }) => 
 
   return (
     <AppointmentFormContext.Provider
-      value={{ services, setServices, specialist, setSpecialist, date, setDate, totalTime, setTotalTime, nextStep, prevStep, currentStep }}
+      value={{ services, setServices, specialist, setSpecialist, startDate, setStartDate, endDate, setEndDate, totalTime, setTotalTime, nextStep, prevStep, currentStep, setCurrentStep }}
     >
       {children}
     </AppointmentFormContext.Provider>
