@@ -24,34 +24,7 @@ const Home = () => {
   return (
     <>
     
-      <section className='mx-30'>
-      
-      {/* <Hero /> */}
-
-      <div className='relative text-center py-24 bg-gradient-to-br from-pink-50 to-purple-50 rounded-3xl overflow-hidden'>	
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative z-10">
-          <h1 className='text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight'>
-            Bienvenidos a Nails Spa!
-          </h1>
-          <p className='text-xl md:text-2xl text-gray-600 mb-8'>El lugar perfecto para el cuidado de tus uñas</p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-            Descubre nuestros servicios
-          </button>
-        </div>
-      </div>
-
-      <div className="column col-md-12 col-6 p-0">
-        <Carrousel />
-      </div>
-    </section>    
-
-    <section className='column col-12 px-30 hero bg-none text-opinion text-center text-primary'>
-        <h4 className='text-center text-dark'>
-          Somos los mejores en el sector de uñas
-        </h4>
-        <p>¡Conocénos y sé parte de nuestra comunidad!</p>
-    </section>
+     
     <div className='col-span-12 px-24 w-full rounded-2xl border border-gray-200 bg-gradient-to-r from-blue-50 to-indigo-50 text-center py-12'>
       <h2 className='text-4xl md:text-5xl font-bold text-blue-600 mb-4'>
         Somos los mejores en el sector de uñas!
@@ -72,7 +45,7 @@ const Home = () => {
             
             <div className='group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden'>
               <div className="relative h-64 overflow-hidden">
-                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src={image17} alt='Semi-permanentes' />
+                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src={image21} alt='Semi-permanentes' />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
               <div className='p-6'>
@@ -88,7 +61,7 @@ const Home = () => {
 
             <div className='group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden'>
               <div className="relative h-64 overflow-hidden">
-                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src={image9} alt='Press on' />
+                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src={image22} alt='Press on' />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
               <div className='p-6'>
@@ -104,7 +77,7 @@ const Home = () => {
 
             <div className='group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden'>
               <div className="relative h-64 overflow-hidden">
-                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src={image19} alt='Acrílicos' />
+                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src={image23} alt='Acrílicos' />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
               <div className='p-6'>
@@ -120,7 +93,7 @@ const Home = () => {
 
             <div className='group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden'>
               <div className="relative h-64 overflow-hidden">
-                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src={image20} alt='Permanentes' />
+                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src={image24} alt='Permanentes' />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
               <div className='p-6'>
@@ -194,9 +167,7 @@ const Home = () => {
         </div>
 
       </section>
-      <section className='bg-footer'>
-        <Footer />
-      </section>
+      
     </>
   );
 }

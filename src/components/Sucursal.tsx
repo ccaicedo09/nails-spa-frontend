@@ -2,11 +2,11 @@ import React from 'react';
 //@ts-ignore
 import './styles/about/Sucursal.css';
 
-const Sucursal = ({sucursal}) => {
+const Sucursal = ({url}) => {
   return (
     <div className='bg-white rounded-3xl shadow-xl overflow-hidden transform mb-16'>
       <div className='relative h-64 overflow-hidden'>
-        <img src={sucursal} alt="Sucursal" className='w-full h-full object-cover' />
+        <img src={url} alt="Sucursal" className='w-full h-full object-cover' />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         <div className="absolute bottom-4 left-4">
           <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -53,5 +53,4 @@ const Sucursal = ({sucursal}) => {
     </div>
   );
 }
-
 export default Sucursal; 

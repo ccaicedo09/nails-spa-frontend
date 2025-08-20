@@ -1,4 +1,4 @@
-import nailsLogo from '../assets/logo.svg';
+  import nailsLogo from '../assets/logo.svg';
 import './styles/Navbar.css'; 
 
 function Navbar() {
@@ -11,7 +11,7 @@ function Navbar() {
         </section>
         <section className="flex-1 flex items-center justify-center">
           <a href="/"  rel="noopener noreferrer">
-              <img src={spectreLogo} className="logo" alt="Spectre logo" />
+              <img src={nailsLogo} className="logo" alt="Spectre logo" />
           </a>
         </section>
         <section className="flex items-center gap-2">

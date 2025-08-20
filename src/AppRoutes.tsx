@@ -4,18 +4,18 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Sedes from './pages/Sedes';
-import Api from './pages/Api';
+
 import Appointments from './pages/Appointments';
 
 const AppRoutes = () => {
   let routes = useRoutes([
     { path: '/', element: <Home /> },
-    { path: '/sobre-nosotros', element: <About /> },
-    { path: '/servicios', element: <Services /> },
+    { path: '/about', element: <About /> },
+    { path: '/services', element: <Services /> },
     { path: '/sedes', element: <Sedes />},
-    { path: '/api', element: <Api /> },
+   
     { path: '/citas', element: <Appointments />}
-  ]);
+  ]); 
 
   return routes;
 }
