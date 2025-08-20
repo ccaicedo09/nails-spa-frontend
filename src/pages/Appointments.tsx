@@ -7,12 +7,12 @@ import { FormProvider } from '../components/appointments/AppointmentFormContext'
 const Appointments = () => {
   return (
     <FormProvider>
-      <div className="container appointments-container my-2">
-        <div className="columns hide-sm hide-md hide-xs">
-          <aside className="text-center appointment-review column col-5">
+      <div className="mx-auto max-w-7xl px-4 appointments-container my-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-6 md:grid-cols-12">
+          <aside className="text-center appointment-review md:col-span-5">
             <Review />
           </aside>
-          <section className="appointment-form column col-7">
+          <section className="appointment-form md:col-span-7">
             <AppointmentForm />
           </section>
         </div>

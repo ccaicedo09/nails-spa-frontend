@@ -35,7 +35,7 @@ const Review = () => {
 
         <article>
           <h3 className="h4 text-primary">Neiva, Huila</h3>
-          <span style={{ display: "block", marginTop: "-0.8rem" }}>
+          <span >
             Carrera 7 #25-40
           </span>
         </article>

@@ -18,37 +18,37 @@ const Carrousel = () => {
  
   <div className="carousel-container">
     
-    <figure className="carousel-item">
-      <label className="item-prev btn btn-action btn-lg" htmlFor="slide-4"><i className="icon icon-arrow-left"></i></label>
-      <label className="item-next btn btn-action btn-lg" htmlFor="slide-2"><i className="icon icon-arrow-right"></i></label>
-      <img className="img-responsive rounded" 
+    <figure className="relative w-full">
+      <label className="absolute left-2 top-1/2 transform -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-transparent px-4 py-2 text-base font-medium transition-colors bg-white/80 text-gray-900 hover:bg-white shadow-lg cursor-pointer" htmlFor="slide-4">‹</label>
+      <label className="absolute right-2 top-1/2 transform -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-transparent px-4 py-2 text-base font-medium transition-colors bg-white/80 text-gray-900 hover:bg-white shadow-lg cursor-pointer" htmlFor="slide-2">›</label>
+      <img className="w-full h-auto rounded" 
       src={image10} alt="macOS Yosemite Wallpaper" />
     </figure>
-    <figure className="carousel-item">
-      <label className="item-prev btn btn-action btn-lg" htmlFor="slide-1"><i className="icon icon-arrow-left"></i></label>
-      <label className="item-next btn btn-action btn-lg" htmlFor="slide-3"><i className="icon icon-arrow-right"></i></label>
-      <img className="img-responsive rounded" 
+    <figure className="relative w-full">
+      <label className="absolute left-2 top-1/2 transform -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-transparent px-4 py-2 text-base font-medium transition-colors bg-white/80 text-gray-900 hover:bg-white shadow-lg cursor-pointer" htmlFor="slide-1">‹</label>
+      <label className="absolute right-2 top-1/2 transform -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-transparent px-4 py-2 text-base font-medium transition-colors bg-white/80 text-gray-900 hover:bg-white shadow-lg cursor-pointer" htmlFor="slide-3">›</label>
+      <img className="w-full h-auto rounded" 
       src={image2} alt="macOS Yosemite Wallpaper" />
     </figure>
-    <figure className="carousel-item">
-      <label className="item-prev btn btn-action btn-lg" htmlFor="slide-2"><i className="icon icon-arrow-left"></i></label>
-      <label className="item-next btn btn-action btn-lg" htmlFor="slide-4"><i className="icon icon-arrow-right"></i></label>
-      <img className="img-responsive rounded" 
+    <figure className="relative w-full">
+      <label className="absolute left-2 top-1/2 transform -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-transparent px-4 py-2 text-base font-medium transition-colors bg-white/80 text-gray-900 hover:bg-white shadow-lg cursor-pointer" htmlFor="slide-2">‹</label>
+      <label className="absolute right-2 top-1/2 transform -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-transparent px-4 py-2 text-base font-medium transition-colors bg-white/80 text-gray-900 hover:bg-white shadow-lg cursor-pointer" htmlFor="slide-4">›</label>
+      <img className="w-full h-auto rounded" 
       src={image3} alt="macOS El Capitan Wallpaper" />
     </figure>
-    <figure className="carousel-item">
-      <label className="item-prev btn btn-action btn-lg" htmlFor="slide-3"><i className="icon icon-arrow-left"></i></label>
-      <label className="item-next btn btn-action btn-lg" htmlFor="slide-1"><i className="icon icon-arrow-right"></i></label>
-      <img className="img-responsive rounded" 
+    <figure className="relative w-full">
+      <label className="absolute left-2 top-1/2 transform -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-transparent px-4 py-2 text-base font-medium transition-colors bg-white/80 text-gray-900 hover:bg-white shadow-lg cursor-pointer" htmlFor="slide-3">‹</label>
+      <label className="absolute right-2 top-1/2 transform -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-transparent px-4 py-2 text-base font-medium transition-colors bg-white/80 text-gray-900 hover:bg-white shadow-lg cursor-pointer" htmlFor="slide-1">›</label>
+      <img className="w-full h-auto rounded" 
       src={image4} alt="macOS El Capitan Wallpaper" />
     </figure>
   </div>
   
-  <div className="carousel-nav">
-    <label className="nav-item text-hide c-hand" htmlFor="slide-1">1</label>
-    <label className="nav-item text-hide c-hand" htmlFor="slide-2">2</label>
-    <label className="nav-item text-hide c-hand" htmlFor="slide-3">3</label>
-    <label className="nav-item text-hide c-hand" htmlFor="slide-4">4</label>
+  <div className="mt-2 flex gap-2 justify-center">
+    <label className="w-2 h-2 rounded-full bg-gray-300 sr-only cursor-pointer" htmlFor="slide-1">1</label>
+    <label className="w-2 h-2 rounded-full bg-gray-300 sr-only cursor-pointer" htmlFor="slide-2">2</label>
+    <label className="w-2 h-2 rounded-full bg-gray-300 sr-only cursor-pointer" htmlFor="slide-3">3</label>
+    <label className="w-2 h-2 rounded-full bg-gray-300 sr-only cursor-pointer" htmlFor="slide-4">4</label>
   </div>
 </div>
   )

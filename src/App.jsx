@@ -1,7 +1,5 @@
 import './App.css'
-import '../spectre.css/dist/spectre.min.css'
-// import 'spectre.css/dist/spectre-icons.min.css'
-import '../spectre.css/dist/spectre-exp.min.css'
+// Eliminado: imports de Spectre. Estilos ahora provienen de Tailwind y spectre-compat.
 import { BrowserRouter } from 'react-router-dom'
 import AppRoutes from './AppRoutes'
 import Navbar from './components/Navbar'
