@@ -1,9 +1,8 @@
 import React from 'react';
 //@ts-ignore
-import sucursal from '/img/sucursal.webp';
 import './styles/about/Sucursal.css';
 
-const Sucursal = ({url}) => {
+const Sucursal = ({sucursal}) => {
   return (
     <div className='bg-white rounded-3xl shadow-xl overflow-hidden transform mb-16'>
       <div className='relative h-64 overflow-hidden'>

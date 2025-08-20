@@ -1,5 +1,6 @@
 import React from 'react'
-import image16 from '/img/test_img_16.png'
+import image25 from '/img/test_img_25.png'
+import image26 from '/img/test_img_26.png'
 
 const ImageComparision = () => {
   return (
@@ -9,7 +10,7 @@ const ImageComparision = () => {
         <div className="relative w-full overflow-hidden rounded border border-gray-200">
         <figure className="relative">
             <img className="rounded" 
-            src={image16} alt="" />
+            src={image26} alt="" />
             
             <div className="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">Antes</div>
         </figure>
@@ -22,11 +23,7 @@ const ImageComparision = () => {
         </div>
 
         </div>
-        
-
-    
-    
-  )
+  );
 }
 
 export default ImageComparision

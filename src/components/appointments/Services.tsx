@@ -44,9 +44,10 @@ const Services = () => {
   
   return (
     <div>
-      <h3>Selecciona un Servicio</h3>
+      <h3 className="text-primary">Selecciona un Servicio</h3>
       {servicesList.map((service) => (
         <article
+          style={{ cursor: "pointer" }}
           key={service.id}
           className={`card card-custom ${
             services.some((s) => s.id === service.id) ? "selected" : ""
@@ -61,9 +62,9 @@ const Services = () => {
               alignItems: "center",
             }}
           >
-            <h4 className="h5" style={{cursor: "pointer"}}>{service.name}</h4>
+            <h4 className="h5">{service.name}</h4>
             <p>
-                <strong>$ {service.price.toLocaleString('es-CO')}</strong>
+              <strong>$ {service.price.toLocaleString("es-CO")}</strong>
             </p>
           </div>
           <div className="card-body">

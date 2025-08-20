@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useFormContext } from './AppointmentFormContext';
+import { useNavigate } from 'react-router-dom';
+import { useAppointmentNavigation } from '../../hooks/useAppointmentNavigation';
 
 const FormControls = () => {
     const { nextStep, prevStep } = useFormContext();
+   
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="flex justify-center gap-6">
@@ -28,5 +31,8 @@ const FormControls = () => {
     </div>
   );
 }
+  
 
-export default FormControls
+
+
+export default FormControls;

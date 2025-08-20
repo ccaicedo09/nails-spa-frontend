@@ -1,7 +1,9 @@
 .card-scrl {
+  display: flex;
   padding: 0;
   width: 26%;
   min-width: 360px;
+  border: none;
 }
 
 .card-scrl p {
@@ -9,19 +11,23 @@
   margin: 0;
 }
 
+.card-image img {
+  object-fit: cover;
+  max-height: 260px;
+  width: 100%;
+}
+
 .card-scrl .btn {
   font-size: 14px;
   transition: transform 0.2s;
+  align-self: flex-end;
 }
 
-.card-scrl .btn:hover {
-  transform: scale(1.1)
-}
+.card-scrl .btn:hover { transform: scale(1.1); }
 
-.scrl-body {
-  padding: 0 12px;
-}
+.scrl-body { padding: 0 12px; }
 
+.card-body { flex-grow: 1; }
 @media (max-width: 500px) {
   .card-scrl {
     width: 100%;

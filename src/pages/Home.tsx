@@ -1,6 +1,6 @@
 import React from 'react'
 //Css
- import './Home.css'
+ import './styles/Home.css'
 
 //@ts-ignore
 import reactLogo from '../assets/react.svg'
@@ -13,16 +13,12 @@ import GithubCard from '../components/GitHubCard'
 import Carrousel from '../components/Carrousel'
 import ImageComparision from '../components/ImageComparision'
 import Modals from '../components/Modals'
-
-import image20 from '/img/test_img_20.png'
-import image19 from '/img/test_img_19.png'
-import image9 from '/img/test_img_9.png'
-import image17 from '/img/test_img_17.png'
 import Footer from '../components/Footer'
 
-
-
-
+import image21 from '/img/test_img_21.png'
+import image22 from '/img/test_img_22.png'
+import image23 from '/img/test_img_23.png'
+import image24 from '/img/test_img_24.png'
 
 const Home = () => {
   return (
@@ -45,12 +41,16 @@ const Home = () => {
         </div>
       </div>
 
+      <div className="column col-md-12 col-6 p-0">
+        <Carrousel />
+      </div>
+    </section>    
 
-     
-      {/* <Carrousel /> */}
-      
-
-      
+    <section className='column col-12 px-30 hero bg-none text-opinion text-center text-primary'>
+        <h4 className='text-center text-dark'>
+          Somos los mejores en el sector de uñas
+        </h4>
+        <p>¡Conocénos y sé parte de nuestra comunidad!</p>
     </section>
     <div className='col-span-12 px-24 w-full rounded-2xl border border-gray-200 bg-gradient-to-r from-blue-50 to-indigo-50 text-center py-12'>
       <h2 className='text-4xl md:text-5xl font-bold text-blue-600 mb-4'>
@@ -198,7 +198,7 @@ const Home = () => {
         <Footer />
       </section>
     </>
-  )
+  );
 }
 
 export default Home;

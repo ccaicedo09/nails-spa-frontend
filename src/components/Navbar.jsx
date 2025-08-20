@@ -1,6 +1,5 @@
-// import spectreLogo from '../assets/spectre-logo.svg';
-import spectreLogo from '../assets/logo.png'
-
+import nailsLogo from '../assets/logo.svg';
+import './styles/Navbar.css'; 
 
 function Navbar() {
   return (
