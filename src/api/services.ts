@@ -1,9 +1,9 @@
 import axios from "./axios";
-import { Service } from "../types/servicios";
+import { PaginatedServices, Service } from "../types/servicios";
 
 // Obtener todos los servicios
 export const getAllServicesRequest = () =>
-  axios.get<Service[]>("/services");
+  axios.get<PaginatedServices>("/services");
 
 // Obtener un servicio por ID
 export const getServiceByIdRequest = (id: string) =>

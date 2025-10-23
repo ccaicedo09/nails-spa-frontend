@@ -7,3 +7,12 @@ export interface Service {
   duration: number; // En minutos
   pictureUrl?: string;
 }
+
+export interface PaginatedServices {
+  page: number;
+  limit: number;
+  totalPages: number;
+  totalServices: number;
+  services: Service[];
+}
+
