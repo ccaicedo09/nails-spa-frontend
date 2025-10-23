@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useFormContext } from './AppointmentFormContext'
-import supabase from '../../utils/supabaseClient';
+
 import { Service } from '../../types/FormTypes.interface';
 
 const Services = () => {
@@ -13,11 +13,7 @@ const Services = () => {
     const fetchServices = async () => {
       try {
         setLoading(true);
-        const { data: services, error } = await supabase
-          .from("services")
-          .select("*")
-        
-        if (error) throw error;
+       const services:[] = []
         setServicesList(services);
       } catch (error: any) {
         setError(error.message);

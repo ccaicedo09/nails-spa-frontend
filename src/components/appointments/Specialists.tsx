@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useFormContext } from './AppointmentFormContext'
-import supabase from '../../utils/supabaseClient';
+
 import { Specialist } from '../../types/FormTypes.interface';
 
 const Specialists = () => {
@@ -13,10 +13,7 @@ const Specialists = () => {
         const fetchSpecialists = async () => {
             try {
                 setLoading(true);
-                const { data: specialists, error } = await supabase
-                    .from("profiles")
-                    .select("*")
-                    .eq("role", "worker")
+                const specialists: [] = []
                 
                 console.log(specialists);
                 
