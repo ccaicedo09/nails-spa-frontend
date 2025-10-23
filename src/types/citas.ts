@@ -12,3 +12,15 @@ export interface Appointment {
   user: string; // Referencia a User._id
   cancelled?: boolean;
 }
+
+export interface AvailabilityResponse {
+  date: string;
+  location: string;
+  service: string;
+  serviceDuration: number;
+  availability: {
+    employeeId: string;
+    employeeName: string;
+    availableSlots: string[];
+  }[];
+}

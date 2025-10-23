@@ -9,3 +9,11 @@ export interface Location {
   pictureUrl?: string;
   appointments: string[]; // Referencias a Appointment._id
 }
+
+export interface PaginatedLocations {
+  page: number;
+  limit: number;
+  totalPages: number;
+  totalLocations: number;
+  locations: Location[];
+}

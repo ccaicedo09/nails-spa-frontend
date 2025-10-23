@@ -1,5 +1,5 @@
 import axios from "./axios";
-import { Appointment } from "../types/citas"; // Ajusta la ruta según tu estructura
+import { Appointment, AvailabilityResponse } from "../types/citas"; // Ajusta la ruta según tu estructura
 
 // Obtener todas las citas (admin/employee)
 export const getAppointmentsRequest = () =>
@@ -23,7 +23,8 @@ export const getAvailabilityRequest = (payload: {
   locationId: string;
   date: string; // YYYY-MM-DD
 }) =>
-  axios.post<{ availableSlots: string[] }>(
+  axios.post<AvailabilityResponse>(
+
     "/appointments/availability",
     payload
   );

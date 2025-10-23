@@ -1,9 +1,9 @@
 import axios from "./axios";
-import { Location } from "../types/sedes";
+import { Location, PaginatedLocations } from "../types/sedes";
 
 // Obtener todas las ubicaciones
 export const getAllLocationsRequest = () =>
-  axios.get<Location[]>("/locations");
+  axios.get<PaginatedLocations>("/locations");
 
 // Obtener una ubicación por ID
 export const getLocationByIdRequest = (id: string) =>
