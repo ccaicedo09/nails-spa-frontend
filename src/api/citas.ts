@@ -19,8 +19,8 @@ export const createAppointmentRequest = (appointment: Omit<Appointment, "_id">) 
 
 // Consultar disponibilidad para un servicio en una ubicación
 export const getAvailabilityRequest = (payload: {
-  serviceId: string;
-  locationId: string;
+  idLocation: string;
+  idService: string;
   date: string; // YYYY-MM-DD
 }) =>
   axios.post<AvailabilityResponse>(
