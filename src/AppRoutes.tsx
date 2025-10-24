@@ -4,12 +4,16 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Sedes from './pages/Sedes';
+import Login from './pages/Login';
 
 import Appointments from './pages/Appointments';
+import Register from './pages/Register';
 
 const AppRoutes = () => {
   let routes = useRoutes([
     { path: '/', element: <Home /> },
+    { path: '/register', element: <Register />},
+    { path: '/login', element: <Login/> },
     { path: '/about', element: <About /> },
     { path: '/services', element: <Services /> },
     { path: '/sedes', element: <Sedes />},
