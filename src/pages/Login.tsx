@@ -45,7 +45,7 @@ function Login () {
       }
 
       alert(data.message || 'Inicio de sesión exitoso!')
-      navigate('/private')
+      navigate('/priv')
     } catch (error: any) {
       alert(error.message)
     } finally {

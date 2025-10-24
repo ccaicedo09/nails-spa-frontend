@@ -8,6 +8,7 @@ import Login from './pages/Login';
 
 import Appointments from './pages/Appointments';
 import Register from './pages/Register';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -17,8 +18,23 @@ const AppRoutes = () => {
     { path: '/about', element: <About /> },
     { path: '/services', element: <Services /> },
     { path: '/sedes', element: <Sedes />},
-   
-    { path: '/citas', element: <Appointments />}
+    { path: '/citas', element: <Appointments />},
+    {
+      path: '/priv',
+      element: (
+        <ProtectedRoute>
+          <div>Hola privados</div>
+        </ProtectedRoute>
+      )
+    },
+    {
+      path: '/admin',
+      element: (
+        <ProtectedRoute allowed={['admin']}>
+          <div>Hola admin</div>
+        </ProtectedRoute>
+      )
+    },
   ]); 
 
   return routes;
