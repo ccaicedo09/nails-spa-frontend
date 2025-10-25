@@ -17,6 +17,7 @@ function Navbar() {
         <section className="flex items-center gap-2">
           <a href="/services" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Nuestros servicios</a>
           <a href="/citas" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Agenda tu cita</a>
+          <a href="/login" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Iniciar Sesión</a>
         </section>
       </header>
     </>
