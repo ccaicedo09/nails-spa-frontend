@@ -5,17 +5,18 @@ import AppRoutes from './AppRoutes'
 import Navbar from './components/Navbar'
 import Contact from './components/Contact';
 import Footer from './components/Footer'
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
-    <>
-    <BrowserRouter>
-      <Navbar />
-      <AppRoutes />
-      <Contact />
-      <Footer />
-    </BrowserRouter>
-    </>
+    <AuthProvider>
+      <BrowserRouter>
+        <Navbar />
+        <AppRoutes />
+        <Contact />
+        <Footer />
+      </BrowserRouter>
+    </AuthProvider>
   )
 }
 

@@ -1,8 +1,10 @@
 import { LoaderCircle, Lock, Mail } from "lucide-react"
 import { ChangeEvent, FormEvent, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { useAuthGlobal } from "../context/AuthContext";
 
 function Login () {
+  const { isAuthenticated, setIsAuthenticated } = useAuthGlobal();
   const navigate = useNavigate()
   const [user, setUser] = useState({ email: '', password: '' })
   const [errors, setErrors] = useState({ email: '', password: '' })
@@ -39,6 +41,7 @@ function Login () {
       })
 
       const data = await response.json()
+      setIsAuthenticated(!isAuthenticated);
 
       if (!response.ok) {
         throw new Error(data.error || 'Error al iniciar sesión')
