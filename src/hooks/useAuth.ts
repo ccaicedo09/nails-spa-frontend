@@ -7,7 +7,7 @@ export function useAuth() {
   const [role, setRole] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch('http://localhost:4000/api/v1/auth/check', {
+    fetch('http://localhost:3000/api/v1/auth/check', {
       method: 'GET',
       credentials: 'include'
     })
