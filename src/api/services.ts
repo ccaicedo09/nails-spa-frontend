@@ -3,7 +3,7 @@ import { PaginatedServices, Service } from "../types/servicios";
 
 // Obtener todos los servicios
 export const getAllServicesRequest = () =>
-  axios.get<PaginatedServices>("/services/");
+  axios.get<PaginatedServices>("/services");
 
 // Obtener un servicio por ID
 export const getServiceByIdRequest = (id: string) =>
