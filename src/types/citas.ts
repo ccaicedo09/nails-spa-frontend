@@ -13,6 +13,11 @@ export interface Appointment {
   cancelled?: boolean;
 }
 
+export interface CreateAppointmentServerResponse {
+  message: string;
+  appointment?: PopulatedAppointment;
+}
+
 export interface AvailabilityResponse {
   date: string;
   location: string;
@@ -23,4 +28,36 @@ export interface AvailabilityResponse {
     employeeName: string;
     availableSlots: string[];
   }[];
+  message?: string;
+}
+
+export interface PopulatedAppointment {
+  _id: string;
+  schedule: {
+    date: string;   // YYYY-MM-DD
+    start: string;  // HH:mm
+    end: string;    // HH:mm
+  };
+  service: {
+    _id: string;
+    name: string;
+    price: number;
+  };
+  employee: {
+    _id: string;
+    names: string;
+    phone: string;
+  };
+  location: {
+    _id: string;
+    name: string;
+    address: string;
+  };
+  user: {
+    _id: string;
+    names: string;
+  };
+  additionalDescription: string;
+  cancelled: boolean;
+  __v: number;
 }

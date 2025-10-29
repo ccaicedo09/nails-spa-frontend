@@ -6,11 +6,13 @@ import {getAvailabilityRequest, createAppointmentRequest} from "../../api/citas"
 
 import { Service } from "../../types/servicios";
 import { Location } from "../../types/sedes";
-import { Appointment, AvailabilityResponse } from "../../types/citas";
+import { Appointment, AvailabilityResponse, PopulatedAppointment } from "../../types/citas";
 import { User } from "../../types/usuarios";
 
 
+
 export default function AppointmentWizard({ userId }: { userId: string }) {
+
   const [step, setStep] = useState(1);
 
   const [services, setServices] = useState<Service[]>([]);
@@ -25,7 +27,7 @@ export default function AppointmentWizard({ userId }: { userId: string }) {
   const [description, setDescription] = useState("");
 
   const [loading, setLoading] = useState(false);
-  const [confirmation, setConfirmation] = useState<Appointment | null>(null);
+  const [confirmation, setConfirmation] = useState<PopulatedAppointment | null>(null);
 
   useEffect(() => {
   const fetchInitialData = async () => {
@@ -46,15 +48,14 @@ export default function AppointmentWizard({ userId }: { userId: string }) {
 
 
   //---------------------------------LOGS------------------------------------------
-console.log("Services:", services);
-    console.log("Locations:", locations);
+
   console.log("Step:", step);
-  console.log("Selected Service:", selectedService);
-  console.log("Selected Location:", selectedLocation);
-    console.log("Selected Date:", selectedDate);
+  
     console.log("Availability Data:", availabilityData);
-    console.log("Selected Employee:", selectedEmployee);
+   
     console.log("Selected Slot:", selectedSlot);
+
+    console.log("Confirmation:", confirmation);
     //---------------------------------LOGS------------------------------------------
 
 
@@ -66,7 +67,13 @@ console.log("Services:", services);
       idLocation: selectedLocation,
       date: selectedDate,
     });
-    setAvailabilityData(res.data);
+    if(res.data.message){
+       alert(res.data.message)
+    } else {
+      setAvailabilityData(res.data);
+    }
+    
+
 
     setLoading(false);
   };
@@ -100,7 +107,11 @@ console.log("Services:", services);
       user: userId,
     });
 
-    setConfirmation(res.data);
+      if(res.data.appointment){
+        setConfirmation(res.data.appointment);
+      } else {
+        alert(res.data.message);
+      }
     setStep(6);
   };
 
@@ -260,11 +271,21 @@ console.log("Services:", services);
       {step === 6 && confirmation && (
         <div className="bg-green-100 p-4 rounded">
           <h3 className="text-xl font-bold">¡Cita confirmada!</h3>
-          <p>Servicio: {confirmation.service}</p>
-          <p>Empleado: {confirmation.employee}</p>
+          <p>Servicio: {confirmation.service.name}</p>
+          <p>Precio: ${confirmation.service.price}</p>
+          <br />
+          <p>Empleado: {confirmation.employee.names}</p>
+          <p>Teléfono: {confirmation.employee.phone}</p>
+          <br />
           <p>Fecha: {confirmation.schedule.date}</p>
           <p>Hora: {confirmation.schedule.start} - {confirmation.schedule.end}</p>
-          <p>Sede: {confirmation.location}</p>
+          <br />
+          <p>Sede: {confirmation.location.name}</p>
+          <p>Dirección: {confirmation.location.address}</p>
+          <br />
+          <p>Descripción adicional: {confirmation.additionalDescription || "Ninguna"}</p>
+          <br />
+          <a href="/" className="mt-4 text-sm text-blue-500">Volver al inicio</a>
         </div>
       )}
     </div>
