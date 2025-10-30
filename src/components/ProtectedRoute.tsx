@@ -1,8 +1,8 @@
-import { Navigate } from 'react-router-dom'
-import { useAuth } from '../hooks/useAuth'
-import { JSX } from 'react'
+import { Navigate } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
+import { JSX } from "react";
 
-type Role = 'customer' | 'admin' | 'employee'
+type Role = "customer" | "admin" | "employee"
 
 interface ProtectedRouteProps {
   children: JSX.Element
@@ -12,19 +12,18 @@ interface ProtectedRouteProps {
 function ProtectedRoute({ children, allowed }: ProtectedRouteProps) {
   const { auth, role } = useAuth()
 
-  if (auth === 'loading') {
+  if (auth === "loading") {
     return (
-      <div className="flex h-screen items-center justify-center text-gray-600 text-lg">
+      <div style={{ minHeight: "calc(100vh - 190px)" }} className="flex items-center justify-center text-gray-600 text-lg">
         Cargando autenticación...
       </div>
     )
   }
 
-  if (auth === 'unauthenticated') {
+  if (auth === "unauthenticated") {
     return <Navigate to="/login" replace />
   }
 
-  // Validación de rol
   if (allowed && (!role || !allowed.includes(role as Role))) {
     return <Navigate to="/" replace />
   }

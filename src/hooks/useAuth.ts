@@ -1,27 +1,24 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
+import { checkCredentials } from "../api/auth";
 
-type AuthState = 'loading' | 'authenticated' | 'unauthenticated'
+type AuthState = "loading" | "authenticated" | "unauthenticated";
 
 export function useAuth() {
-  const [auth, setAuth] = useState<AuthState>('loading')
-  const [role, setRole] = useState<string | null>(null)
+  const [auth, setAuth] = useState<AuthState>("loading");
+  const [role, setRole] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('http://localhost:4000/api/v1/auth/check', {
-      method: 'GET',
-      credentials: 'include'
-    })
-      .then(res => res.json())
-      .then(data => {
+    checkCredentials()
+      .then(({ data }) => {
         if (data.authenticated) {
-          setAuth('authenticated')
-          setRole(data.role || null)
+          setAuth("authenticated");
+          setRole(data.role || null);
         } else {
-          setAuth('unauthenticated')
+          setAuth("unauthenticated");
         }
       })
-      .catch(() => setAuth('unauthenticated'))
-  }, [])
+      .catch(() => setAuth("unauthenticated"));
+  }, []);
 
   return { auth, role }
 }

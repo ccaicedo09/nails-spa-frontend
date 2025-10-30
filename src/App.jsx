@@ -5,7 +5,7 @@ import AppRoutes from './AppRoutes'
 import Navbar from './components/Navbar'
 import Contact from './components/Contact';
 import Footer from './components/Footer'
-import { AuthProvider } from './context/AuthContext';
+import AuthProvider from './context/AuthProvider';
 
 function App() {
   return (
