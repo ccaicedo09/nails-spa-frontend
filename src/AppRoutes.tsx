@@ -1,4 +1,3 @@
-import React from 'react';
 import { useRoutes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -18,20 +17,10 @@ const AppRoutes = () => {
     { path: '/about', element: <About /> },
     { path: '/services', element: <Services /> },
     { path: '/sedes', element: <Sedes />},
-    { path: '/citas', element: <Appointments />},
-    {
-      path: '/priv',
+    { path: '/citas', 
       element: (
         <ProtectedRoute>
-          <div>Hola privados</div>
-        </ProtectedRoute>
-      )
-    },
-    {
-      path: '/admin',
-      element: (
-        <ProtectedRoute allowed={['admin']}>
-          <div>Hola admin</div>
+          <Appointments />
         </ProtectedRoute>
       )
     },
