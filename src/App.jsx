@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Contact from './components/Contact';
 import Footer from './components/Footer'
 import AuthProvider from './context/AuthProvider';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -15,6 +16,11 @@ function App() {
         <AppRoutes />
         <Contact />
         <Footer />
+        <Toaster 
+          position="top-right"
+          reverseOrder={false}
+          gutter={12}
+        />
       </BrowserRouter>
     </AuthProvider>
   )

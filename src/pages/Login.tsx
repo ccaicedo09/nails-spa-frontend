@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { isAuthenticatedContext } from "../context/IsAuthenticatedContext";
+import toast from "react-hot-toast";
 
 const formSchema = z.object({
   email: z.string(),
@@ -33,16 +34,16 @@ function Login () {
     setLoading(true);
     try {
       const response = await accessAccount(data);
-      alert(response.data.message || "Inicio de sesión exitoso!");
+      toast.success(response.data.message || "Inicio de sesión exitoso!")
       setIsAuthenticated(true);
       navigate("/citas");
     } catch (err) {
       setIsAuthenticated(false);
 
       if (axios.isAxiosError(err)) {
-        alert(err.response?.data.error || "Credenciales inválidas o error del servidor");
+        toast.error(err.response?.data.error || "Credenciales inválidas o error del servidor");
       } else {
-        alert("Error desconocido al iniciar sesión");
+        toast.error("Error desconocido al iniciar sesión");
       }
     } finally {
       setLoading(false);
