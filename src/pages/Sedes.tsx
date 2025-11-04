@@ -26,44 +26,54 @@ const Sedes = () => {
   }, []);
 
   if (loading) {
-    // Show a few skeleton placeholders while the real data is loading.
     return (
-      <div className="sedes-container" aria-busy>
-        <h2 className='text-center'>
-          Conoce cada una de nuestras sedes!
-        </h2>
-        <div className="flex-container">
-          {[1, 2, 3].map((i) => (
-            <SucursalSkeleton key={i} />
-          ))}
+      <div className="bg-gray-100 min-h-screen" style={{padding: 24}} aria-busy>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-gray-800 mb-3">Nuestras Sedes</h1>
+            <p className="text-gray-600 text-lg">Encuentra la sucursal más cercana a ti</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3].map((i) => (
+              <SucursalSkeleton key={i} />
+            ))}
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="sedes-container">
-      <h2 className='text-center'>
-        Conoce cada una de nuestras sedes!
-      </h2>
-
-      {locations.length > 0 ? (
-        <div className="flex-container">
-          {locations.map((loc) => (
-            <Sucursal
-              key={loc._id}
-              url={loc.pictureUrl}
-              name={loc.name}
-              address={loc.address}
-              schedule={loc.schedule}
-              manager={loc.manager}
-              phone={loc.phone}
-            />
-          ))}
+    <div className="bg-gray-100 min-h-screen" style={{padding: 24}}>
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-800 mb-3">Nuestras Sedes</h1>
+          <p className="text-gray-600 text-lg">Encuentra la sucursal más cercana a ti</p>
         </div>
-      ) : (
-        <p className='text-center text-gray-400'>No hay sedes registradas aún.</p>
-      )}
+
+        {locations.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {locations.map((loc) => (
+              <Sucursal
+                key={loc._id}
+                url={loc.pictureUrl}
+                name={loc.name}
+                address={loc.address}
+                schedule={loc.schedule}
+                manager={loc.manager}
+                phone={loc.phone}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-16">
+            <div className="inline-block bg-white rounded-2xl p-8 shadow-lg">
+              <span className="text-6xl mb-4 block">🏢</span>
+              <p className="text-gray-600 text-lg">No hay sedes registradas aún.</p>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
