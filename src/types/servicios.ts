@@ -15,4 +15,3 @@ export interface PaginatedServices {
   totalServices: number;
   services: Service[];
 }
-
