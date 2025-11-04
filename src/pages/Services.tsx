@@ -1,12 +1,24 @@
 import React from 'react';
 import PDFCard from '../components/PDFCard';
 import Schedule from '../components/Schedule';
+import FeaturedServices from '../components/FeaturedServices';
 
 const Services = () => {
   return (
-    <div className="text-primary" style={{fontSize:'1rem', display: 'flex', flexWrap: 'wrap', gap: 32, minHeight: '100vh', padding: 24 }}>
-      <PDFCard />
-      <Schedule />
+    <div className="text-primary bg-gray-100" style={{fontSize:'1rem', minHeight: '100vh', padding: 24 }}>
+      <div className="mb-8 text-center">
+        <h1 className="text-4xl font-bold text-gray-800 mb-3">Nuestros Servicios</h1>
+        <p className="text-gray-600 text-lg">Experiencia y calidad en cada detalle</p>
+      </div>
+
+      <div className="mb-8">
+        <FeaturedServices />
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <PDFCard />
+        <Schedule />
+      </div>
     </div>
   );
 }
