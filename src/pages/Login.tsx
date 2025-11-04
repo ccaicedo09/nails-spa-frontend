@@ -32,16 +32,7 @@ function Login () {
   const onSubmit = async (data: FormData) => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:3000/api/v1/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        credentials: 'include',
-        body: JSON.stringify(user)
-      })
-
-      const data = await response.json()
+      
       const response = await accessAccount(data);
       alert(response.data.message || "Inicio de sesión exitoso!");
       setIsAuthenticated(true);
