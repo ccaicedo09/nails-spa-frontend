@@ -18,3 +18,7 @@ export const logoutAccount = () => {
 export const checkCredentials = () => {
   return instance.get<ResponseAuth>("/auth/check");
 }
+
+export const getProfile = () => {
+  return instance.get("/auth/profile");
+}

@@ -5,6 +5,7 @@ import { Service } from '../types/servicios';
 // @ts-ignore
 import PDFLogo from '../assets/pdf.svg';
 import './styles/about/PDFCard.css';
+import { FileIcon, HandIcon, MoneyIcon, TimerIcon } from './icons';
 
 
 
@@ -89,16 +90,16 @@ const PDFCard = ({services}: {services: Service[]}) => {
   return (
     <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8" style={{flexGrow: 1, minWidth: 300}}>
       <div className="text-center mb-6">
-        <div className="inline-block bg-blue-500 rounded-2xl p-3 mb-3 shadow-md">
-          <span className="text-3xl">📄</span>
+        <div className="inline-flex items-center justify-center bg-pink-600 rounded-2xl p-3 mb-3 shadow-md">
+          <FileIcon className="text-white" size={24} />
         </div>
         <h3 className="text-2xl font-bold text-gray-800">Carta de Servicios</h3>
       </div>
       
       <div className="space-y-3 mb-6">
-        <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl border border-gray-200">
+        <div className="flex justify-between items-center p-4 bg-pink-50 rounded-xl border border-pink-200">
           <div className="flex items-center gap-3">
-            <span className="text-xl">💅</span>
+            <HandIcon className="text-pink-600" />
             <span className="font-semibold text-gray-800">Todos los servicios</span>
           </div>
           <span className="bg-green-100 text-green-600 font-semibold px-3 py-1 rounded-full text-sm">
@@ -106,19 +107,19 @@ const PDFCard = ({services}: {services: Service[]}) => {
           </span>
         </div>
         
-        <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl border border-gray-200">
+        <div className="flex justify-between items-center p-4 bg-pink-50 rounded-xl border border-pink-200">
           <div className="flex items-center gap-3">
-            <span className="text-xl">💰</span>
+            <MoneyIcon className="text-pink-600" />
             <span className="font-semibold text-gray-800">Precios actualizados</span>
           </div>
-          <span className="bg-blue-100 text-blue-600 font-semibold px-3 py-1 rounded-full text-sm">
+          <span className="bg-pink-100 text-pink-600 font-semibold px-3 py-1 rounded-full text-sm">
             2024
           </span>
         </div>
         
-        <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl border border-gray-200">
+        <div className="flex justify-between items-center p-4 bg-pink-50 rounded-xl border border-pink-200">
           <div className="flex items-center gap-3">
-            <span className="text-xl">⏱️</span>
+            <TimerIcon className="text-pink-600" />
             <span className="font-semibold text-gray-800">Duración incluida</span>
           </div>
           <span className="bg-purple-100 text-purple-600 font-semibold px-3 py-1 rounded-full text-sm">
@@ -127,12 +128,12 @@ const PDFCard = ({services}: {services: Service[]}) => {
         </div>
       </div>
       
-      <div className="p-4 bg-blue-50 rounded-xl border border-blue-200">
+      <div className="p-4 bg-pink-50 rounded-xl border border-pink-200">
         <p className="text-gray-700 text-sm text-center mb-3 font-medium">
           📄 Incluye precios y duraciones
         </p>
         <button 
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-md" 
+          className="w-full bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-md" 
           onClick={handleGeneratePDF}
         >
           Ver Carta PDF

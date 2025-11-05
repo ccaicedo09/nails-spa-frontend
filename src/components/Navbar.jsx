@@ -40,12 +40,15 @@ function Navbar() {
         <a href="/services" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Nuestros servicios</a>
         <a href="/citas" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Agenda tu cita</a>
         {isAuthenticated ? (
-          <button
-            onClick={handleLogout}
-            className="bg-transparent text-blue-600 hover:underline px-2 py-1"
-          >
-            Cerrar sesión
-          </button>
+          <>
+            <a href="/mis-citas" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Mis citas</a>
+            <button
+              onClick={handleLogout}
+              className="bg-transparent text-blue-600 hover:underline px-2 py-1"
+            >
+              Cerrar sesión
+            </button>
+          </>
         ) : (
           <a
             href="/login"

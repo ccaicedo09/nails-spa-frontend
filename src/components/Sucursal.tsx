@@ -1,4 +1,5 @@
 import React from 'react';
+import { CalendarIcon, UserIcon, PhoneIcon, BuildingIcon } from './icons';
 // @ts-ignore
 import './styles/about/Sucursal.css';
 
@@ -52,7 +53,7 @@ const Sucursal: React.FC<SucursalProps> = ({ url, pictureUrlSmall, pictureUrlMed
           ) : (
             <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
               <div className="text-center">
-                <span className="text-4xl mb-2 block">🏢</span>
+                <BuildingIcon className="mx-auto mb-2 text-gray-500" size={36} />
                 <span className="text-gray-500 text-sm">Imagen no disponible</span>
               </div>
             </div>
@@ -64,26 +65,26 @@ const Sucursal: React.FC<SucursalProps> = ({ url, pictureUrlSmall, pictureUrlMed
 
       <div className='p-6'>
         <div className='space-y-3'>
-          <div className='flex items-start gap-3 p-3 bg-gray-50 rounded-xl hover:bg-blue-50 transition-colors duration-200'>
-            <svg className="w-5 h-5 mt-0.5 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+          <div className='flex items-start gap-3 p-3 bg-pink-50 rounded-xl hover:bg-pink-100 transition-colors duration-200'>
+            <svg className="w-5 h-5 mt-0.5 text-pink-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
             </svg>
             <span className='text-gray-700 text-sm'>{address}</span>
           </div>
 
-          <div className='flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-green-50 transition-colors duration-200'>
-            <span className='text-lg flex-shrink-0'>📅</span>
+          <div className='flex items-center gap-3 p-3 bg-pink-50 rounded-xl hover:bg-pink-100 transition-colors duration-200'>
+            <CalendarIcon className='text-pink-600 flex-shrink-0' />
             <span className='text-gray-700 text-sm font-medium'>{schedule}</span>
           </div>
 
-          <div className='flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-purple-50 transition-colors duration-200'>
-            <span className='text-lg flex-shrink-0'>👩‍💼</span>
+          <div className='flex items-center gap-3 p-3 bg-pink-50 rounded-xl hover:bg-pink-100 transition-colors duration-200'>
+            <UserIcon className='text-pink-600 flex-shrink-0' />
             <span className='text-gray-700 text-sm'>{manager}</span>
           </div>
 
-          <div className='flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-pink-50 transition-colors duration-200'>
-            <span className='text-lg flex-shrink-0'>📞</span>
-            <a href={`tel:${phone}`} className='text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors'>
+          <div className='flex items-center gap-3 p-3 bg-pink-50 rounded-xl hover:bg-pink-100 transition-colors duration-200'>
+            <PhoneIcon className='text-pink-600 flex-shrink-0' />
+            <a href={`tel:${phone}`} className='text-pink-600 hover:text-pink-700 text-sm font-medium transition-colors'>
               {phone}
             </a>
           </div>
