@@ -13,7 +13,7 @@ const FeaturedServices= ({services}: {services: Service[]}) => {
       {services && services.map((service, index) => (
         <div 
           key={index}
-          className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
+          className="rounded-2xl p-6 shadow-lg hover:shadow-2xl"
         >
           <div className={`w-16 h-16  rounded-full flex items-center justify-center text-3xl mb-4 mx-auto`}>
             {service.pictureUrl ? (

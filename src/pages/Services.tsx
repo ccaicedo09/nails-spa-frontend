@@ -24,14 +24,16 @@ const Services = () => {
         <p className="text-gray-600 text-lg">Experiencia y calidad en cada detalle</p>
       </div>
 
-      <div className="mb-8">
+      <div className=" max-w-6xl mx-auto">
         <FeaturedServices services={services}/>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="grid mt-8 grid-cols-1 lg:grid-cols-2 gap-6 ">
+        
         <PDFCard services={services}/>
         <Schedule />
       </div>
+      </div>
+
+      
     </div>
   );
 }

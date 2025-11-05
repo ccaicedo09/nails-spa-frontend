@@ -1,14 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './styles/Home.css'
 import Carrousel from '../components/Carrousel'
 import FeaturedServices from '../components/FeaturedServices'
 import Schedule from '../components/Schedule'
 import PDFCard from '../components/PDFCard'
 import Footer from '../components/Footer'
+import { Service } from '../types/servicios'
+import { getAllServicesRequest } from '../api/services'
 
 // gallery images referenced directly from /public/img
 
 const Home = () => {
+
+  const [services, setServices] = useState<Service[]>([]);
+  
+    useEffect(() => {
+       const fetchServices = async () => {
+         const res = await getAllServicesRequest();
+         const services: Service[] = res.data.services.slice(0, 4); 
+         setServices(services);
+       };
+       fetchServices();
+    }, []);
   return (
     <div className="space-y-8">
       {/* Hero */}
@@ -21,7 +34,7 @@ const Home = () => {
               <a href="/citas" className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-semibold">Reservar ahora</a>
               <a href="/services" className="bg-white border border-pink-200 text-pink-700 px-6 py-3 rounded-full font-semibold">Ver servicios</a>
             </div>
-            <div className="mt-6 text-sm text-gray-500">Abierto hoy • 9:00 - 20:00 • Atención personalizada</div>
+           
           </div>
           <div className="flex-1">
             <div className="rounded-3xl overflow-hidden shadow-lg">
@@ -36,7 +49,7 @@ const Home = () => {
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Nuestros servicios destacados</h2>
           <p className="text-gray-600 mb-6">Tratamientos diseñados para tu estilo y comodidad.</p>
-          <FeaturedServices />
+          <FeaturedServices services={services}/>
         </div>
       </section>
 
