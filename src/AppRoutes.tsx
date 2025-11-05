@@ -7,6 +7,7 @@ import Login from './pages/Login';
 
 import Appointments from './pages/Appointments';
 import Register from './pages/Register';
+import UserAppointments from './pages/UserAppointments';
 import ProtectedRoute from './components/ProtectedRoute';
 
 const AppRoutes = () => {
@@ -21,6 +22,13 @@ const AppRoutes = () => {
       element: (
         <ProtectedRoute>
           <Appointments />
+        </ProtectedRoute>
+      )
+    },
+    { path: '/mis-citas', 
+      element: (
+        <ProtectedRoute>
+          <UserAppointments />
         </ProtectedRoute>
       )
     },

@@ -4,6 +4,7 @@ import SucursalSkeleton from '../components/SucursalSkeleton';
 import { getAllLocationsRequest } from '../api/locations';
 import { Location } from '../types/sedes';
 import './styles/Sedes.css';
+import { BuildingIcon } from '../components/icons';
 
 const Sedes = () => {
   const [locations, setLocations] = useState<Location[]>([]);
@@ -27,10 +28,10 @@ const Sedes = () => {
 
   if (loading) {
     return (
-      <div className="bg-gray-100 min-h-screen" style={{padding: 24}} aria-busy>
+      <div className="bg-white min-h-screen" style={{padding: 24}} aria-busy>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-800 mb-3">Nuestras Sedes</h1>
+            <h1 className="text-4xl font-bold text-pink-700 mb-3">Nuestras Sedes</h1>
             <p className="text-gray-600 text-lg">Encuentra la sucursal más cercana a ti</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -44,10 +45,10 @@ const Sedes = () => {
   }
 
   return (
-    <div className="bg-gray-100 min-h-screen" style={{padding: 24}}>
+    <div className="bg-white min-h-screen" style={{padding: 24}}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-3">Nuestras Sedes</h1>
+          <h1 className="text-4xl font-bold text-pink-700 mb-3">Nuestras Sedes</h1>
           <p className="text-gray-600 text-lg">Encuentra la sucursal más cercana a ti</p>
         </div>
 
@@ -68,7 +69,7 @@ const Sedes = () => {
         ) : (
           <div className="text-center py-16">
             <div className="inline-block bg-white rounded-2xl p-8 shadow-lg">
-              <span className="text-6xl mb-4 block">🏢</span>
+              <BuildingIcon className="mx-auto mb-4 text-gray-400" size={48} />
               <p className="text-gray-600 text-lg">No hay sedes registradas aún.</p>
             </div>
           </div>
