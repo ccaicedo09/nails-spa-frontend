@@ -61,3 +61,10 @@ export interface PopulatedAppointment {
   cancelled: boolean;
   __v: number;
 }
+
+export interface PaginatedAppointmentsResponse {
+  appointments: PopulatedAppointment[];
+  totalAppointments?: number;
+  currentPage?: number;
+  totalPages?: number;
+}
