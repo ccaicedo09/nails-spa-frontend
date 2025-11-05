@@ -1,9 +1,22 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import PDFCard from '../components/PDFCard';
 import Schedule from '../components/Schedule';
 import FeaturedServices from '../components/FeaturedServices';
+import { Service } from '../types/servicios';
+import { getAllServicesRequest } from '../api/services';
 
 const Services = () => {
+  const [services, setServices] = useState<Service[]>([]);
+
+  useEffect(() => {
+     const fetchServices = async () => {
+       const res = await getAllServicesRequest();
+       const services: Service[] = res.data.services;
+       setServices(services);
+     };
+     fetchServices();
+  }, []);
+
   return (
     <div className="text-primary bg-gray-100" style={{fontSize:'1rem', minHeight: '100vh', padding: 24 }}>
       <div className="mb-8 text-center">
@@ -12,11 +25,11 @@ const Services = () => {
       </div>
 
       <div className="mb-8">
-        <FeaturedServices />
+        <FeaturedServices services={services}/>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
-        <PDFCard />
+        <PDFCard services={services}/>
         <Schedule />
       </div>
     </div>

@@ -6,11 +6,12 @@ import { Service } from '../types/servicios';
 import PDFLogo from '../assets/pdf.svg';
 import './styles/about/PDFCard.css';
 
-const PDFCard: React.FC = () => {
+
+
+const PDFCard = ({services}: {services: Service[]}) => {
   const handleGeneratePDF = async () => {
     try {
-      const res = await getAllServicesRequest();
-      const services: Service[] = res.data.services;
+     
 
       if (!services || services.length === 0) {
         alert('No hay servicios disponibles para generar el PDF.');
