@@ -29,8 +29,6 @@ export const getAvailabilityRequest = (payload: {
     payload
   );
 
-// Eliminar/Cancelar una cita (requiere userId en el body)
-export const deleteAppointmentRequest = (appointmentId: string, userId: string) =>
-  axios.delete(`/appointments/${appointmentId}`, {
-    data: { userId },
-  });
+// Eliminar/Cancelar una cita
+export const deleteAppointmentRequest = (appointmentId: string) =>
+  axios.delete(`/appointments/${appointmentId}`);

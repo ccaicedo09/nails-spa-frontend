@@ -39,7 +39,7 @@ const UserAppointments = () => {
     }
   };
 
-  const handleDeleteAppointment = async (appointmentId: string, userId: string) => {
+  const handleDeleteAppointment = async (appointmentId: string) => {
     const confirmDelete = window.confirm(
       "¿Estás seguro de que deseas cancelar esta cita?"
     );
@@ -48,7 +48,7 @@ const UserAppointments = () => {
 
     try {
   setDeletingId(appointmentId);
-  await deleteAppointmentRequest(appointmentId, userId);
+  await deleteAppointmentRequest(appointmentId);
       
       // Actualizar la lista de citas
       setAppointments(prev => prev.filter(apt => apt._id !== appointmentId));

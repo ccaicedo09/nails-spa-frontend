@@ -4,7 +4,7 @@ import { PopulatedAppointment } from "../../types/citas";
 type Props = {
   appointment: PopulatedAppointment;
   deletingId: string | null;
-  onDelete: (appointmentId: string, userId: string) => Promise<void> | void;
+  onDelete: (appointmentId: string) => Promise<void> | void;
 };
 
 const AppointmentCard: React.FC<Props> = ({ appointment, deletingId, onDelete }) => {
@@ -27,7 +27,6 @@ const AppointmentCard: React.FC<Props> = ({ appointment, deletingId, onDelete })
 
   const isPast = isPastAppointment(appointment.schedule.date, appointment.schedule.end);
   const isCancelled = appointment.cancelled;
-  const userId = (appointment as any)?.user?._id ?? (appointment as any)?.user;
 
   return (
     <div
@@ -168,7 +167,7 @@ const AppointmentCard: React.FC<Props> = ({ appointment, deletingId, onDelete })
       <div className="px-6 py-4 bg-gray-50 flex justify-center gap-4 border-t border-gray-100">
         {!isPast && !isCancelled && (
           <button
-            onClick={() => onDelete(appointment._id, userId)}
+            onClick={() => onDelete(appointment._id)}
             disabled={deletingId === appointment._id}
             className="flex items-center gap-2 bg-red-500 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-red-600 hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
           >
