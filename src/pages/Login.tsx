@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { isAuthenticatedContext } from "../context/IsAuthenticatedContext";
 import toast from "react-hot-toast";
+import Cookies from "js-cookie";
 
 const formSchema = z.object({
   email: z.string(),
@@ -36,7 +37,15 @@ function Login () {
       const response = await accessAccount(data);
       toast.success(response.data.message || "Inicio de sesión exitoso!")
       setIsAuthenticated(true);
-      navigate("/citas");
+      
+      // redirect
+      const role = Cookies.get("role");
+      if (role === "customer") {
+        navigate("/citas");
+      }
+      if (role === "employee") {
+        navigate("/employee/citas");
+      }
     } catch (err) {
       setIsAuthenticated(false);
 

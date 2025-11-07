@@ -2,7 +2,7 @@ import { Navigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { JSX } from "react";
 
-type Role = "customer" | "admin" | "employee"
+type Role = "customer" | "admin" | "employee" | "manager"
 
 interface ProtectedRouteProps {
   children: JSX.Element
