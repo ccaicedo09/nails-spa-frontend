@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { isAuthenticatedContext } from "../context/IsAuthenticatedContext";
+import toast from "react-hot-toast";
+import Cookies from "js-cookie";
 
 const formSchema = z.object({
   email: z.string(),
@@ -34,16 +36,24 @@ function Login () {
     try {
       
       const response = await accessAccount(data);
-      alert(response.data.message || "Inicio de sesión exitoso!");
+      toast.success(response.data.message || "Inicio de sesión exitoso!")
       setIsAuthenticated(true);
-      navigate("/citas");
+      
+      // redirect
+      const role = Cookies.get("role");
+      if (role === "customer") {
+        navigate("/citas");
+      }
+      if (role === "employee") {
+        navigate("/employee/citas");
+      }
     } catch (err) {
       setIsAuthenticated(false);
 
       if (axios.isAxiosError(err)) {
-        alert(err.response?.data.error || "Credenciales inválidas o error del servidor");
+        toast.error(err.response?.data.error || "Credenciales inválidas o error del servidor");
       } else {
-        alert("Error desconocido al iniciar sesión");
+        toast.error("Error desconocido al iniciar sesión");
       }
     } finally {
       setLoading(false);

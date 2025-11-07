@@ -5,6 +5,7 @@ import { logoutAccount } from '../api/auth';
 import axios from 'axios';
 import { useContext } from 'react';
 import { isAuthenticatedContext } from '../context/IsAuthenticatedContext';
+import toast from 'react-hot-toast';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -13,14 +14,14 @@ function Navbar() {
   const handleLogout = async () => {
     try {
       const response = await logoutAccount();
-      alert(response.data.message || "Sesión cerrada correctamente");
+      toast.success(response.data.message || "Sesión cerrada correctamente");
       setIsAuthenticated(false);
       navigate("/");
     } catch (err) {
       if (axios.isAxiosError(err)) {
-        alert(err.response?.data?.error || "Error al cerrar sesión");
+        toast.error(err.response?.data?.error || "Error al cerrar sesión");
       } else {
-        alert("Error inesperado al cerrar sesión");
+        toast.error("Error inesperado al cerrar sesión");
       }
     }
   };

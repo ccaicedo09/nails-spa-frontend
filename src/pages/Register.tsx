@@ -6,6 +6,7 @@ import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const formSchema = z.object({
   name: z.string().min(1, "Por favor ingresa tu nombre completo."),
@@ -45,14 +46,14 @@ function Register() {
         password: data.password,
       });
 
-      alert(response.data.message || "Registro exitoso!");
+      toast.success(response.data.message || "Registro exitoso!");
       navigate("/login");
     } catch (err: any) {
       console.error("Error al registrar usuario:", err);
       if (axios.isAxiosError(err)) {
-        alert(err.response?.data.error || "Error del servidor al registrar");
+        toast.error(err.response?.data.error || "Error del servidor al registrar");
       } else {
-        alert("Error desconocido al registrar");
+        toast.error("Error desconocido al registrar");
       }
     } finally {
       setLoading(false);

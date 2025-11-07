@@ -1,4 +1,5 @@
 import axios from "./axios";
+import { ResponseCitasByEmployee } from "../types/responseAppointmentByEmployee";
 import { Appointment, AvailabilityResponse, CreateAppointmentServerResponse } from "../types/citas"; // Ajusta la ruta según tu estructura
 
 // Obtener todas las citas (admin/employee)
@@ -7,7 +8,7 @@ export const getAppointmentsRequest = () =>
 
 // Obtener citas por empleado
 export const getAppointmentsByEmployeeRequest = (id: string) =>
-  axios.get<Appointment[]>(`/appointments/employee/${id}`);
+  axios.get<ResponseCitasByEmployee>(`/appointments/employee/${id}`);
 
 // Obtener citas del usuario autenticado
 export const getUserAppointmentsRequest = () =>
