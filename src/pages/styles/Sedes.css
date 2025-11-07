@@ -2,7 +2,7 @@
   background-color: #1E1E1E;
   padding: 24px;
   width: 100%;
-  min-height: calc(100vh - 8rem);
+  min-height: auto;
 }
 
 .sedes-container h2 {
@@ -18,18 +18,30 @@
 }
 
 .flex-container > * {
-  flex: 1 1 calc((100% / 3) - 16px);
+  flex: 1 1 calc(33% - 24px);
+  max-width: 420px; 
+  min-width: 300px;
   box-sizing: border-box;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .flex-container > * {
-    flex: 1 1 calc((100% / 2) - 12px);
+    flex: 1 1 calc(50% - 20px);
+    max-width: 480px;
   }
 }
 
 @media (max-width: 876px) {
   .flex-container > * {
     flex: 1 1 100%;
+    max-width: none;
   }
+}
+
+.flex-container > * .relative {
+  height: 340px !important;
+}
+
+.flex-container > * .p-6 {
+  padding: 20px !important;
 }

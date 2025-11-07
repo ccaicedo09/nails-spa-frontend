@@ -9,7 +9,7 @@ export function useAuth() {
 
   useEffect(() => {
     checkCredentials()
-      .then(({ data }) => {
+      .then(({ data }: any) => {
         if (data.authenticated) {
           setAuth("authenticated");
           setRole(data.role || null);

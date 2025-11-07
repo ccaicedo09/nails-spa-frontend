@@ -7,6 +7,7 @@ import Login from './pages/Login';
 
 import Appointments from './pages/Appointments';
 import Register from './pages/Register';
+import UserAppointments from './pages/UserAppointments';
 import ProtectedRoute from './components/ProtectedRoute';
 import RecoveryCode from './pages/RecoveryCode';
 import Dashboard from './pages/employee/Dashboard';
@@ -35,6 +36,14 @@ const AppRoutes = () => {
       )
     }
   ]);
+    { path: '/mis-citas', 
+      element: (
+        <ProtectedRoute>
+          <UserAppointments />
+        </ProtectedRoute>
+      )
+    },
+  ]); 
 
   return routes;
 }
