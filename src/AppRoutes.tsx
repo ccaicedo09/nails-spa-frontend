@@ -14,36 +14,38 @@ import Dashboard from './pages/employee/Dashboard';
 
 const AppRoutes = () => {
   let routes = useRoutes([
-    { path: '/', element: <Home /> },
-    { path: '/register', element: <Register /> },
-    { path: '/login', element: <Login/> },
-    { path: '/code', element: <RecoveryCode/> },
-    { path: '/about', element: <About /> },
-    { path: '/services', element: <Services /> },
-    { path: '/sedes', element: <Sedes />},
-    { path: '/citas', 
+    { path: "/", element: <Home /> },
+    { path: "/register", element: <Register /> },
+    { path: "/login", element: <Login /> },
+    { path: "/code", element: <RecoveryCode /> },
+    { path: "/about", element: <About /> },
+    { path: "/services", element: <Services /> },
+    { path: "/sedes", element: <Sedes /> },
+    {
+      path: "/citas",
       element: (
         <ProtectedRoute>
           <Appointments />
         </ProtectedRoute>
-      )
+      ),
     },
-    { path: '/employee/citas',
+    {
+      path: "/employee/citas",
       element: (
         <ProtectedRoute allowed={["employee"]}>
-          <Dashboard/>
+          <Dashboard />
         </ProtectedRoute>
-      )
-    }
-  ]);
-    { path: '/mis-citas', 
+      ),
+    },
+    {
+      path: "/mis-citas",
       element: (
         <ProtectedRoute>
           <UserAppointments />
         </ProtectedRoute>
-      )
+      ),
     },
-  ]); 
+  ]);
 
   return routes;
 }
