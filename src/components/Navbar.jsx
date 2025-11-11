@@ -27,7 +27,7 @@ function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 w-full bg-gray-100/80 backdrop-blur border-b border-gray-200 flex items-center justify-between px-24 py-2 z-50">
+    <header className="sticky top-0 w-full bg-gray-100/80 backdrop-blur border-b border-gray-200 flex items-center justify-between px-10 py-2 z-50">
       <section className="flex items-center gap-2">
         <a href="/about" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Sobre nosotros</a>
         <a href="/sedes" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Nuestras sedes</a>
@@ -43,6 +43,7 @@ function Navbar() {
         {isAuthenticated ? (
           <>
             <a href="/mis-citas" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Mis citas</a>
+            <a href="/dashboard" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Dashboard</a>
             <button
               onClick={handleLogout}
               className="bg-transparent text-blue-600 hover:underline px-2 py-1"

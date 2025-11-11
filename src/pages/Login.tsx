@@ -43,9 +43,8 @@ function Login () {
       const role = Cookies.get("role");
       if (role === "customer") {
         navigate("/citas");
-      }
-      if (role === "employee") {
-        navigate("/employee/citas");
+      }else{
+        navigate("/dashboard");
       }
     } catch (err) {
       setIsAuthenticated(false);

@@ -1,3 +1,5 @@
+import { CitasByEmployee } from "./responseAppointmentByEmployee";
+
 export interface Appointment {
   _id: string;
   service: string; // Referencia a Service._id
@@ -29,6 +31,15 @@ export interface AvailabilityResponse {
     availableSlots: string[];
   }[];
   message?: string;
+}
+
+export type CitasBySedeResponse = {
+  appointments: CitasByEmployee[];
+  page?: number;
+  totalPages?: number;
+  totalItems?: number;
+  limit: number;
+  totalAppointments: number;
 }
 
 export interface PopulatedAppointment {

@@ -1,6 +1,6 @@
 import axios from "./axios";
 import { ResponseCitasByEmployee } from "../types/responseAppointmentByEmployee";
-import { Appointment, AvailabilityResponse, CreateAppointmentServerResponse } from "../types/citas"; // Ajusta la ruta según tu estructura
+import { Appointment, AvailabilityResponse, CitasBySedeResponse, CreateAppointmentServerResponse } from "../types/citas"; // Ajusta la ruta según tu estructura
 
 // Obtener todas las citas (admin/employee)
 export const getAppointmentsRequest = () =>
@@ -33,3 +33,7 @@ export const getAvailabilityRequest = (payload: {
 // Eliminar/Cancelar una cita
 export const deleteAppointmentRequest = (appointmentId: string) =>
   axios.delete(`/appointments/${appointmentId}`);
+
+// Traer citas por sede
+export const getAppointmentsByLocationRequest = (locationId: string) =>
+  axios.get<CitasBySedeResponse[]>(`/appointments/sede/${locationId}`);

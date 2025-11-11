@@ -1,3 +1,5 @@
+import { Appointment } from "./citas";
+
 export interface CitasByEmployee {
   schedule: {
     date: string;
@@ -25,3 +27,4 @@ export interface ResponseCitasByEmployee {
   data: CitasByEmployee[];
   message?: string;
 }
+
