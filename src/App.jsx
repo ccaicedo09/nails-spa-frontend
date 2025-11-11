@@ -17,7 +17,7 @@ function App() {
         <Contact />
         <Footer />
         <Toaster 
-          position="top-right"
+          position="top-left"
           reverseOrder={false}
           gutter={12}
         />

@@ -15,5 +15,5 @@ export const addStaffToServiceRequest = (
   staffIds: string[]
 ) =>
   axios.post<Service>(`/services/${serviceId}/staff`, {
-    staff: staffIds,
+    staffCapable: staffIds,
   });

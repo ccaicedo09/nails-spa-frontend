@@ -10,7 +10,7 @@ import Register from './pages/Register';
 import UserAppointments from './pages/UserAppointments';
 import ProtectedRoute from './components/ProtectedRoute';
 //import RecoveryCode from './pages/RecoveryCode';
-import Dashboard from './pages/employee/Dashboard';
+import Dashboard from './pages/Dashboard';
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -30,9 +30,9 @@ const AppRoutes = () => {
       ),
     },
     {
-      path: "/employee/citas",
+      path: "/dashboard",
       element: (
-        <ProtectedRoute allowed={["employee"]}>
+        <ProtectedRoute allowed={["employee", "admin", "manager"]}>
           <Dashboard /> 
         </ProtectedRoute>
       ),

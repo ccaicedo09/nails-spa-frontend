@@ -7,7 +7,7 @@ export interface User {
   password: string;
   salary?: number;
   phone: string;
-  role: UserRole;
+  role?: UserRole;
   recoveryCode?: string;
   locations: string[]; // Referencias a Location._id
 }
