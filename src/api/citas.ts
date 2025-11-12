@@ -11,8 +11,8 @@ export const getAppointmentsByEmployeeRequest = (id: string) =>
   axios.get<ResponseCitasByEmployee>(`/appointments/employee/${id}`);
 
 // Obtener citas del usuario autenticado
-export const getUserAppointmentsRequest = () =>
-  axios.get("/appointments/user");
+export const getUserAppointmentsRequest = (params ?: Record<string, any>) =>
+  axios.get("/appointments/user", { params });
 
 // Crear una nueva cita
 export const createAppointmentRequest = (appointment: Omit<Appointment, "_id">) =>

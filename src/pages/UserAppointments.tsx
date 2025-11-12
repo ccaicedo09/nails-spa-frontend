@@ -2,24 +2,32 @@ import { useEffect, useState } from "react";
 import { getUserAppointmentsRequest, deleteAppointmentRequest } from "../api/citas";
 import { PopulatedAppointment } from "../types/citas";
 import AppointmentCard from "../components/appointments/AppointmentCard";
+import FilterBar, { Filters } from "../components/ui/FilterBar";
+import Pagination from "../components/ui/Pagination";
+
+type Meta = {
+  total: number,
+  page: number,
+  limit: number,
+  totalPages: number
+}
 
 const UserAppointments = () => {
   const [appointments, setAppointments] = useState<PopulatedAppointment[]>([]);
+  const [meta, setMeta] = useState<Meta | null>(null);
+  const [filters, setFilters] = useState<Filters>({ page: 1, limit: 10, cancelled: undefined})
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);
 
-  useEffect(() => {
-    fetchAppointments();
-  }, []);
-
-  const fetchAppointments = async () => {
+  const fetchAppointments = async (params?: Filters) => {
     try {
       setLoading(true);
-      const response = await getUserAppointmentsRequest();
+      const response = await getUserAppointmentsRequest(params || filters);
       
       // Manejar diferentes estructuras de respuesta posibles
       let appointmentsData: any[] = [];
+      let incomingMeta: Meta | null = null;
       
       if (Array.isArray(response.data)) {
         appointmentsData = response.data;
@@ -27,9 +35,16 @@ const UserAppointments = () => {
         appointmentsData = response.data.appointments;
       } else if (response.data && response.data.data && Array.isArray(response.data.data)) {
         appointmentsData = response.data.data;
+        if (response.data.meta) {
+          incomingMeta = response.data.meta as Meta;
+        }
       }
       
       setAppointments(appointmentsData);
+
+      if (incomingMeta) setMeta(incomingMeta);
+      else setMeta((prev) => prev ?? { total: appointmentsData.length, page: 1, limit: appointmentsData.length || 10, totalPages: 1})
+
       setError(null);
     } catch (err: any) {
       console.error("Error al obtener citas:", err);
@@ -38,6 +53,10 @@ const UserAppointments = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchAppointments();
+  }, [filters.page, filters.limit, filters.date, filters.from, filters.to, filters.cancelled]);
 
   const handleDeleteAppointment = async (appointmentId: string) => {
     const confirmDelete = window.confirm(
@@ -73,6 +92,10 @@ const UserAppointments = () => {
     return new Date(`${apt.schedule.date}T${apt.schedule.start}`);
   };
 
+  const applyFilters = (f: Filters) => {
+    setFilters((prev) => ({ ...prev, ...f, page: 1}))
+  }
+
   if (loading) {
     return (
       <div className="max-w-7xl mx-auto min-h-screen px-6 py-8">
@@ -87,19 +110,34 @@ const UserAppointments = () => {
   return (
     <div className="max-w-7xl mx-auto min-h-screen px-6 py-8">
       <div className="text-center mb-6 py-4">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl text-pink-700 mb-2 font-extrabold">Mis Citas</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl text-pink-700 mb-2 font-extrabold">
+          Mis Citas
+        </h1>
       </div>
 
-      {error && (
+      {/* Filtros reutilizables */}
+      <FilterBar initial={filters} onApply={applyFilters} />
+
+      {loading && (
+        <div className="flex flex-col items-center justify-center min-h-[200px] gap-4">
+          <div className="w-12 h-12 border-4 border-pink-100 border-t-pink-600 rounded-full animate-spin"></div>
+          <p>Cargando tus citas...</p>
+        </div>
+      )}
+
+      {!loading && error && (
         <div className="bg-amber-100 border border-amber-500 rounded-xl p-6 text-center mb-8">
           <p className="text-amber-800 mb-4 text-lg">{error}</p>
-          <button onClick={fetchAppointments} className="bg-amber-500 text-white px-6 py-3 rounded-full font-semibold cursor-pointer transition-all duration-300 hover:bg-amber-600 hover:-translate-y-0.5">
+          <button
+            onClick={() => fetchAppointments(filters)}
+            className="bg-amber-500 text-white px-6 py-3 rounded-full font-semibold cursor-pointer transition-all duration-300 hover:bg-amber-600 hover:-translate-y-0.5"
+          >
             Reintentar
           </button>
         </div>
       )}
 
-      {!error && appointments.length === 0 && (
+      {!loading && !error && appointments.length === 0 && (
         <div className="text-center p-16 bg-white rounded-3xl shadow">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -118,38 +156,63 @@ const UserAppointments = () => {
             <line x1="8" y1="2" x2="8" y2="6"></line>
             <line x1="3" y1="10" x2="21" y2="10"></line>
           </svg>
-          <h2 className="text-gray-800 mb-4 text-2xl font-bold">No tienes citas programadas</h2>
-          <p className="text-gray-500 mb-8 text-lg">Cuando agendes una cita, aparecerá aquí.</p>
-          <a href="/appointments" className="inline-block bg-pink-600 text-white py-3.5 px-8 rounded-full no-underline font-semibold transition-all duration-300 hover:bg-pink-700 hover:-translate-y-0.5">
+          <h2 className="text-gray-800 mb-4 text-2xl font-bold">
+            No tienes citas programadas
+          </h2>
+          <p className="text-gray-500 mb-8 text-lg">
+            Cuando agendes una cita, aparecerá aquí.
+          </p>
+          <a
+            href="/appointments"
+            className="inline-block bg-pink-600 text-white py-3.5 px-8 rounded-full no-underline font-semibold transition-all duration-300 hover:bg-pink-700 hover:-translate-y-0.5"
+          >
             Agendar una cita
           </a>
         </div>
       )}
 
-      {!error && appointments.length > 0 && (
-        <div className="grid gap-6 mt-4" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))' }}>
-          {[...appointments]
-            .filter((appointment) => appointment.service !== null)
-            .sort((a, b) => {
-              const aPast = isPast(a);
-              const bPast = isPast(b);
-              if (aPast !== bPast) return aPast ? 1 : -1; 
-              if (!aPast) {
-                // ambas próximas: ordenar por inicio ascendente
-                return getStart(a).getTime() - getStart(b).getTime();
-              }
-              // ambas realizadas: ordenar por inicio descendente
-              return getStart(b).getTime() - getStart(a).getTime();
-            })
-            .map((appointment) => (
-              <AppointmentCard
-                key={appointment._id}
-                appointment={appointment}
-                deletingId={deletingId}
-                onDelete={handleDeleteAppointment}
-              />
-            ))}
-        </div>
+      {!loading && !error && appointments.length > 0 && (
+        <>
+          <div
+            className="grid gap-6 mt-4"
+            style={{
+              gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))",
+            }}
+          >
+            {[...appointments]
+              .filter((appointment) => appointment.service !== null)
+              .sort((a, b) => {
+                const aPast = isPast(a);
+                const bPast = isPast(b);
+                if (aPast !== bPast) return aPast ? 1 : -1;
+                if (!aPast)
+                  return getStart(a).getTime() - getStart(b).getTime();
+                return getStart(b).getTime() - getStart(a).getTime();
+              })
+              .map((appointment) => (
+                <AppointmentCard
+                  key={appointment._id}
+                  appointment={appointment}
+                  deletingId={deletingId}
+                  onDelete={handleDeleteAppointment}
+                />
+              ))}
+          </div>
+
+          {/* Paginación */}
+          <div className="mt-8">
+            <Pagination
+              page={filters.page || meta?.page || 1}
+              totalPages={meta?.totalPages || 1}
+              onPageChange={(p) => setFilters((prev) => ({ ...prev, page: p }))}
+            />
+            <p className="text-center text-sm text-gray-500 mt-2">
+              Página {meta?.page ?? filters.page ?? 1} de{" "}
+              {meta?.totalPages ?? 1} · {meta?.total ?? appointments.length}{" "}
+              resultados
+            </p>
+          </div>
+        </>
       )}
     </div>
   );
