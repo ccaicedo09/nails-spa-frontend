@@ -18,6 +18,11 @@ export interface CreateAppointmentServerResponse {
   appointment?: PopulatedAppointment;
 }
 
+export interface UpdateAppointmentServerResponse {
+  message: string;
+  appointment?: PopulatedAppointment;
+}
+
 export interface AvailabilityResponse {
   date: string;
   location: string;

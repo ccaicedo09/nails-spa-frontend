@@ -4,6 +4,7 @@ import { PopulatedAppointment } from "../types/citas";
 import AppointmentCard from "../components/appointments/AppointmentCard";
 import FilterBar, { Filters } from "../components/ui/FilterBar";
 import Pagination from "../components/ui/Pagination";
+import AppointmentWizard from "../components/appointments/AppointmentWizard";
 
 type Meta = {
   total: number,
@@ -19,6 +20,9 @@ const UserAppointments = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);
+
+  const [editingAppointment, setEditingAppointment] =
+    useState<PopulatedAppointment | null>(null);
 
   const fetchAppointments = async (params?: Filters) => {
     try {
@@ -195,6 +199,7 @@ const UserAppointments = () => {
                   appointment={appointment}
                   deletingId={deletingId}
                   onDelete={handleDeleteAppointment}
+                  onEdit={(apt) => setEditingAppointment(apt)}
                 />
               ))}
           </div>
@@ -213,6 +218,26 @@ const UserAppointments = () => {
             </p>
           </div>
         </>
+      )}
+
+      {editingAppointment && (
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-3xl max-h-[90vh] overflow-y-auto p-4">
+            <AppointmentWizard
+              mode="edit"
+              initialAppointment={editingAppointment}
+              // userId opcional en modo edit
+              onSuccess={(updated) => {
+                // Refrescar la lista local con la cita actualizada
+                setAppointments((prev) =>
+                  prev.map((apt) => (apt._id === updated._id ? updated : apt))
+                );
+                setEditingAppointment(null);
+              }}
+              onClose={() => setEditingAppointment(null)}
+            />
+          </div>
+        </div>
       )}
     </div>
   );
