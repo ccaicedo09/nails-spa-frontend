@@ -57,18 +57,22 @@ const Carrousel = () => {
 
       <button
         onClick={prevSlide}
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-transparent w-10 h-10 text-xl font-bold transition-colors bg-white/80 text-gray-900 hover:bg-white shadow-lg cursor-pointer z-10"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 inline-flex items-center justify-center rounded-full w-12 h-12 transition-all bg-white/90 hover:bg-white text-pink-600 shadow-lg hover:shadow-xl cursor-pointer z-10 backdrop-blur-sm"
         aria-label="Imagen anterior"
       >
-        ‹
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+        </svg>
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-transparent w-10 h-10 text-xl font-bold transition-colors bg-white/80 text-gray-900 hover:bg-white shadow-lg cursor-pointer z-10"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 inline-flex items-center justify-center rounded-full w-12 h-12 transition-all bg-white/90 hover:bg-white text-pink-600 shadow-lg hover:shadow-xl cursor-pointer z-10 backdrop-blur-sm"
         aria-label="Imagen siguiente"
       >
-        ›
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+        </svg>
       </button>
 
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">

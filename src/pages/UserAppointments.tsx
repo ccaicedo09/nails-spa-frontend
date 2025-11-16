@@ -167,7 +167,7 @@ const UserAppointments = () => {
             Cuando agendes una cita, aparecerá aquí.
           </p>
           <a
-            href="/appointments"
+            href="/citas"
             className="inline-block bg-pink-600 text-white py-3.5 px-8 rounded-full no-underline font-semibold transition-all duration-300 hover:bg-pink-700 hover:-translate-y-0.5"
           >
             Agendar una cita
