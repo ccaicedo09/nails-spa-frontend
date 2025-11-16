@@ -1,25 +1,20 @@
 import React from 'react';
-import './styles/about/Card.css'
 
-const Card = ({worker}) => {
+const Card = ({worker}: {worker: any}) => {
   return (
-    <div className='bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-center p-6'>
-      <div className='w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden shadow-lg'>
+    <div className='bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-200 text-center p-6 border border-pink-100'>
+      <div className='w-28 h-28 mx-auto mb-6 rounded-full overflow-hidden shadow-md ring-2 ring-pink-100'>
         <img src={worker.pathProfile} alt={worker.name} className="w-full h-full object-cover" />
       </div>
       
       <div className='mb-4'>
-        <h3 className='text-xl font-bold text-blue-600 mb-2'>{worker.name}</h3>
-        <span className="text-gray-600 font-semibold">{worker.role}</span>
+        <h3 className='text-lg font-bold text-gray-800 mb-2'>{worker.name}</h3>
+        <span className="inline-block bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-semibold">{worker.role}</span>
       </div>
 
-      <div className='mb-6'>
-        <p className="text-gray-600 leading-relaxed">{worker.message}</p>
+      <div>
+        <p className="text-gray-600 text-base leading-relaxed">{worker.message}</p>
       </div>
-
-      <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-semibold transition-colors">
-        Contactar
-      </button>
     </div>
   );
 }
