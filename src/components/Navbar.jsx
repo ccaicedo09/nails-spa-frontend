@@ -27,39 +27,43 @@ function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 w-full bg-gray-100/80 backdrop-blur border-b border-gray-200 flex items-center justify-between px-10 py-2 z-50">
-      <section className="flex items-center gap-2">
-        <a href="/about" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Sobre nosotros</a>
-        <a href="/sedes" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Nuestras sedes</a>
-      </section>
-      <section className="flex-1 flex items-center justify-center">
-        <a href="/"  rel="noopener noreferrer">
-            <img src={nailsLogo} className="logo" alt="Spectre logo" />
-        </a>
-      </section>
-      <section className="flex items-center gap-2">
-        <a href="/services" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Nuestros servicios</a>
-        <a href="/citas" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Agenda tu cita</a>
-        {isAuthenticated ? (
-          <>
-            <a href="/mis-citas" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Mis citas</a>
-            <a href="/dashboard" className="bg-transparent text-blue-600 hover:underline px-2 py-1">Dashboard</a>
-            <button
-              onClick={handleLogout}
-              className="bg-transparent text-blue-600 hover:underline px-2 py-1"
-            >
-              Cerrar sesión
-            </button>
-          </>
-        ) : (
-          <a
-            href="/login"
-            className="bg-transparent text-blue-600 hover:underline px-2 py-1"
-          >
-            Iniciar Sesión
+    <header className="sticky top-0 w-full bg-white/95 backdrop-blur-sm border-b border-pink-200 shadow-sm z-50">
+      <div className="flex items-center justify-between px-10 py-3 max-w-7xl mx-auto">
+        <section className="flex items-center gap-3 flex-1 justify-start">
+          <a href="/about" className="text-gray-700 hover:text-pink-600 font-medium px-3 py-2 rounded-lg transition-colors">Sobre nosotros</a>
+          <a href="/sedes" className="text-gray-700 hover:text-pink-600 font-medium px-3 py-2 rounded-lg transition-colors">Nuestras sedes</a>
+          <a href="/services" className="text-gray-700 hover:text-pink-600 font-medium px-3 py-2 rounded-lg transition-colors">Nuestros servicios</a>
+        </section>
+        
+        <section className="flex items-center justify-center">
+          <a href="/" rel="noopener noreferrer">
+              <img src={nailsLogo} className="logo" alt="NailSpa logo" />
           </a>
-        )}
-      </section>
+        </section>
+        
+        <section className="flex items-center gap-3 flex-1 justify-end">
+          <a href="/citas" className="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-4 py-2 rounded-lg transition-colors shadow-sm">Agenda tu cita</a>
+          {isAuthenticated ? (
+            <>
+              <a href="/mis-citas" className="text-gray-700 hover:text-pink-600 font-medium px-3 py-2 rounded-lg transition-colors">Mis citas</a>
+              <a href="/dashboard" className="text-gray-700 hover:text-pink-600 font-medium px-3 py-2 rounded-lg transition-colors">Dashboard</a>
+              <button
+                onClick={handleLogout}
+                className="text-gray-700 hover:text-pink-600 font-medium px-3 py-2 rounded-lg transition-colors"
+              >
+                Cerrar sesión
+              </button>
+            </>
+          ) : (
+            <a
+              href="/login"
+              className="text-gray-700 hover:text-pink-600 font-medium px-3 py-2 rounded-lg transition-colors"
+            >
+              Iniciar Sesión
+            </a>
+          )}
+        </section>
+      </div>
     </header>
   )
 }
