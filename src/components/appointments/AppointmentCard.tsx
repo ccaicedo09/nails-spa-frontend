@@ -48,7 +48,7 @@ const AppointmentCard: React.FC<Props> = ({ appointment, deletingId, onDelete, o
             Realizada
           </span>
         ) : (
-          <span className="inline-block px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wide bg-pink-600 text-white">
+          <span className="inline-block px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wide text-pink-600">
             Próxima
           </span>
         )}

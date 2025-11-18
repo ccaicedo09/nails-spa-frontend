@@ -16,7 +16,7 @@ type Meta = {
 const UserAppointments = () => {
   const [appointments, setAppointments] = useState<PopulatedAppointment[]>([]);
   const [meta, setMeta] = useState<Meta | null>(null);
-  const [filters, setFilters] = useState<Filters>({ page: 1, limit: 10, cancelled: undefined})
+  const [filters, setFilters] = useState<Filters>({ page: 1, limit: 10})
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);
@@ -60,7 +60,8 @@ const UserAppointments = () => {
 
   useEffect(() => {
     fetchAppointments();
-  }, [filters.page, filters.limit, filters.date, filters.from, filters.to, filters.cancelled]);
+    console.log("Filters changed:", filters);
+  }, [filters.page, filters.limit, filters.date, filters.from, filters.to]);
 
   const handleDeleteAppointment = async (appointmentId: string) => {
     const confirmDelete = window.confirm(
