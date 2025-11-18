@@ -14,12 +14,14 @@ type Props = {
   onApply: (filters: Filters) => void;
   className?: string;
   showSubmit?: boolean; // por si deseas aplicar auto en cambios; default true con botón
+  managerFilters?: boolean
 };
 
 const FilterBar: React.FC<Props> = ({
   initial,
   onApply,
   className,
+  managerFilters,
   showSubmit = true,
 }) => {
   const [date, setDate] = useState<string>(initial?.date || "");
@@ -94,35 +96,39 @@ const FilterBar: React.FC<Props> = ({
           </p>
         </div>
 
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1">
-            Desde
-          </label>
-          <input
-            type="date"
-            value={from}
-            onChange={(e) => {
-              setFrom(e.target.value);
-              if (date) setDate("");
-            }}
-            className="w-full rounded-xl border-gray-300 focus:ring-pink-500 focus:border-pink-500"
-          />
-        </div>
+        {!managerFilters && (
+          <>
 
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1">
-            Hasta
-          </label>
-          <input
-            type="date"
-            value={to}
-            onChange={(e) => {
-              setTo(e.target.value);
-              if (date) setDate("");
-            }}
-            className="w-full rounded-xl border-gray-300 focus:ring-pink-500 focus:border-pink-500"
-          />
-        </div>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">
+                Desde
+              </label>
+              <input
+                type="date"
+                value={from}
+                onChange={(e) => {
+                  setFrom(e.target.value);
+                  if (date) setDate("");
+                }}
+                className="w-full rounded-xl border-gray-300 focus:ring-pink-500 focus:border-pink-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">
+                Hasta
+              </label>
+              <input
+                type="date"
+                value={to}
+                onChange={(e) => {
+                  setTo(e.target.value);
+                  if (date) setDate("");
+                }}
+                className="w-full rounded-xl border-gray-300 focus:ring-pink-500 focus:border-pink-500"
+              />
+            </div>
+          </>)}
 
        
 

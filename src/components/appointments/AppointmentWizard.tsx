@@ -118,13 +118,19 @@ export default function AppointmentWizard({
         services.find((s) => s._id === service)?.duration || 30
       ),
     };
+    let additionalDescription;
+    if(description === undefined || description.trim() === "") {
+      additionalDescription = "N/A";
+    } else {
+      additionalDescription = description;
+    }
 
     const payload: any = {
       service,
       location,
       employee,
       schedule,
-      additionalDescription: description,
+      additionalDescription
     };
 
     const effectiveUserId =
@@ -365,7 +371,7 @@ export default function AppointmentWizard({
             {confirmation.additionalDescription || "Ninguna"}
           </p>
           <br />
-          <a href="/" className="mt-4 text-sm text-blue-500">
+          <a href="/mis-citas" className="mt-4 text-sm text-blue-500">
             Volver al inicio
           </a>
         </div>

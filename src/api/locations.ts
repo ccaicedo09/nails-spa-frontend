@@ -17,3 +17,5 @@ export const addEmployeesToLocationRequest = (
   axios.post<Location>(`/locations/${locationId}/employees`, {
     employees: employeeIds,
   });
+
+  export const location = "Nails Spa Neiva";

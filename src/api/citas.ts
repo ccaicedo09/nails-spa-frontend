@@ -38,7 +38,14 @@ export const getAvailabilityRequest = (payload: {
 // Eliminar/Cancelar una cita
 export const deleteAppointmentRequest = (appointmentId: string) =>
   axios.delete(`/appointments/${appointmentId}`);
+export const getAppointmentsByLocationRequest = (
+  locationId: string,
+  filters: { date?: string; page?: number; limit?: number }
+) => {
+  const params = new URLSearchParams();
+  if (filters.date) params.append("date", filters.date);
+  if (filters.page) params.append("page", filters.page.toString());
+  if (filters.limit) params.append("limit", filters.limit.toString());
 
-// Traer citas por sede
-export const getAppointmentsByLocationRequest = (locationId: string) =>
-  axios.get<CitasBySedeResponse[]>(`/appointments/sede/${locationId}`);
+  return axios.get(`/appointments/sede/${locationId}?${params.toString()}`);
+};
