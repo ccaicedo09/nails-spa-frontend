@@ -60,6 +60,7 @@ const UserAppointments = () => {
 
   useEffect(() => {
     fetchAppointments();
+    console.log("Filters changed:", filters);
   }, [filters.page, filters.limit, filters.date, filters.from, filters.to]);
 
   const handleDeleteAppointment = async (appointmentId: string) => {

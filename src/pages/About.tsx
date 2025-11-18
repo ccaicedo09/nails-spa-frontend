@@ -13,7 +13,7 @@ const teamWork = [
   {
     name: 'Carlos Esteban Castro Caicedo',
     message: 'Especialista en calidad de producto.',
-    role: 'Cofundador & Directora de producto'
+    role: 'Cofundador & Director de producto'
   },
   {
     name: 'Gabriel Andres Fajardo Ortiz',
@@ -23,7 +23,7 @@ const teamWork = [
   {
     name: 'Julian Enrique Buitrago Charry',
     message: 'Experto en experiencia del cliente y diseño.',
-    role: 'Cofundador & Director de Experiencia'
+    role: 'Cofundador & Director de experiencia'
   }
 ]
 

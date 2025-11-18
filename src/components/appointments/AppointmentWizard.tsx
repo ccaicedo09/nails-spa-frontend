@@ -166,7 +166,7 @@ export default function AppointmentWizard({
 
   // Renderizado por pasos
   return (
-    <div className="max-w-3xl mx-auto p-4 h-[75vh]">
+    <div className="max-w-3xl mx-auto p-4 min-h-[75vh]">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-bold">
           {mode === "edit" ? "Editar cita" : "Reserva tu cita"}
