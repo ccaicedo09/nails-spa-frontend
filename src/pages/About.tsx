@@ -6,27 +6,23 @@ import './styles/About.css';
 
 const teamWork = [
   {
-    name: 'Juliana Enriqueta Buitriago Charry',
-    message: 'Con más de 15 años de experiencia en el arte del nail care, cofundé este spa con la visión de crear un espacio donde la belleza y el bienestar se encuentran. Mi pasión es liderar un equipo excepcional que transforma cada visita en una experiencia memorable.',
-    pathProfile: 'https://i.pinimg.com/1200x/1c/85/2e/1c852ea928150dfcf54c5457dbca0a35.jpg',
+    name: 'Nathalia Avila Borrero',
+    message: 'Visionaria y apasionada por la belleza de las uñas',
     role: 'Cofundadora & Directora General'
   },
   {
-    name: 'Carla Estefany Castro Caicedo',
-    message: 'Como cofundadora y especialista en diseño de uñas, mi objetivo es llevar las últimas tendencias internacionales a nuestros clientes. Creo firmemente que cada diseño debe reflejar la personalidad única de quien lo lleva.',
-    pathProfile: 'https://i.pinimg.com/1200x/53/71/7e/53717eb0d8f58c3ffa799b25dd3cd1bc.jpg',
-    role: 'Cofundadora & Directora Creativa'
+    name: 'Carlos Esteban Castro Caicedo',
+    message: 'Especialista en calidad de producto.',
+    role: 'Cofundador & Directora de producto'
   },
   {
-    name: 'Gabriela Andrea Fajardo Ortiz',
-    message: 'Junto a mis socias, creamos este spa para ofrecer productos de la más alta calidad y tratamientos seguros. Mi compromiso es garantizar que cada servicio cumpla con los estándares más exigentes de la industria.',
-    pathProfile: 'https://i.pinimg.com/736x/90/06/83/9006838f5f8347d83b65fea831b40eb9.jpg',
-    role: 'Cofundadora & Directora de Calidad'
+    name: 'Gabriel Andres Fajardo Ortiz',
+    message: 'Lider de proyectos tecnológicos y desarrollo.',
+    role: 'Cofundador & Director de tecnología'
   },
   {
-    name: 'Nathaniel Avila Borrero',
-    message: 'Mi visión al cofundar este spa fue crear una experiencia cliente excepcional desde el primer contacto. Me dedico a asegurar que cada persona que nos visita se sienta valorada, escuchada y completamente satisfecha.',
-    pathProfile: 'https://i.pinimg.com/736x/7e/46/c6/7e46c6d2798eff446b365c5246f4c9ca.jpg',
+    name: 'Julian Enrique Buitrago Charry',
+    message: 'Experto en experiencia del cliente y diseño.',
     role: 'Cofundador & Director de Experiencia'
   }
 ]

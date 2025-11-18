@@ -50,9 +50,15 @@ const Dashboard = () => {
   if(role == "employee") return (
     <div className="px-6 py-8 max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">Panel de Empleado</h2>
+      
+      <div className="flex flex-col items-center mb-8">
+        <p>Necesitas un descanso? </p>
+        <a href="/citas" className="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-4 py-2  rounded-lg transition-colors  shadow-sm">Agenda tu cita</a>
+
+      </div>
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {appointments.map((cita, i) => (
-          <CitasCard key={i} cita={cita} />
+          <CitasCard key={i} cita={cita} hasLocation />
         ))}
       </div>
     </div>
@@ -61,6 +67,13 @@ const Dashboard = () => {
   if(role === "admin") return (
     <div className="px-6 py-8 max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">Panel de Administrador</h2>
+
+      
+      <div className="flex flex-col items-center mb-8">
+        <p>Necesitas un descanso? </p>
+        <a href="/citas" className="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-4 py-2  rounded-lg transition-colors  shadow-sm">Agenda tu cita</a>
+
+      </div>
       <AdminDashboard />
       
        
@@ -71,14 +84,24 @@ const Dashboard = () => {
   if(role === "manager") return (
     <div className="px-6 py-8 max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">Panel de Gerente de sede</h2>
+      <div className="flex flex-col items-center mb-8">
+        <p>Necesitas un descanso? </p>
+        <a href="/citas" className="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-4 py-2  rounded-lg transition-colors  shadow-sm">Agenda tu cita</a>
+
+      </div>
+      
+      
+       <h3 className="text-2xl font-bold text-gray-800 my-4">Citas de su sede</h3>
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <div>
-          <h3 className="text-2xl font-bold text-gray-800 mb-4">Citas de su sede</h3>
+        
+         
           
-            {appointments.map((cita, i) => (
-              <CitasCard hasLocation={false} key={i} cita={cita} />
-            ))}
-        </div>
+           
+        {appointments.map((cita, i) => (
+          <CitasCard key={i} cita={cita} />
+        ))}
+      
+        
        
 
       </div>

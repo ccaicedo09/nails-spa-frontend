@@ -6,8 +6,10 @@ import axios from 'axios';
 import { useContext } from 'react';
 import { isAuthenticatedContext } from '../context/IsAuthenticatedContext';
 import toast from 'react-hot-toast';
+import Cookies from "js-cookie";
 
 function Navbar() {
+   const role = Cookies.get("role");
   const navigate = useNavigate();
   const { isAuthenticated, setIsAuthenticated } = useContext(isAuthenticatedContext);
 
@@ -42,11 +44,15 @@ function Navbar() {
         </section>
         
         <section className="flex items-center gap-3 flex-1 justify-end">
-          <a href="/citas" className="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-4 py-2 rounded-lg transition-colors shadow-sm">Agenda tu cita</a>
+         {(role === "customer" || role === undefined) && <a href="/citas" className="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-4 py-2 rounded-lg transition-colors shadow-sm">Agenda tu cita</a>}
           {isAuthenticated ? (
             <>
               <a href="/mis-citas" className="text-gray-700 hover:text-pink-600 font-medium px-3 py-2 rounded-lg transition-colors">Mis citas</a>
-              <a href="/dashboard" className="text-gray-700 hover:text-pink-600 font-medium px-3 py-2 rounded-lg transition-colors">Dashboard</a>
+              {
+                role !== "customer" && (
+                 <a href="/dashboard" className="text-gray-700 hover:text-pink-600 font-medium px-3 py-2 rounded-lg transition-colors">Dashboard</a>
+                )
+              }
               <button
                 onClick={handleLogout}
                 className="text-gray-700 hover:text-pink-600 font-medium px-3 py-2 rounded-lg transition-colors"

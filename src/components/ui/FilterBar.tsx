@@ -4,7 +4,7 @@ export type Filters = {
   date?: string; // YYYY-MM-DD
   from?: string; // YYYY-MM-DD
   to?: string; // YYYY-MM-DD
-  cancelled?: boolean | undefined; // undefined = todas
+  
   page?: number;
   limit?: number;
 };
@@ -25,19 +25,16 @@ const FilterBar: React.FC<Props> = ({
   const [date, setDate] = useState<string>(initial?.date || "");
   const [from, setFrom] = useState<string>(initial?.from || "");
   const [to, setTo] = useState<string>(initial?.to || "");
-  const [cancelled, setCancelled] = useState<string>(
-    initial?.cancelled === undefined
-      ? "all"
-      : initial.cancelled
-      ? "true"
-      : "false"
-  );
+  // const [cancelled, setCancelled] = useState<string>(
+  //   initial?.cancelled === undefined
+  //     ? "all"
+  //     : initial.cancelled
+  //     ? "true"
+  //     : "false"
+  // );
   const [limit, setLimit] = useState<number>(initial?.limit || 10);
 
-  // Si quieres aplicar automáticamente al cambiar (sin botón), descomenta:
-  // useEffect(() => {
-  //   onApply(build());
-  // }, [date, from, to, cancelled, limit]);
+
 
   const build = (): Filters => {
     // Si hay "date", ignoramos from/to por coherencia con tus endpoints
@@ -51,9 +48,7 @@ const FilterBar: React.FC<Props> = ({
       if (from) f.from = from;
       if (to) f.to = to;
     }
-    if (cancelled === "true") f.cancelled = true;
-    else if (cancelled === "false") f.cancelled = false;
-    else f.cancelled = undefined;
+
 
     return f;
   };
@@ -63,15 +58,15 @@ const FilterBar: React.FC<Props> = ({
     setDate("");
     setFrom("");
     setTo("");
-    setCancelled("all");
+    // setCancelled("all");
     setLimit(10);
-    onApply({ page: 1, limit: 10, cancelled: undefined });
+    onApply({ page: 1, limit: 10 });
   };
 
   useEffect(() => {
-    // Validación simple de rango
+    
     if (from && to && from > to) {
-      // intercambia
+      
       setFrom(to);
       setTo(from);
     }
@@ -129,20 +124,7 @@ const FilterBar: React.FC<Props> = ({
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1">
-            Estado
-          </label>
-          <select
-            value={cancelled}
-            onChange={(e) => setCancelled(e.target.value)}
-            className="w-full rounded-xl border-gray-300 focus:ring-pink-500 focus:border-pink-500"
-          >
-            <option value="all">Todas</option>
-            <option value="false">Activas</option>
-            <option value="true">Canceladas</option>
-          </select>
-        </div>
+       
 
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-1">
