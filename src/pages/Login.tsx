@@ -110,9 +110,9 @@ function Login () {
               <p className="mt-1 text-sm text-red-600">{errors.password.message}</p>
             )}
             <div className="mt-2 text-right">
-              <a href="#" className="text-sm text-blue-600 hover:underline">
+              <Link to="/code" className="text-sm text-blue-600 hover:underline">
                 ¿Olvidaste tu contraseña?
-              </a>
+              </Link>
             </div>
           </div>
 

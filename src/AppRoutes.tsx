@@ -11,13 +11,14 @@ import UserAppointments from './pages/UserAppointments';
 import ProtectedRoute from './components/ProtectedRoute';
 //import RecoveryCode from './pages/RecoveryCode';
 import Dashboard from './pages/Dashboard';
+import RecoveryCode from './pages/RecoveryCode';
 
 const AppRoutes = () => {
   let routes = useRoutes([
     { path: "/", element: <Home /> },
     { path: "/register", element: <Register /> },
     { path: "/login", element: <Login /> },
-    // { path: "/code", element: <RecoveryCode /> },
+    { path: "/code", element: <RecoveryCode /> },
     { path: "/about", element: <About /> },
     { path: "/services", element: <Services /> },
     { path: "/sedes", element: <Sedes /> },
